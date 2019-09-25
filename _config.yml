@@ -1,0 +1,14 @@
+name: DougStewart.io
+markdown: kramdown
+theme: null
+sass:
+  sass_dir: _sass
+  style: compressed
+exclude: [
+  '.vscode',
+  'Gemfile',
+  'Gemfile.lock',
+  'node_modules',
+  'package-lock.json',
+  'CNAME'
+]

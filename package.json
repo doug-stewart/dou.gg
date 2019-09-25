@@ -1,0 +1,23 @@
+{
+  "name": "dou.gg",
+  "version": "1.0.0",
+  "description": "Personal site of Doug Stewart.",
+  "main": ".eslintrc.js",
+  "dependencies": {
+    "stylelint": "^10.1.0",
+    "stylelint-order": "^3.0.1"
+  },
+  "devDependencies": {},
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/doug-stewart/dou.gg.git"
+  },
+  "keywords": [],
+  "author": "Doug Stewart",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/doug-stewart/dou.gg/issues"
+  },
+  "homepage": "https://dou.gg/"
+}

@@ -1,0 +1,10 @@
+# This needs to go first
+# https://stackoverflow.com/questions/19023550/how-do-i-add-files-without-dots-in-them-all-extension-less-files-to-the-gitign
+*
+!/**/
+!*.scss
+
+# Directories here
+_site
+.sass-cache
+node_modules

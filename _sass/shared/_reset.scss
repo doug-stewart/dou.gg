@@ -1,0 +1,69 @@
+@-ms-viewport { width: device-width; }
+
+* {
+  border: 0;
+  box-sizing: border-box;
+  cursor: default;
+  font: inherit;
+  margin: 0;
+  -webkit-overflow-scrolling: touch;
+  padding: 0;
+  vertical-align: baseline;
+}
+
+body {
+  text-rendering: optimizeLegibility;
+  -webkit-text-size-adjust: 100%;
+}
+
+ol,
+ul { list-style: none; }
+
+blockquote,
+q { quotes: none; }
+
+blockquote::before,
+blockquote::after,
+q::before,
+q::after { content: ''; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+ul,
+ol { list-style: none; }
+
+a,
+button,
+[contenteditable] {
+  color: inherit;
+
+  &,
+  & * {
+    cursor: pointer;
+  }
+}
+
+a,
+button,
+input { -webkit-app-region: no-drag; }
+
+a { text-decoration: underline; }
+
+strong { font-weight: 500; }
+
+em { font-style: italic; }
+
+img { overflow: hidden; }
+
+input {
+  &[type=number] {
+    &::-webkit-inner-spin-button,
+    &::-webkit-outer-spin-button {
+      appearance: none;
+      margin: 0;
+    }
+  }
+}
