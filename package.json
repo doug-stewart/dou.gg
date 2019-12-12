@@ -4,11 +4,24 @@
   "description": "Personal site of Doug Stewart.",
   "main": ".eslintrc.js",
   "dependencies": {
+    "react": "^16.10.2",
+    "react-dom": "^16.10.2"
+  },
+  "devDependencies": {
+    "babel-eslint": "^10.0.3",
+    "eslint": "^6.5.1",
+    "eslint-config-prettier": "^6.4.0",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-react": "^7.16.0",
+    "parcel-bundler": "^1.12.4",
+    "prettier": "^1.18.2",
     "stylelint": "^10.1.0",
     "stylelint-order": "^3.0.1"
   },
-  "devDependencies": {},
-  "scripts": {},
+  "scripts": {
+    "dev": "parcel index.html"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/doug-stewart/dou.gg.git"
