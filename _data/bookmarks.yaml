@@ -75,6 +75,8 @@
       link: https://www.alistapart.com/
     - name: 'Android Authority'
       link: https://www.androidauthority.com/
+    - name: 'Android Police'
+      link: https://www.androidpolice.com/
     - name: 'Ars Technica'
       link: https://www.arstechnica.com/index.ars
     - name: 'CSS-Tricks'
@@ -87,6 +89,8 @@
       link: https://www.zeldman.com/
     - name: 'Lifehacker'
       link: https://www.lifehacker.com/
+    - name: 'The New York Times'
+      link: https://www.nytimes.com/
     - name: 'ProPublica'
       link: https://www.propublica.org/
     - name: 'Slashdot'
@@ -115,15 +119,13 @@
     - name: 'Coon Comic'
       link: https://cooncomic.com/
     - name: 'Drive'
-      link: https://www.drivecomic.com/
+      link: http://www.drivecomic.com/
     - name: 'Dumbing of Age'
       link: https://www.dumbingofage.com/
     - name: 'Emra'
       link: https://tapas.io/series/Erma
     - name: 'Fowl Language Comics'
       link: https://www.fowllanguagecomics.com/
-    - name: 'The Gamercat'
-      link: https://www.thegamercat.com/
     - name: 'Girls with Slingshots'
       link: https://www.daniellecorsetto.com/
     - name: 'Gunnerkrigg Court'
@@ -133,11 +135,11 @@
     - name: 'Indexed'
       link: https://www.thisisindexed.com/
     - name: 'Johnny Wander'
-      link: https://www.johnnywander.com/
+      link: http://www.johnnywander.com/
     - name: 'Looking For Group'
       link: https://www.lfgcomic.com/
     - name: 'Mary Death'
-      link: https://www.marydeathcomics.com/
+      link: http://www.marydeathcomics.com/
     - name: 'The Meek'
       link: https://www.meekcomic.com/
     - name: 'My Junk Drawer'
@@ -145,7 +147,7 @@
     - name: 'PHD Comics'
       link: https://www.phdcomics.com/comics.php
     - name: 'Port Sherry'
-      link: https://portsherry.com/
+      link: http://portsherry.com/
     - name: 'Questionable Content'
       link: https://www.questionablecontent.net/
     - name: 'Raruurien'
@@ -161,11 +163,11 @@
     - name: 'Scandinavia and the World'
       link: https://www.satwcomic.com/
     - name: 'Sheldon'
-      link: https://www.sheldoncomics.com/
+      link: http://www.sheldoncomics.com/
     - name: 'Stupid Fox'
       link: https://www.stupidfox.net/
     - name: 'Three Is The New Black'
-      link: https://www.threepanelsoul.com/
+      link: http://www.threepanelsoul.com/
     - name: 'XKCD'
       link: https://www.xkcd.com/
     - name: 'ZomCom'
@@ -186,7 +188,7 @@
     - name: 'Really Good Emails'
       link: https://reallygoodemails.com/
     - name: 'Site Inspire'
-      link: https://www.siteinspire.net/
+      link: http://www.siteinspire.net/
     - name: 'We Love Typography'
       link: https://www.welovetypography.com/
 
