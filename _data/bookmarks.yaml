@@ -26,14 +26,16 @@
 
 - title: Network (Local)
   bookmarks:
+    - name: 'Home Assistant'
+      link: http://brig.local:8123/
     - name: 'Plex'
-      link: http://10.0.1.100:32400/web
-    - name: 'SickChill'
-      link: http://10.0.1.100:8083/
+      link: http://brig.local:32400/web
+    - name: 'Sonarr'
+      link: http://10.0.1.100:8989/
     - name: 'Synology DiskStation'
-      link: https://10.0.1.100:5001/
+      link: https://brig.local:5001/
     - name: 'UniFi Controller'
-      link: https://10.0.1.100:8443/
+      link: https://brig.local:8443/
 
 - title: Download Sites
   bookmarks:
@@ -41,20 +43,12 @@
       link: https://1337x.to/
     - name: 'ETTV'
       link: https://www.ettv.tv/
-    - name: 'IsoHunt'
-      link: https://isohunts.to/
-    - name: 'KickAssTorrents'
-      link: https://katcr.co/
     - name: 'The Pirate Bay'
       link: https://thepiratebay.org/
     - name: 'Nyaa'
       link: https://nyaa.si/
     - name: 'RARBG'
-      link: https://rarbgget.org/
-    - name: 'TorrenGalaxy'
-      link: https://torrentgalaxy.org/
-    - name: 'Torrents'
-      link: https://torrents.me/
+      link: https://rarbg.to/
 
 - title: Wallpaper Sites
   bookmarks:
@@ -62,21 +56,13 @@
       link: https://wall.alphacoders.com/
     - name: 'ArtStation'
       link: https://www.artstation.com/
-    - name: 'InterfaceLIFT'
-      link: https://www.interfacelift.com/
     - name: 'Wallhaven'
       link: https://alpha.wallhaven.cc/latest
 
 - title: Magazines &amp; Blogs
   bookmarks:
-    - name: '24 Ways'
-      link: https://www.24ways.org/
     - name: 'A List Apart'
       link: https://www.alistapart.com/
-    - name: 'Android Authority'
-      link: https://www.androidauthority.com/
-    - name: 'Android Police'
-      link: https://www.androidpolice.com/
     - name: 'Ars Technica'
       link: https://www.arstechnica.com/index.ars
     - name: 'CSS-Tricks'
@@ -110,24 +96,16 @@
       link: https://www.avasdemon.com/
     - name: 'Blindsprings'
       link: https://www.blindsprings.com/
-    - name: 'C-Cassandra'
-      link: https://c-cassandra.tumblr.com/
     - name: "Cat's Cafe"
       link: https://tapas.io/series/Cats-Cafe
     - name: 'Catana Comics'
       link: https://catanacomics.com/
-    - name: 'Coon Comic'
-      link: https://cooncomic.com/
     - name: 'Drive'
       link: http://www.drivecomic.com/
     - name: 'Dumbing of Age'
       link: https://www.dumbingofage.com/
     - name: 'Emra'
       link: https://tapas.io/series/Erma
-    - name: 'Fowl Language Comics'
-      link: https://www.fowllanguagecomics.com/
-    - name: 'Girls with Slingshots'
-      link: https://www.daniellecorsetto.com/
     - name: 'Gunnerkrigg Court'
       link: https://www.gunnerkrigg.com/
     - name: 'Ichabod the Optimistic Canine'
@@ -138,10 +116,6 @@
       link: http://www.johnnywander.com/
     - name: 'Looking For Group'
       link: https://www.lfgcomic.com/
-    - name: 'Mary Death'
-      link: http://www.marydeathcomics.com/
-    - name: 'The Meek'
-      link: https://www.meekcomic.com/
     - name: 'My Junk Drawer'
       link: https://www.instagram.com/amymebberson/
     - name: 'PHD Comics'
@@ -150,6 +124,8 @@
       link: http://portsherry.com/
     - name: 'Questionable Content'
       link: https://www.questionablecontent.net/
+    - name: 'Racoon Comic'
+      link: https://raccooncomic.com/
     - name: 'Raruurien'
       link: https://raruurien.com/
     - name: 'RandoWis'
