@@ -27,15 +27,15 @@
 - title: Network (Local)
   bookmarks:
     - name: 'Home Assistant'
-      link: http://brig.local:8123/
+      link: http://danu.local:8123/
     - name: 'Plex'
-      link: http://brig.local:32400/web
+      link: http://danu.local:32400/web
     - name: 'Sonarr'
-      link: http://10.0.1.100:8989/
+      link: http://danu.local:8989/
     - name: 'Synology DiskStation'
-      link: https://brig.local:5001/
+      link: https://danu.local:5001/
     - name: 'UniFi Controller'
-      link: https://brig.local:8443/
+      link: https://danu.local:8443/
 
 - title: Download Sites
   bookmarks:
