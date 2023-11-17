@@ -3,52 +3,40 @@
 
 - title: Frequently Visited Sites
   bookmarks:
-    - name: 'Amazon'
-      link: https://www.amazon.com/
-    - name: 'Dropbox'
-      link: https://www.dropbox.com/
+    - name: 'DoorDash'
+      link: https://www.doordash.com/
     - name: 'Feedly'
       link: https://www.feedly.com/
-    - name: 'Gmail'
-      link: https://www.gmail.com/
-    - name: 'GrubHub'
-      link: https://www.grubhub.com/
     - name: 'Imgur'
       link: https://imgur.com/
-    - name: 'Netflix'
-      link: https://www.netflix.com/
-    - name: 'Pocket Casts'
-      link: https://play.pocketcasts.com/
-    - name: 'ReviewMeta'
-      link: https://reviewmeta.com/
+    - name: 'Reddit'
+      link: https://reddit.com/
     - name: 'YouTube'
       link: https://www.youtube.com/
 
-- title: Network (Local)
+- title: Danu
   bookmarks:
     - name: 'Home Assistant'
-      link: http://danu.local:8123/
+      link: http://10.0.1.201:8123/
     - name: 'Plex'
-      link: http://danu.local:32400/web
+      link: http://10.0.1.201:32400/
     - name: 'Sonarr'
-      link: http://danu.local:8989/
-    - name: 'Synology DiskStation'
-      link: https://danu.local:5001/
-    - name: 'UniFi Controller'
-      link: https://danu.local:8443/
+      link: http://10.0.1.201:8989/
+    - name: 'Synology'
+      link: https://10.0.1.201:5001/
+    - name: 'UniFi'
+      link: https://10.0.1.201:8443/
 
 - title: Download Sites
   bookmarks:
     - name: '1337x'
       link: https://1337x.to/
-    - name: 'ETTV'
-      link: https://www.ettv.tv/
     - name: 'The Pirate Bay'
       link: https://thepiratebay.org/
     - name: 'Nyaa'
       link: https://nyaa.si/
-    - name: 'RARBG'
-      link: https://rarbg.to/
+    - name: 'Torrent Galaxy'
+      link: https://torrentgalaxy.to/
 
 - title: Wallpaper Sites
   bookmarks:
@@ -58,141 +46,3 @@
       link: https://www.artstation.com/
     - name: 'Wallhaven'
       link: https://alpha.wallhaven.cc/latest
-
-- title: Magazines &amp; Blogs
-  bookmarks:
-    - name: 'A List Apart'
-      link: https://www.alistapart.com/
-    - name: 'Ars Technica'
-      link: https://www.arstechnica.com/index.ars
-    - name: 'CSS-Tricks'
-      link: https://www.css-tricks.com/
-    - name: 'Engadget'
-      link: https://www.engadget.com/
-    - name: 'I Love Typography'
-      link: https://www.ilovetypography.com/
-    - name: 'Jeffrey Zeldman Presents The Daily Report'
-      link: https://www.zeldman.com/
-    - name: 'Lifehacker'
-      link: https://www.lifehacker.com/
-    - name: 'The New York Times'
-      link: https://www.nytimes.com/
-    - name: 'ProPublica'
-      link: https://www.propublica.org/
-    - name: 'Slashdot'
-      link: https://www.slashdot.org/
-    - name: 'Smashing Magazine'
-      link: https://www.smashingmagazine.com/
-    - name: 'Sony Alpha Rumors'
-      link: https://www.sonyalpharumors.com/
-    - name: 'Vox'
-      link: https://www.vox.com/
-    - name: 'Wired News'
-      link: https://www.wired.com/
-
-- title: Webcomics
-  bookmarks:
-    - name: 'Ava&rsquo;s Demon'
-      link: https://www.avasdemon.com/
-    - name: 'Blindsprings'
-      link: https://www.blindsprings.com/
-    - name: "Cat's Cafe"
-      link: https://tapas.io/series/Cats-Cafe
-    - name: 'Catana Comics'
-      link: https://catanacomics.com/
-    - name: 'Drive'
-      link: http://www.drivecomic.com/
-    - name: 'Dumbing of Age'
-      link: https://www.dumbingofage.com/
-    - name: 'Emra'
-      link: https://tapas.io/series/Erma
-    - name: 'Gunnerkrigg Court'
-      link: https://www.gunnerkrigg.com/
-    - name: 'Ichabod the Optimistic Canine'
-      link: https://tapas.io/series/Ichabod-the-Optimistic-Canine
-    - name: 'Indexed'
-      link: https://www.thisisindexed.com/
-    - name: 'Johnny Wander'
-      link: http://www.johnnywander.com/
-    - name: 'Looking For Group'
-      link: https://www.lfgcomic.com/
-    - name: 'My Junk Drawer'
-      link: https://www.instagram.com/amymebberson/
-    - name: 'PHD Comics'
-      link: https://www.phdcomics.com/comics.php
-    - name: 'Port Sherry'
-      link: http://portsherry.com/
-    - name: 'Questionable Content'
-      link: https://www.questionablecontent.net/
-    - name: 'Racoon Comic'
-      link: https://raccooncomic.com/
-    - name: 'Raruurien'
-      link: https://raruurien.com/
-    - name: 'RandoWis'
-      link: https://randowis.com/
-    - name: 'Sam and Fuzzy'
-      link: https://www.samandfuzzy.com/
-    - name: 'Sarah&rsquo;s Scribbles'
-      link: https://www.sarahcandersen.com/
-    - name: 'Saturday Morning Breakfast Cereal'
-      link: https://www.smbc-comics.com/
-    - name: 'Scandinavia and the World'
-      link: https://www.satwcomic.com/
-    - name: 'Sheldon'
-      link: http://www.sheldoncomics.com/
-    - name: 'Stupid Fox'
-      link: https://www.stupidfox.net/
-    - name: 'Three Is The New Black'
-      link: http://www.threepanelsoul.com/
-    - name: 'XKCD'
-      link: https://www.xkcd.com/
-    - name: 'ZomCom'
-      link: https://www.webtoons.com/en/challenge/zomcom/list?title_no=70195
-
-- title: Galleries
-  bookmarks:
-    - name: 'Behance Network'
-      link: https://www.behance.net/
-    - name: 'Best Website Gallery'
-      link: https://bestwebsite.gallery/
-    - name: 'Dieline'
-      link: https://www.thedieline.com/blog/
-    - name: 'Information Is Beautiful'
-      link: https://www.informationisbeautiful.net/
-    - name: 'Land Book'
-      link: https://land-book.com/
-    - name: 'Really Good Emails'
-      link: https://reallygoodemails.com/
-    - name: 'Site Inspire'
-      link: http://www.siteinspire.net/
-    - name: 'We Love Typography'
-      link: https://www.welovetypography.com/
-
-- title: Resources
-  bookmarks:
-    - name: 'Creative Market'
-      link: https://creativemarket.com/
-    - name: 'Font Squirrel'
-      link: https://www.fontsquirrel.com/
-    - name: 'Fonts'
-      link: https://www.fonts.com/
-    - name: 'Free Images'
-      link: https://www.freeimages.com/
-    - name: 'Icon Finder'
-      link: https://www.iconfinder.com/
-    - name: 'IconStore'
-      link: https://iconstore.co/
-    - name: 'Lorem Ipsum Generator'
-      link: https://lorem-ipsum.perbang.dk/
-    - name: 'Lost Type'
-      link: https://losttype.com/
-    - name: 'The Noun Project'
-      link: https://www.thenounproject.com/
-    - name: 'MyFonts'
-      link: https://www.myfonts.com/
-    - name: 'Pexels'
-      link: https://www.pexels.com/
-    - name: 'Premium Pixels'
-      link: https://www.premiumpixels.com/
-    - name: 'To Icon'
-      link: https://www.toicon.com/
