@@ -1,0 +1,31 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import data from '../../data/bookmarks.json';
+---
+
+<!-- https://api.themoviedb.org/3/movie/550?api_key=7b41b7c750880b89e9386d6b0b4987b0 -->
+<Layout title="Baile">
+    {
+        Object.entries(data.categories).map(([key, value]) => (
+            <section>
+                <h2>{value}</h2>
+                <ul>
+                    {data.bookmarks
+                        .filter((bookmark) => bookmark.category === key)
+                        .sort((a, b) => a.name.localeCompare(b.name))
+                        .map(({ name, link }) => (
+                            <li>
+                                <a href={link}>
+                                    <img
+                                        alt=""
+                                        src={`http://www.google.com/s2/favicons?domain=${link}`}
+                                    />
+                                    {name}
+                                </a>
+                            </li>
+                        ))}
+                </ul>
+            </section>
+        ))
+    }
+</Layout>

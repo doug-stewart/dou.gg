@@ -1,36 +1,42 @@
 {
-  "name": "dou.gg",
-  "version": "1.0.0",
-  "description": "Personal site of Doug Stewart.",
-  "main": ".eslintrc.js",
-  "dependencies": {
-    "react": "^16.10.2",
-    "react-dom": "^16.10.2"
-  },
-  "devDependencies": {
-    "babel-eslint": "^10.1.0",
-    "eslint": "^6.8.0",
-    "eslint-config-prettier": "^6.10.0",
-    "eslint-plugin-import": "^2.20.1",
-    "eslint-plugin-jsx-a11y": "^6.2.3",
-    "eslint-plugin-react": "^7.19.0",
-    "parcel-bundler": "^1.12.4",
-    "prettier": "^1.19.1",
-    "stylelint": "^10.1.0",
-    "stylelint-order": "^3.1.1"
-  },
-  "scripts": {
-    "dev": "parcel index.html"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/doug-stewart/dou.gg.git"
-  },
-  "keywords": [],
-  "author": "Doug Stewart",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/doug-stewart/dou.gg/issues"
-  },
-  "homepage": "https://dou.gg/"
+    "name": "dou.gg",
+    "type": "module",
+    "version": "0.0.1",
+    "scripts": {
+        "dev": "astro dev",
+        "start": "astro dev",
+        "build": "astro check && astro build",
+        "preview": "astro preview",
+        "astro": "astro",
+        "lint": "npm run lint:css ; npm run lint:ts ; npm run lint:js",
+        "lint:css": "stylelint \"**/*.{scss,css}\" --fix",
+        "lint:js": "eslint . --ext .js,.jsx,.ts,.tsx,.astro --ignore-path .gitignore",
+        "lint:ts": "tsc -b",
+        "pretty": "prettier --ignore-path .gitignore --write ."
+    },
+    "dependencies": {
+        "@astrojs/check": "^0.3.2",
+        "astro": "^4.0.5",
+        "typescript": "^5.3.3"
+    },
+    "devDependencies": {
+        "@typescript-eslint/eslint-plugin": "^6.11.0",
+        "@typescript-eslint/parser": "^6.14.0",
+        "eslint": "^8.55.0",
+        "eslint-config-prettier": "^9.1.0",
+        "eslint-import-resolver-typescript": "^3.6.1",
+        "eslint-plugin-astro": "^0.30.0",
+        "eslint-plugin-import": "^2.29.1",
+        "eslint-plugin-jsx-a11y": "^6.8.0",
+        "eslint-plugin-prettier": "^5.0.1",
+        "prettier": "^3.1.1",
+        "prettier-plugin-astro": "^0.12.2",
+        "sass": "^1.69.5",
+        "stylelint": "^16.0.2",
+        "stylelint-config-standard-scss": "^12.0.0",
+        "stylelint-order": "^6.0.4",
+        "stylelint-prettier": "^5.0.0",
+        "stylelint-scss": "^6.0.0",
+        "typescript": "^5.2.2"
+    }
 }
