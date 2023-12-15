@@ -1,5 +1,11 @@
 body {
-    background: radial-gradient(circle at 50dvh 0, oklch(1 0 0deg / 12%), oklch(1 0 0deg / 0%)),
+    background-attachment: fixed;
+    background-color: #000;
+    background-image: radial-gradient(
+            circle at 50dvh 0,
+            oklch(1 0 0deg / 12%),
+            oklch(1 0 0deg / 0%)
+        ),
         linear-gradient(oklch(0 0 0deg) 66dvh, oklch(0.06 0.12 300deg));
     color: oklch(80 0 0deg);
     display: flex;
@@ -12,16 +18,23 @@ body {
 }
 
 section {
-    margin-inline: 2.4em;
+    margin-inline: auto;
     max-width: 1280px;
+    width: calc(100% - 2.4em * 2);
 
     &:first-of-type {
         margin-block-start: auto;
+        padding-block-start: 2.4em;
     }
 
     &:last-of-type {
         margin-block-end: auto;
+        padding-block-end: 2.4em;
     }
+}
+
+h1 {
+    margin: auto;
 }
 
 h2 {
@@ -29,21 +42,24 @@ h2 {
     font-size: 0.72em;
     font-weight: 700;
     margin-block-end: 1.5em;
-    text-align: center;
     text-transform: uppercase;
 }
 
 ul {
     display: grid;
+    filter: drop-shadow(0 0 3px oklch(0 0 0deg / 12%));
     font-size: 1.14em;
     gap: 0.24em;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(min(15em, 100%), 1fr));
     list-style-type: none;
     margin: unset;
     padding: unset;
+    width: 100%;
 }
 
 li {
+    max-width: 100%;
+
     a {
         align-items: center;
         background-color: oklch(0.18 0 0deg);
