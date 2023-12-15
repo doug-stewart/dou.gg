@@ -7,4 +7,8 @@
 # Directories here
 _site
 .sass-cache
+.vscode
+build
+coverage
 node_modules
+out
