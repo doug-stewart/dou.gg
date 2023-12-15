@@ -8,7 +8,7 @@ import data from '../../data/bookmarks.json';
     {
         Object.entries(data.categories).map(([key, value]) => (
             <section>
-                <h2>{value}</h2>
+                <h2>{value} ↴</h2>
                 <ul>
                     {data.bookmarks
                         .filter((bookmark) => bookmark.category === key)
