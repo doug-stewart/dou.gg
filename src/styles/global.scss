@@ -1,11 +1,7 @@
 body {
     background-attachment: fixed;
     background-color: #000;
-    background-image: radial-gradient(
-            circle at 50dvh 0,
-            oklch(1 0 0deg / 12%),
-            oklch(1 0 0deg / 0%)
-        ),
+    background-image: radial-gradient(circle at 50% 0, oklch(1 0 0deg / 12%), oklch(1 0 0deg / 0%)),
         linear-gradient(oklch(0 0 0deg) 66dvh, oklch(0.06 0.12 300deg));
     color: oklch(80 0 0deg);
     display: flex;
