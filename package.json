@@ -15,28 +15,28 @@
         "pretty": "prettier --ignore-path .gitignore --write ."
     },
     "dependencies": {
-        "@astrojs/check": "^0.3.2",
-        "astro": "^4.0.5",
-        "typescript": "^5.3.3"
+        "@astrojs/check": "^0.9.4",
+        "astro": "^4.16.9",
+        "typescript": "^5.6.3"
     },
     "devDependencies": {
-        "@typescript-eslint/eslint-plugin": "^6.11.0",
-        "@typescript-eslint/parser": "^6.14.0",
-        "eslint": "^8.55.0",
+        "@typescript-eslint/eslint-plugin": "^8.13.0",
+        "@typescript-eslint/parser": "^8.13.0",
+        "eslint": "^9.14.0",
         "eslint-config-prettier": "^9.1.0",
-        "eslint-import-resolver-typescript": "^3.6.1",
-        "eslint-plugin-astro": "^0.30.0",
-        "eslint-plugin-import": "^2.29.1",
-        "eslint-plugin-jsx-a11y": "^6.8.0",
-        "eslint-plugin-prettier": "^5.0.1",
-        "prettier": "^3.1.1",
-        "prettier-plugin-astro": "^0.12.2",
-        "sass": "^1.69.5",
-        "stylelint": "^16.0.2",
-        "stylelint-config-standard-scss": "^12.0.0",
+        "eslint-import-resolver-typescript": "^3.6.3",
+        "eslint-plugin-astro": "^1.3.0",
+        "eslint-plugin-import": "^2.31.0",
+        "eslint-plugin-jsx-a11y": "^6.10.2",
+        "eslint-plugin-prettier": "^5.2.1",
+        "prettier": "^3.3.3",
+        "prettier-plugin-astro": "^0.14.1",
+        "sass": "^1.80.6",
+        "stylelint": "^16.10.0",
+        "stylelint-config-standard-scss": "^13.1.0",
         "stylelint-order": "^6.0.4",
-        "stylelint-prettier": "^5.0.0",
-        "stylelint-scss": "^6.0.0",
-        "typescript": "^5.2.2"
+        "stylelint-prettier": "^5.0.2",
+        "stylelint-scss": "^6.8.1",
+        "typescript": "^5.6.3"
     }
 }
