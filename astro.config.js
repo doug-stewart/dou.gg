@@ -1,3 +1,4 @@
+//eslint-disable-next-line
 import { defineConfig } from 'astro/config';
 
 // https://astro.build/config

@@ -1,13 +1,11 @@
 {
-    "extends": ["stylelint-config-standard-scss"],
-    "plugins": ["stylelint-order", "stylelint-prettier", "stylelint-scss"],
+    "extends": ["stylelint-config-recommended"],
+    "plugins": ["stylelint-order", "stylelint-prettier"],
     "rules": {
         "selector-class-pattern": null,
         "order/order": ["custom-properties", "declarations"],
         "order/properties-alphabetical-order": true,
         "no-descending-specificity": null,
-        "function-no-unknown": null,
-        "scss/function-no-unknown": null,
-        "scss/operator-no-newline-after": null
+        "function-no-unknown": null
     }
 }
