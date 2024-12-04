@@ -1,13 +1,16 @@
 ---
-import '../styles/reset.css';
-import '../styles/global.css';
-import '../styles/typography.css';
+import '@/styles/reset.css';
+import '@/styles/global.css';
+import '@/styles/typography.css';
+
+import favicon from '@/assets/images/favicon.png';
 
 interface Props {
     title: string;
 }
 
 const { title } = Astro.props;
+const currentPath = Astro.url.pathname;
 ---
 
 <!doctype html>
@@ -16,17 +19,41 @@ const { title } = Astro.props;
         <meta charset="UTF-8" />
         <meta name="description" content="Astro description" />
         <meta name="viewport" content="width=device-width" />
-        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <link rel="icon" type="image/png" href={favicon.src} />
         <meta name="generator" content={Astro.generator} />
-        <title>{title} | Dou.gg</title>
+        <title>{`{ ${title} }: Dou.gg`}</title>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
         <link
             href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap"
             rel="stylesheet"
         />
+        <script is:inline type="module">
+            if (!('anchorName' in document.documentElement.style)) {
+                import('https://unpkg.com/@oddbird/css-anchor-positioning');
+            }
+        </script>
     </head>
     <body>
+        <header class="header">
+            <nav class="nav">
+                <ul class="nav__list">
+                    {
+                        currentPath !== '/' && (
+                            <li class={currentPath === '/' ? 'active' : ''}>
+                                <a href="/">Home</a>
+                            </li>
+                        )
+                    }
+                    <!-- <li class={currentPath.startsWith('/blog') ? 'active' : ''}>
+                        <a href="/blog">Blog</a>
+                    </li> -->
+                    <li>
+                        <a href="mailto:hi@dou.gg">Contact</a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
         <main class="wrapper">
             <slot />
         </main>

@@ -1,5 +1,5 @@
 {
-    "extends": ["stylelint-config-recommended"],
+    "extends": ["stylelint-config-recommended", "stylelint-config-html"],
     "plugins": ["stylelint-order", "stylelint-prettier"],
     "rules": {
         "selector-class-pattern": null,

@@ -1,0 +1,24 @@
+{
+    "homeButtons": [
+        {
+            "url": "/downloads/doug-stewart-resume.pdf",
+            "icon": "download",
+            "name": "Download my resume"
+        },
+        {
+            "url": "https://www.linkedin.com/in/dougmstewart/",
+            "icon": "linkedin",
+            "name": "LinkedIn"
+        },
+        {
+            "url": "https://github.com/doug-stewart/",
+            "icon": "github",
+            "name": "GitHub"
+        },
+        {
+            "url": "https://codesandbox.io/u/doug-stewart",
+            "icon": "codesandbox",
+            "name": "CodeSandbox.io"
+        }
+    ]
+}

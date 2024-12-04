@@ -1,0 +1,38 @@
+---
+import { Image } from 'astro:assets';
+
+import Asterism from '@/icons/asterism.svg';
+import lucy from '@/assets/images/lucy-bg.png';
+import glow from '@/assets/images/lucy-glow.png';
+import Layout from '@/layouts/Layout.astro';
+
+import '@/styles/error.css';
+
+interface Props {
+    title: string;
+    headline: string;
+}
+
+const { title, headline } = Astro.props;
+---
+
+<Layout title={title}>
+    <div class="error">
+        <h1 class="title">
+            <Asterism class="asterism" />
+            {headline}
+        </h1>
+        <p class="notice">
+            If I sent you here, uh, sorry! Could you please <a href="mailto:hi@dou.gg"
+                >let me know</a
+            >?
+            <br />
+            <strong>Otherwise maybe you can just <a href="/">go home</a>?</strong>
+        </p>
+        <slot />
+    </div>
+    <div role="presentation" class="lucy">
+        <Image class="lucy__glow" src={glow} alt="" layout="responsive" format="avif" />
+        <Image class="lucy__img" src={lucy} alt="" layout="responsive" format="avif" />
+    </div>
+</Layout>

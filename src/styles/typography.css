@@ -25,22 +25,33 @@ body,
 h1,
 .type-1 {
     font-size: var(--type-xxl);
-    font-weight: 200;
+    font-weight: 600;
     letter-spacing: 0;
     line-height: 1.24;
-    margin-block: calc(var(--spacing-m) / 2);
+    margin-block: calc(var(--spacing) * 2);
+
+    &:has(strong) {
+        font-weight: 200;
+    }
 
     strong {
         font-weight: 600;
     }
+
+    .asterism {
+        display: block;
+        height: auto;
+        margin-block-end: 0.36em;
+        width: 1.1em;
+    }
 }
 
 h2,
-.type-xl {
+.type-2 {
     font-size: var(--type-xl);
     font-weight: 500;
     line-height: 1.24;
-    margin-block: calc(var(--spacing-m) / 2);
+    margin-block: calc(var(--spacing) * 2);
     text-transform: uppercase;
 }
 
@@ -48,14 +59,14 @@ h3,
 .type-3 {
     font-size: var(--type-l);
     font-weight: 500;
-    margin-block: calc(var(--spacing-m) / 4);
+    margin-block: var(--spacing);
 }
 
 h4,
 .type-4 {
     font-size: var(--type-l);
     font-weight: 300;
-    margin-block: calc(var(--spacing-m) / 4);
+    margin-block: var(--spacing);
 }
 
 h5,
@@ -76,29 +87,68 @@ cite,
     font-size: var(--type-s);
 }
 
-@property --anchor-underline {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+cite,
+figure,
+ol:where(:not([class])),
+p,
+ul:where(:not([class])),
+table,
+.type-1,
+.type-2,
+.type-3,
+.type-4,
+.type-5,
+.type-6,
+.type--1 {
+    &:where(:first-child) {
+        margin-block-start: 0;
+    }
+
+    &:where(:last-child) {
+        margin-block-end: 0;
+    }
+}
+
+@property --_anchor-underline {
     inherits: true;
     initial-value: 0%;
     syntax: '<percentage>';
 }
 
-a:not([class]) {
-    --anchor-underline: 0%;
+a:where(:not([class])) {
+    --_anchor-underline: 0%;
+    --_bg: var(--yellow-2);
+    --_color: var(--yellow-2);
 
-    background: transparent
-        linear-gradient(to top, var(--green-3) calc(var(--anchor-underline) + 1px), transparent 0%)
-        no-repeat 0 0;
+    background-color: transparent;
+    background-image: linear-gradient(to top, var(--_bg) max(1px, 0.072em), transparent 0%),
+        radial-gradient(ellipse at 50% 100%, var(--_bg) 50%, transparent 0%);
+    background-position:
+        0 0,
+        50% 100%;
+    background-repeat: no-repeat;
+    background-size:
+        100% 100%,
+        150% calc(var(--_anchor-underline) * 5);
     box-decoration-break: slice;
+    color: var(--_color);
     text-decoration: none;
     transition-duration: var(--animation-timing);
-    transition-property: --anchor-underline, color;
+    transition-property: --_anchor-underline, border-radius, color;
     transition-timing-function: var(--animation-curve-out);
 
     &:focus-visible,
     &:hover {
-        --anchor-underline: 100%;
+        --_anchor-underline: 100%;
+        --_color: var(--green-5);
 
-        color: var(--green-1);
+        border-radius: max(2px, 0.144em);
         transition-timing-function: var(--animation-curve-in);
     }
 }
@@ -138,7 +188,7 @@ table {
 
 ol:where(:not([class])),
 ul:where(:not([class])) {
-    padding-inline-start: calc(var(--spacing-l) / 2);
+    padding-inline-start: calc(var(--spacing) * 2);
 
     ol:where(:not([class])),
     ul:where(:not([class])) {
@@ -167,13 +217,13 @@ figure:where(:has(blockquote)) {
     }
 
     > p {
-        padding-inline: calc(var(--spacing-m) / 2);
+        padding-inline: calc(var(--spacing) * 2);
     }
 
     blockquote {
         font-size: var(--type-xl);
         font-weight: 200;
-        padding-inline: calc(var(--spacing-m) / 2);
+        padding-inline: calc(var(--spacing) * 2);
     }
 
     cite {

@@ -56,7 +56,7 @@ p {
     margin: 0;
 }
 
-a:not([class]) {
+a:where(:not([class])) {
     color: currentcolor;
     text-decoration-skip-ink: auto;
 }
