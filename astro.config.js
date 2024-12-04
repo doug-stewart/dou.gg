@@ -7,7 +7,9 @@ import icon from 'astro-icon';
 // https://astro.build/config
 export default defineConfig({
     site: 'https://dou.gg',
-    adapter: cloudflare(),
+    adapter: cloudflare({
+        imageService: 'cloudflare',
+    }),
     output: 'server',
     integrations: [icon()],
     experimental: {

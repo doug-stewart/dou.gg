@@ -1,4 +1,6 @@
 ---
+import type { ImageMetadata } from 'astro';
+
 import { getImage } from 'astro:assets';
 import { nanoid } from 'nanoid';
 
@@ -23,22 +25,19 @@ const frameworks = processData(frameworksData);
 const languages = processData(languagesData);
 const software = processData(softwareData);
 
-const pngs = import.meta.glob<{ default: ImageMetadata }>('/src/assets/images/skills/mono/*.png');
-
-const promises = await Promise.allSettled(
+const pngs = import.meta.glob<{ default: ImageMetadata }>('@/assets/images/skills/mono/*.png');
+const optimized = await Promise.allSettled(
     Object.values(pngs).map(async (image) =>
-        getImage({ src: image(), format: 'avif', height: 96, width: 96 })
+        getImage({ src: image(), format: 'webp', height: 96, width: 96 })
+    )
+).then((results) =>
+    Object.fromEntries(
+        Object.keys(pngs).map((key, index) => [
+            key,
+            results[index].status === 'fulfilled' ? results[index].value.src : '',
+        ])
     )
 );
-
-const optimized = Object.fromEntries(
-    Object.keys(pngs).map((key, index) => [
-        key,
-        promises[index].status === 'fulfilled' ? promises[index].value.src : '',
-    ])
-);
-
-console.log({ optimized });
 
 const cssCustomProps = [...environments, ...frameworks, ...languages, ...software].reduce(
     (string, { color, icon, mask }) =>
