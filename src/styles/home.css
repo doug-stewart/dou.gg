@@ -23,3 +23,17 @@
 .socials {
     display: block;
 }
+
+.map {
+    fill: none;
+    filter: invert(1);
+    height: 100svh;
+    inset: 0;
+    mask: linear-gradient(to bottom, black, transparent) no-repeat 0 0 / cover;
+    mix-blend-mode: soft-light;
+    object-fit: cover;
+    opacity: 0.42;
+    position: absolute;
+    width: 100%;
+    z-index: -1;
+}
