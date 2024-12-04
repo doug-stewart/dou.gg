@@ -7,6 +7,30 @@
             "url": "https://www.krafton.com"
         },
         {
+            "label": "Unknown Worlds",
+            "type": "full-time",
+            "logo": "/src/assets/images/jobs/unknown-worlds.png",
+            "url": "https://unknownworlds.com"
+        },
+        {
+            "label": "Redacted",
+            "type": "full-time",
+            "logo": "/src/assets/images/jobs/redacted.png",
+            "url": "https://press.krafton.com/STRIKING-DISTANCE-STUDIOS-LAUNCHES-REDACTED-THE-FIGHT-FOR-SURVIVAL-STA"
+        },
+        {
+            "label": "The Callisto Protocol",
+            "type": "full-time",
+            "logo": "/src/assets/images/jobs/the-callisto-protocol.png",
+            "url": "https://callisto.sds.com"
+        },
+        {
+            "label": "Moonbreaker",
+            "type": "full-time",
+            "logo": "/src/assets/images/jobs/moonbreaker.png",
+            "url": "https://www.moonbreaker.com"
+        },
+        {
             "label": "Together Labs",
             "type": "full-time",
             "logo": "/src/assets/images/jobs/together-labs.png",
@@ -25,12 +49,6 @@
             "url": "https://www.kongregate.com/"
         },
         {
-            "label": "Tag New Media",
-            "type": "full-time",
-            "logo": "/src/assets/images/jobs/tag-new-media.png",
-            "url": "https://www.linkedin.com/company/tag-new-media/about/"
-        },
-        {
             "label": "ANCILE Solutions",
             "type": "contract",
             "logo": "/src/assets/images/jobs/ancile-solutions.png",
@@ -47,6 +65,12 @@
             "type": "contract",
             "logo": "/src/assets/images/jobs/gillette.png",
             "url": "https://www.gillette.com/"
+        },
+        {
+            "label": "Tag New Media",
+            "type": "contract",
+            "logo": "/src/assets/images/jobs/tag-new-media.png",
+            "url": "https://www.linkedin.com/company/tag-new-media/about/"
         },
         {
             "label": "Rossignol",
