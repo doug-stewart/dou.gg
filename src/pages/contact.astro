@@ -1,5 +1,12 @@
 ---
 import Layout from '@/layouts/Layout.astro';
+
+const time = new Date().toLocaleTimeString('en-US', {
+    hour: 'numeric',
+    minute: 'numeric',
+    second: 'numeric',
+    hour12: false,
+});
 ---
 
 <script>
@@ -13,7 +20,7 @@ import Layout from '@/layouts/Layout.astro';
         const formData = new FormData(form);
         const data = Object.fromEntries(formData);
 
-        const response = await fetch('https://email.dou.gg/', {
+        const response = await fetch('/api/email', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -64,15 +71,30 @@ import Layout from '@/layouts/Layout.astro';
     <form class="contact-form">
         <label>
             <span>Name</span>
-            <input type="text" name="name" required />
+            <input type="text" name="name" value={`Test - ${time}`} required />
         </label>
         <label>
             <span>Email</span>
-            <input type="email" name="email" required />
+            <input type="email" name="email" value="test@test.com" required />
         </label>
         <label>
             <span>Message</span>
-            <textarea name="email" required></textarea>
+            <textarea name="email" required>
+                Time Sent: {time}
+                {' '}
+                Lorem ipsum odor amet, consectetuer adipiscing elit. Habitasse quis iaculis aliquet non
+                quam laoreet dis. Himenaeos porttitor ex nec sollicitudin habitant; pulvinar magnis dictum.
+                Suscipit risus ad suspendisse; finibus nisi efficitur mi. Tortor odio taciti dapibus
+                sapien nunc lacus donec elit. Aliquet fermentum quam etiam sapien nostra himenaeos. Enim
+                rutrum vivamus iaculis massa nec consectetur. Curae augue odio elementum, integer pulvinar
+                blandit mus. Id fringilla sodales ligula donec dignissim taciti.
+                {' '}
+                Aenean suspendisse eget penatibus ad donec feugiat semper. Vitae magna commodo est lacinia
+                class at etiam urna ipsum. Ad sodales at ridiculus cubilia ex quisque. Nisi nostra senectus
+                efficitur sit nostra blandit vulputate. Semper ut odio eleifend consectetur commodo aenean
+                vivamus. Eget nascetur lobortis orci eu adipiscing sodales cubilia. Justo nisi ultricies
+                ex etiam nascetur nostra.
+            </textarea>
         </label>
         <button type="submit">Send It</button>
     </form>
