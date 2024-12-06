@@ -64,6 +64,7 @@ body {
 }
 
 .wrapper {
+    align-items: start;
     display: grid;
     gap: 2px;
     grid-area: wrapper;
