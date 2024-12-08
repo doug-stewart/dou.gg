@@ -37,6 +37,50 @@ body {
     padding-inline: calc(var(--spacing) * 3);
 }
 
+form {
+    display: grid;
+    gap: 4px var(--spacing);
+    grid-template-columns: auto 1fr;
+
+    label:where(:has(input, textarea)) {
+        display: grid;
+        gap: 4px var(--spacing);
+        grid-column: 1 / -1;
+        grid-template-columns: subgrid;
+    }
+
+    button[type='submit'] {
+        grid-column: 2;
+    }
+}
+
+label {
+    span {
+        padding-block: 0.72em;
+    }
+}
+
+input,
+textarea {
+    background-color: var(--green-1);
+    border: unset;
+    border-radius: 3px;
+    color: var(--green-5);
+    padding-block: 0.72em;
+    padding-inline: 0.84em;
+}
+
+textarea {
+    min-height: 8lh;
+    resize: vertical;
+
+    @supports (field-sizing: content) {
+        field-sizing: content;
+        min-height: 4lh;
+        resize: none;
+    }
+}
+
 .header {
     grid-area: header;
 
@@ -64,7 +108,7 @@ body {
 }
 
 .wrapper {
-    align-items: start;
+    align-content: start;
     display: grid;
     gap: 2px;
     grid-area: wrapper;

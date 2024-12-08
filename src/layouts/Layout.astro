@@ -48,8 +48,8 @@ const currentPath = Astro.url.pathname;
                     <!-- <li class={currentPath.startsWith('/blog') ? 'active' : ''}>
                         <a href="/blog">Blog</a>
                     </li> -->
-                    <li>
-                        <a href="mailto:hi@dou.gg">Contact</a>
+                    <li class={currentPath === '/contact' ? 'active' : ''}>
+                        <a href="/contact">Contact</a>
                     </li>
                 </ul>
             </nav>
