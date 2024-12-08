@@ -1,32 +1,149 @@
 ---
-import map from '@/assets/images/map.png';
 import Asterism from '@/icons/asterism.svg';
-import Jobs from '@/components/jobs/Jobs.astro';
-import ButtonList from '@/components/button-list/ButtonList.astro';
-import Skills from '@/components/skills/Skills.astro';
 import Layout from '@/layouts/Layout.astro';
 
-import { homeButtons } from '@/data/home-buttons.json';
-
 import '@/styles/home.css';
-import { Image } from 'astro:assets';
 ---
 
-<Layout title="Home">
-    <Image class="map" src={map} alt="" layout="responsive" format="avif" role="presentation" />
+<style>
+    .color-overlay {
+        --_color: #fff;
+
+        background-color: var(--_color);
+
+        clip-path: ellipse(100vmax 100vmax at 50% -150vmax);
+        inset: 0;
+        mix-blend-mode: color;
+        pointer-events: none;
+        position: fixed;
+
+        transition-duration: calc(var(--animation-timing) * 2);
+        transition-property: clip-path;
+        transition-timing-function: var(--animation-curve-out);
+        z-index: var(--z-overlay);
+
+        &.is-visible {
+            clip-path: ellipse(150% 100vmax at 50% 50%);
+            transition-timing-function: var(--animation-curve-out);
+        }
+    }
+
+    .theme-ancile {
+        --_color: #11afe8;
+    }
+
+    .theme-codesandbox {
+        --_color: #eaff96;
+    }
+
+    .theme-gillette {
+        --_color: #031a46;
+    }
+
+    .theme-github {
+        --_color: #7c268d;
+    }
+
+    .theme-imvu {
+        --_color: #0d2340;
+    }
+
+    .theme-keurig {
+        --_color: #ffc92f;
+    }
+
+    .theme-kongregate {
+        --_color: #900;
+    }
+
+    .theme-krafton {
+        --_color: #000;
+    }
+
+    .theme-linkedin {
+        --_color: #0a66c2;
+    }
+
+    .theme-rossignol {
+        --_color: #2b1d38;
+    }
+
+    .theme-tag {
+        --_color: #f21d71;
+    }
+</style>
+
+<Layout title="Home" bodyClass="home-page" wrapperClass="wrapper--home">
+    <header></header>
     <h1 class="title">
         <Asterism class="asterism" />
-        Hi! I’m <strong>Doug Stewart</strong>, a <strong>frontend developer</strong> living in <strong
-            >San Francisco, CA</strong
-        > with over 15 years’ experience making beautiful websites.
+        Hi! I&rsquo;m <strong>Doug Stewart</strong>, a <strong>software developer</strong> living in
+        <strong>San Francisco, CA</strong> with two years of team leadership and over 15 years&rsquo;
+        experience making beautiful websites.
     </h1>
-    <ButtonList buttons={homeButtons} class="links" />
-    <section class="section">
-        <h2>My tools of the trade</h2>
-        <Skills />
+    <p>
+        You can find me on <a
+            class="nifty-link"
+            data-company="codesandbox"
+            href="https://codesandbox.io/u/doug-stewart">CodeSandbox.io</a
+        > and <a class="nifty-link" data-company="github" href="https://github.com/doug-stewart"
+            >GitHub</a
+        >. If you want to connect I&rsquo;m on <a
+            class="nifty-link"
+            data-company="linkedin"
+            href="https://www.linkedin.com/in/dougmstewart/">LinkedIn</a
+        > or just <a href="/contact">email me</a>.
+    </p>
+    <p>
+        I&rsquo;ve worked for <a
+            class="nifty-link"
+            data-company="krafton"
+            href="https://www.krafton.com/">Krafton Americas</a
+        >, <a class="nifty-link" data-company="imvu" href="https://www.togetherlabs.com/"
+            >Together Labs</a
+        >, <a class="nifty-link" data-company="kongregate" href="https://www.kongregate.com/"
+            >Kongregate</a
+        >, and <a
+            class="nifty-link"
+            data-company="tag"
+            href="https://www.linkedin.com/company/tag-new-media/about/">Tag New Media</a
+        >; and I&rsquo;ve worked with amazing brands like <a
+            class="nifty-link"
+            data-company="ancile"
+            href="https://www.uperform.com/">ANCILE Solutions</a
+        >, <a class="nifty-link" data-company="keurig" href="https://www.keurig.com/">Keurig</a>, <a
+            class="nifty-link"
+            data-company="gillette"
+            href="https://www.gillette.com/">Gillette</a
+        >, <a class="nifty-link" data-company="rossignol" href="https://www.rossignol.com/"
+            >Rossignol</a
+        >, and so many others.
+    </p>
+    <section>
+        <h2>Sometimes <a href="/blog">I write</a> ↴</h2>
+        <ul></ul>
+        <p><a href="/blog">There&rsquo;s more →</a></p>
     </section>
-    <section class="section">
-        <h2>(Not All of) The People I’ve worked with</h2>
-        <Jobs />
-    </section>
+    <p>
+        When I&rsquo;m not doing the code monkey thing I ride my motorcycle and do some casual
+        photography.
+    </p>
+    <div class="color-overlay"></div>
 </Layout>
+
+<script is:inline>
+    const links = document.querySelectorAll('.nifty-link');
+    const overlay = document.querySelector('.color-overlay');
+
+    for (const link of links) {
+        link.addEventListener('mouseenter', () => {
+            const offsets = link.getBoundingClientRect();
+            const classes = document.querySelector('.color-overlay').classList;
+            const themes = Array.from(classes).filter((cl) => cl.includes('theme'));
+
+            overlay.classList.remove(...themes);
+            overlay.classList.add(`theme-${link.dataset.company}`, 'is-visible');
+        });
+        link.addEventListener('mouseleave', () => overlay.classList.remove('is-visible'));
+    }
+</script>

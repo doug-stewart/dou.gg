@@ -1,0 +1,27 @@
+---
+import NavLink from '../nav-link/NavLink.astro';
+---
+
+<style>
+    .header {
+        grid-area: header;
+
+        ul {
+            display: grid;
+            gap: calc(var(--spacing) * 2);
+            grid-auto-flow: column;
+            justify-content: end;
+            list-style: none;
+        }
+    }
+</style>
+
+<header class="header">
+    <nav class="nav">
+        <ul class="nav__list">
+            <li><NavLink href="/">Home</NavLink></li>
+            <li><NavLink href="/blog">Blog</NavLink></li>
+            <li><NavLink href="/contact">Contact</NavLink></li>
+        </ul>
+    </nav>
+</header>

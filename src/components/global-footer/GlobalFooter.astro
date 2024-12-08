@@ -1,0 +1,22 @@
+---
+const { isErrorRoute } = Astro.props;
+---
+
+<style>
+    .footer {
+        grid-area: footer;
+        margin-block-start: calc(var(--spacing) * 2);
+
+        a {
+            font-weight: 600;
+        }
+    }
+</style>
+
+<footer class="footer">
+    <p>
+        {isErrorRoute ? 'Imperfectly made with love by me.' : 'Made with love by me.'}
+        <br />
+        <a href="/downloads/doug-stewart-resume.pdf" download>Download my resume</a>
+    </p>
+</footer>

@@ -1,0 +1,22 @@
+---
+const currentPath = Astro.url.pathname;
+const { href, class: classes, ...props } = Astro.props;
+---
+
+<style>
+    a {
+        font-weight: 600;
+        text-transform: uppercase;
+
+        &.active {
+            background-image: unset;
+
+            &:focus-visible,
+            &:hover {
+                color: var(--green-2);
+            }
+        }
+    }
+</style>
+
+<a class:list={[classes, { active: currentPath.startsWith(href) }]} href={href}><slot /></a>

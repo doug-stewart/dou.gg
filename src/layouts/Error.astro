@@ -16,7 +16,7 @@ interface Props {
 const { title, headline } = Astro.props;
 ---
 
-<Layout title={title}>
+<Layout title={title} isErrorRoute={true}>
     <div class="error">
         <h1 class="title">
             <Asterism class="asterism" />

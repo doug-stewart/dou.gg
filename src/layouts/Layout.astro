@@ -1,16 +1,21 @@
 ---
 import '@/styles/reset.css';
+import '@/styles/variables.css';
 import '@/styles/global.css';
 import '@/styles/typography.css';
 
 import favicon from '@/assets/images/favicon.png';
+import GlobalFooter from '@/components/global-footer/GlobalFooter.astro';
+import GlobalHeader from '@/components/global-header/GlobalHeader.astro';
 
 interface Props {
     title: string;
+    bodyClass?: string;
+    wrapperClass?: string;
+    isErrorRoute?: boolean;
 }
 
-const { title } = Astro.props;
-const currentPath = Astro.url.pathname;
+const { title, bodyClass, wrapperClass, isErrorRoute } = Astro.props;
 ---
 
 <!doctype html>
@@ -34,33 +39,11 @@ const currentPath = Astro.url.pathname;
             }
         </script>
     </head>
-    <body>
-        <header class="header">
-            <nav class="nav">
-                <ul class="nav__list">
-                    {
-                        currentPath !== '/' && (
-                            <li class={currentPath === '/' ? 'active' : ''}>
-                                <a href="/">Home</a>
-                            </li>
-                        )
-                    }
-                    <!-- <li class={currentPath.startsWith('/blog') ? 'active' : ''}>
-                        <a href="/blog">Blog</a>
-                    </li> -->
-                    <li class={currentPath === '/contact' ? 'active' : ''}>
-                        <a href="/contact">Contact</a>
-                    </li>
-                </ul>
-            </nav>
-        </header>
-        <main class="wrapper">
+    <body class:list={[bodyClass]}>
+        <GlobalHeader />
+        <main class:list={['wrapper', wrapperClass]}>
             <slot />
         </main>
-        <footer class="footer">
-            Made with love by <a href="mailto:hi@dou.gg">hi@dou.gg</a> in {
-                new Date().getFullYear()
-            }.
-        </footer>
+        <GlobalFooter isErrorRoute={isErrorRoute} />
     </body>
 </html>
