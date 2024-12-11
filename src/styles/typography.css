@@ -142,7 +142,7 @@ a {
 
     &:focus-visible,
     &:hover {
-        --_color: var(--green-5);
+        --_color: var(--green-6);
         --_bg: var(--green-2);
         --_anchor-underline: 100%;
     }

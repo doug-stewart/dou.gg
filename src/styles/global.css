@@ -1,6 +1,6 @@
 body {
-    background: var(--green-5)
-        radial-gradient(circle at top left, var(--green-4) 0, var(--green-5) 80vmin) no-repeat 0 0;
+    background: var(--blue-4)
+        radial-gradient(circle at top left, var(--green-5) 0, var(--blue-4) 80vmin) no-repeat 0 0;
     color: var(--blue-1);
     display: grid;
     gap: calc(var(--spacing) * 4);
@@ -41,7 +41,7 @@ textarea {
     background-color: var(--green-1);
     border: unset;
     border-radius: 3px;
-    color: var(--green-5);
+    color: var(--green-6);
     padding-block: 0.72em;
     padding-inline: 0.84em;
 }
@@ -129,7 +129,7 @@ textarea {
 }
 
 .label-group__note {
-    background-color: color-mix(in srgb, var(--green-5), black 12%);
+    background-color: color-mix(in srgb, var(--green-6), black 12%);
     color: var(--blue-2);
     grid-row: unset;
     padding: 1em;
