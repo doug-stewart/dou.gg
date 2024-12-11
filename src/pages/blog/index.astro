@@ -1,0 +1,28 @@
+---
+import { getCollection } from 'astro:content';
+
+import Asterism from '@/icons/asterism.svg';
+import Layout from '@/layouts/Layout.astro';
+
+const posts = await getCollection('blog').then((response) =>
+    response.sort((a, b) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf())
+);
+---
+
+<Layout title="Blog">
+    <header>
+        <h1 class="title">
+            <Asterism class="asterism" />
+            M'Blog
+        </h1>
+    </header>
+    <ol>
+        {
+            posts.map((post) => (
+                <li>
+                    <a href={`/blog/${post.slug}`}>{post.data.title}</a>
+                </li>
+            ))
+        }
+    </ol>
+</Layout>

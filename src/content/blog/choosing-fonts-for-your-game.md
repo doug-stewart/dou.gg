@@ -5,7 +5,7 @@ publishDate: 2017-06-23
 ---
 
 <div class="notice">
-<p>This post was originally written for Kongregate and published on their blog on June 23rd, 2016. I’m reposting it here for archival purposes and posterity (with minor change), yadda yadda, you know the drill.</p>
+<p>This post was originally written for Kongregate and <a href="https://blog.kongregate.com/choosing-fonts-for-your-game/">published on their blog</a> on June 23rd, 2016. I’m reposting it here for archival purposes and posterity (with minor change), yadda yadda, you know the drill.</p>
 </div>
 
 One of the easiest ways to help inject some personality into your games is with the typefaces you
@@ -18,7 +18,7 @@ tuned and see how!
 Typefaces are deceptively complex things so let’s run through a few of the basics. First, here’s a
 look at the aspects of a font:
 
-[![](//cdn3.kongcdn.com/assets/files/0001/7509/fig-1-diagram.png)](//cdn3.kongcdn.com/assets/files/0001/7509/fig-1-diagram.png)
+![](/assets/blog/choosing-fonts-for-your-game/fig-1.png)
 
 Now, some of these are a bit more esoteric and only of real use when talking to typographers, but
 others are very important when choosing a typeface. One to take particular note of is the x-height
@@ -27,12 +27,12 @@ and I’ll go into its importance more in a later section.
 Also note the serif, this is what people are referring to when they are talking about sans serif,
 slab serif and serif typefaces. Examples of each of those can be seen below for comparison:
 
-[![](//cdn2.kongcdn.com/assets/files/0001/7508/fig-2-classification.png)](//cdn2.kongcdn.com/assets/files/0001/7508/fig-2-classification.png)
+![](/assets/blog/choosing-fonts-for-your-game/fig-2.png)
 
 One other piece of information its important to keep in mind is the difference between a display
 typeface, body typeface and caption typeface. See below:
 
-[![](//cdn1.kongcdn.com/assets/files/0001/7507/fig-3-usage.png)](//cdn1.kongcdn.com/assets/files/0001/7507/fig-3-usage.png)
+![](/assets/blog/choosing-fonts-for-your-game/fig-3.png)
 
 As you can see, there are subtle differences depending on what use-case the tyepface was designed
 for. Display typefaces are intended for large type and as such tend to have more delicate features
@@ -64,7 +64,7 @@ The style of a typeface conveys a certain feel and is a great way to further the
 and inject some personality. Luckily, you don’t have to be an expert to be able to know a certain
 typeface feels sci-fi where a different typeface feels very old fashioned.
 
-[![](//cdn3.kongcdn.com/assets/files/0001/7506/fig-4-theme.png)](//cdn3.kongcdn.com/assets/files/0001/7506/fig-4-theme.png)
+![](/assets/blog/choosing-fonts-for-your-game/fig-4.png)
 
 These fonts are pretty stylized but you don’t always need to go even that far. At its simplest,
 serif typefaces always feel older. The reason for this is it’s how type was designed for
@@ -183,9 +183,9 @@ games using typefaces to help further their aesthetic.
 
 #### The Yawhg
 
-- [![](//cdn2.kongcdn.com/assets/files/0001/7531/the-yawhg-1-sml.jpg)](//cdn3.kongcdn.com/assets/files/0001/7547/the-yawhg-1-lrg.jpg)
-- [![](//cdn2.kongcdn.com/assets/files/0001/7532/the-yawhg-2-sml.jpg)](//cdn3.kongcdn.com/assets/files/0001/7548/the-yawhg-2-lrg.jpg)
-- [![](//cdn3.kongcdn.com/assets/files/0001/7533/the-yawhg-3-sml.jpg)](//cdn1.kongcdn.com/assets/files/0001/7549/the-yawhg-3-lrg.jpg)
+- [![](/assets/blog/choosing-fonts-for-your-game/the-yawhg-1-sml.jpg)](/assets/blog/choosing-fonts-for-your-game/the-yawhg-1-lrg.jpg)
+- [![](/assets/blog/choosing-fonts-for-your-game/the-yawhg-2-sml.jpg)](/assets/blog/choosing-fonts-for-your-game/the-yawhg-2-lrg.jpg)
+- [![](/assets/blog/choosing-fonts-for-your-game/the-yawhg-3-sml.jpg)](/assets/blog/choosing-fonts-for-your-game/the-yawhg-3-lrg.jpg)
 
 The Yawhg has a great hand-drawn aesthetic and being a text-based game its type choices are
 especailly important. To match the aesthetic of the game they chose to use a hand-drawn typeface for
@@ -194,9 +194,9 @@ whole game a consistent hand-made feel.
 
 #### Dishonored
 
-- [![](//cdn3.kongcdn.com/assets/files/0001/7518/dishonored-1-sml.jpg)](//cdn3.kongcdn.com/assets/files/0001/7534/dishonored-1-lrg.jpg)
-- [![](//cdn3.kongcdn.com/assets/files/0001/7519/dishonored-2-sml.jpg)](//cdn3.kongcdn.com/assets/files/0001/7535/dishonored-2-lrg.jpg)
-- [![](//cdn1.kongcdn.com/assets/files/0001/7520/dishonored-3-sml.jpg)](//cdn1.kongcdn.com/assets/files/0001/7536/dishonored-3-lrg.jpg)
+- [![](/assets/blog/choosing-fonts-for-your-game/dishonored-1-sml.jpg)](/assets/blog/choosing-fonts-for-your-game/dishonored-1-lrg.jpg)
+- [![](/assets/blog/choosing-fonts-for-your-game/dishonored-2-sml.jpg)](/assets/blog/choosing-fonts-for-your-game/dishonored-2-lrg.jpg)
+- [![](/assets/blog/choosing-fonts-for-your-game/dishonored-3-sml.jpg)](/assets/blog/choosing-fonts-for-your-game/dishonored-3-lrg.jpg)
 
 Dishonored takes place in a once great kingdom that is now a little run down. To reflet that they
 chose a serif typeface with tall characters and sharp details to reflect that once proud history.
@@ -206,9 +206,9 @@ societies.
 
 #### Guacamelee
 
-- [![](//cdn4.kongcdn.com/assets/files/0001/7521/guacamelee-1-sml.jpg)](//cdn3.kongcdn.com/assets/files/0001/7537/guacamelee-1-lrg.jpg)
-- [![](//cdn2.kongcdn.com/assets/files/0001/7522/guacamelee-2-sml.jpg)](//cdn3.kongcdn.com/assets/files/0001/7538/guacamelee-2-lrg.jpg)
-- [![](//cdn4.kongcdn.com/assets/files/0001/7523/guacamelee-3-sml.jpg)](//cdn1.kongcdn.com/assets/files/0001/7539/guacamelee-3-lrg.jpg)
+- [![](/assets/blog/choosing-fonts-for-your-game/guacamelee-1-sml.jpg)](/assets/blog/choosing-fonts-for-your-game/guacamelee-1-lrg.jpg)
+- [![](/assets/blog/choosing-fonts-for-your-game/guacamelee-2-sml.jpg)](/assets/blog/choosing-fonts-for-your-game/guacamelee-2-lrg.jpg)
+- [![](/assets/blog/choosing-fonts-for-your-game/guacamelee-3-sml.jpg)](/assets/blog/choosing-fonts-for-your-game/guacamelee-3-lrg.jpg)
 
 Guacamelee has a very cheerful, almost paper-craft aesthetic. Their type choices reflect this with a
 typeface that’s all straight edges so it also feels hand-cut. It feels right at home with the game’s
@@ -216,10 +216,10 @@ art and UI.
 
 #### Monument Valley
 
-- [![](//cdn2.kongcdn.com/assets/files/0001/7527/monument-valley-1-sml.jpg)](//cdn3.kongcdn.com/assets/files/0001/7543/monument-valley-1-lrg.jpg)
-- [![](//cdn3.kongcdn.com/assets/files/0001/7528/monument-valley-2-sml.jpg)](//cdn2.kongcdn.com/assets/files/0001/7544/monument-valley-2-lrg.jpg)
-- [![](//cdn3.kongcdn.com/assets/files/0001/7529/monument-valley-3-sml.jpg)](//cdn3.kongcdn.com/assets/files/0001/7545/monument-valley-3-lrg.jpg)
-- [![](//cdn4.kongcdn.com/assets/files/0001/7530/monument-valley-4-sml.jpg)](//cdn1.kongcdn.com/assets/files/0001/7546/monument-valley-4-lrg.jpg)
+- [![](/assets/blog/choosing-fonts-for-your-game/monument-valley-1-sml.jpg)](/assets/blog/choosing-fonts-for-your-game/monument-valley-1-lrg.jpg)
+- [![](/assets/blog/choosing-fonts-for-your-game/monument-valley-2-sml.jpg)](/assets/blog/choosing-fonts-for-your-game/monument-valley-2-lrg.jpg)
+- [![](/assets/blog/choosing-fonts-for-your-game/monument-valley-3-sml.jpg)](/assets/blog/choosing-fonts-for-your-game/monument-valley-3-lrg.jpg)
+- [![](/assets/blog/choosing-fonts-for-your-game/monument-valley-4-sml.jpg)](/assets/blog/choosing-fonts-for-your-game/monument-valley-4-lrg.jpg)
 
 Monument Valley is a particularly minimalist game. The world is made to be very elegant with small,
 delicate details. The typeface they chose is a geometric sans-serif that&rsquu;s quite remaniscent
@@ -227,9 +227,9 @@ of Futura.
 
 #### Metro: Last Light
 
-- [![](//cdn2.kongcdn.com/assets/files/0001/7524/metro-last-light-1-sml.jpg)](//cdn1.kongcdn.com/assets/files/0001/7540/metro-last-light-1-lrg.jpg)
-- [![](//cdn3.kongcdn.com/assets/files/0001/7525/metro-last-light-2-sml.jpg)](//cdn3.kongcdn.com/assets/files/0001/7541/metro-last-light-2-lrg.jpg)
-- [![](//cdn3.kongcdn.com/assets/files/0001/7526/metro-last-light-3-sml.jpg)](//cdn4.kongcdn.com/assets/files/0001/7542/metro-last-light-3-lrg.jpg)
+- [![](/assets/blog/choosing-fonts-for-your-game/metro-last-light-1-sml.jpg)](/assets/blog/choosing-fonts-for-your-game/metro-last-light-1-lrg.jpg)
+- [![](/assets/blog/choosing-fonts-for-your-game/metro-last-light-2-sml.jpg)](/assets/blog/choosing-fonts-for-your-game/metro-last-light-2-lrg.jpg)
+- [![](/assets/blog/choosing-fonts-for-your-game/metro-last-light-3-sml.jpg)](/assets/blog/choosing-fonts-for-your-game/metro-last-light-3-lrg.jpg)
 
 When you play Metro: Last Light you immediately notice how everything feels reused and scrounged.
 Everything is an amalgamation of other parts that have been worn down over a long time. Normally, I

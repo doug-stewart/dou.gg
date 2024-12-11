@@ -4,6 +4,10 @@ slug: 'fixing-your-games-perceived-slowness-with-elevators'
 publishDate: 2017-12-12
 ---
 
+<div class="notice">
+<p>This post was originally written for Kongregate and <a href="https://blog.kongregate.com/fixing-your-games-perceived-slowness-with-elevators/">published on their blog</a> on December 12th, 2017. I’m reposting it here for archival purposes and posterity (with minor change), yadda yadda, you know the drill.</p>
+</div>
+
 Spending months on optimization only to realize your game _still feels slow_ can be pretty
 demoralizing. Try as you might, eventually you’ll reach a point where the technical solutions are
 simply too expensive to justify. What do you do then? Your game still feels slow and players won’t
@@ -100,7 +104,7 @@ Loading screens are often not much more than some basic art and a progress bar. 
 this idea up pretty easily by changing the sorts of progress messages that are displayed on the
 screen. Games like The Sims and World of Goo do this by making each step be utterly nonsense.
 
-![](./Fixing Your Game's Perceived Slowness with Elevators_files/world-of-goo.png)
+![](/assets/blog/fixing-your-games-perceived-slowness-with-elevators/world-of-goo.png)
 
 _World of Goo loading screen_
 
@@ -115,7 +119,7 @@ recent innovations of this technique is to add multiple tidbits that players can
 _Dishonored 2_ used this to great effect by providing you tips on general gameplay and
 level-specific guidance.
 
-![](./Fixing Your Game's Perceived Slowness with Elevators_files/dishonored-2.jpg)
+![](/assets/blog/fixing-your-games-perceived-slowness-with-elevators/dishonored-2.jpg)
 
 _Dishonored 2, Dunwall loading screen_
 
@@ -131,6 +135,8 @@ which to amuse themselves. The _Assassin’s Creed_ franchise put players in an 
 and let them run around like an idiot. This fit especially well given the franchise’s central
 conceit of all past events taking place in a digital reconstruction.
 
+<video autoplay loop muted src="/assets/blog/fixing-your-games-perceived-slowness-with-elevators/assassins-creed.mp4"></video>
+
 _Assassin’s Creed loading zone_
 
 This technique works best when it’s only a moderate delay of no more than a minute or two. Any
@@ -144,7 +150,7 @@ For a while people had to avoid this because it was patented by Namco.
 and it’s now one of the best options for letting people kill time while their game loads. _Splatoon_
 took full advantage of this by letting you play a series of squid-based mini games.
 
-![](./Fixing Your Game's Perceived Slowness with Elevators_files/splatoon.jpg)
+![](/assets/blog/fixing-your-games-perceived-slowness-with-elevators/splatoon.jpg)
 
 _Splatoon mini-game promo_
 
@@ -158,6 +164,8 @@ source of frustration, so watch out for that.
 Each of these are great on their own, but what happens if you mix them? Something pretty great!
 Bayonetta 2 made their loading screen a place to learn and practice special moves, which is a key
 part of gameplay. The result is a fun, educational playground. It’s even a mini game in its own way.
+
+<video autoplay loop muted src="/assets/blog/fixing-your-games-perceived-slowness-with-elevators/bayonetta-2.mp4"></video>
 
 _Bayonetta 2 loading screen with combo-move tutorial_
 

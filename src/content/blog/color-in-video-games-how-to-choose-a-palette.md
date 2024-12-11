@@ -4,6 +4,10 @@ slug: color-in-video-games-how-to-choose-a-palette
 publishDate: 2017-04-06
 ---
 
+<div class="notice">
+<p>This post was originally written for Kongregate and <a href="https://blog.kongregate.com/color-in-video-games-how-to-choose-a-palette/">published on their blog</a> on April 6th, 2017. I’m reposting it here for archival purposes and posterity (with minor change), yadda yadda, you know the drill.</p>
+</div>
+
 Color is one of the most powerful tools you have when you&rsquo;re designing a game. Colors can be
 engaging, helping to direct your players to whatever you think is most important. It can also be
 used to give subtle clues about the characters and their world. When used properly, color sets the
@@ -52,7 +56,7 @@ experience you&rsquo;re making and the story you&rsquo;re trying to tell.
 
 ### Warm Tones:
 
-![](//cdn3.kongcdn.com/assets/files/0002/0076/palette-warm.png)
+![](/assets/blog/color-in-video-games-how-to-choose-a-palette/palette-warm.png)
 
 Left: &ldquo;Firewatch,&rdquo; Right: &ldquo;Team Fortress 2&rdquo;
 
@@ -62,7 +66,7 @@ it&rsquo;s safe or that it&rsquo;s time to go to war.
 
 ### Cool Tones:
 
-![](//cdn2.kongcdn.com/assets/files/0002/0073/palette-cool.png)
+![](/assets/blog/color-in-video-games-how-to-choose-a-palette/palette-cool.png)
 
 Left: &ldquo;Mirror&rsquo;s Edge,&rdquo; Right: &ldquo;Portal&rdquo;
 
@@ -74,7 +78,7 @@ aesthetic can be very effective.
 
 ### Western / Dystopian:
 
-![](//cdn3.kongcdn.com/assets/files/0002/0074/palette-desaturated.png)
+![](/assets/blog/color-in-video-games-how-to-choose-a-palette/palette-desaturated.png)
 
 Left: &ldquo;Red Dead Redemption,&rdquo; Right: &ldquo;Metro 2033 Redux&rdquo;
 
@@ -89,7 +93,7 @@ your survival, and they stand out in stark contrast to the duller world that sur
 
 ### Noir / Cyberpunk:
 
-![](//cdn2.kongcdn.com/assets/files/0002/0072/palette-contrast.png)
+![](/assets/blog/color-in-video-games-how-to-choose-a-palette/palette-contrast.png)
 
 Left: &ldquo;Batman: Arkham City,&rdquo; Right: &ldquo;Far Cry: Blood Dragon&rdquo;
 
@@ -103,7 +107,7 @@ in and warn you of their presence.
 
 ### Monochrome / Limited:
 
-![](//cdn4.kongcdn.com/assets/files/0002/0075/palette-limited.png)
+![](/assets/blog/color-in-video-games-how-to-choose-a-palette/palette-limited.png)
 
 Left: &ldquo;Dolly,&rdquo; Right: &ldquo;Inside&rdquo;
 
@@ -125,7 +129,7 @@ decision-making process.
 
 ### Wayfinding
 
-![](//cdn2.kongcdn.com/assets/files/0002/0069/bioshock-superhot.jpg)
+![](/assets/blog/color-in-video-games-how-to-choose-a-palette/bioshock-superhot.jpg)
 
 Left: &ldquo;Bioshock,&rdquo; Right: &ldquo;Super Hot!&rdquo;
 
@@ -147,7 +151,7 @@ inform the story and the world you&rsquo;re creating for your player.
 
 ### Telling a user when it&rsquo;s safe (and when it&rsquo;s not)
 
-![](//cdn2.kongcdn.com/assets/files/0002/0071/splinter-cell-conviction.jpg)
+![](/assets/blog/color-in-video-games-how-to-choose-a-palette/splinter-cell-conviction.jpg)
 
 &ldquo;Splinter Cell: Conviction&rdquo; using color to visually differentiate between combat and
 stealth.
@@ -163,7 +167,7 @@ showing them in color if they are discovered or otherwise break stealth.
 
 ### Story and character development
 
-![](//cdn3.kongcdn.com/assets/files/0002/0070/nier-automata.jpg)
+![](/assets/blog/color-in-video-games-how-to-choose-a-palette/nier-automata.jpg)
 
 &ldquo;Nier: Automata&rdquo; using color to imply deeper meaning as to the true nature of its world.
 
