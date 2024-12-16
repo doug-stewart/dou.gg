@@ -6,11 +6,11 @@ publishDate: 2017-12-12
 
 import { Image } from 'astro:assets';
 
-import WorldOfGoo from '@/assets/blog/fixing-your-games-perceived-slowness-with-elevators/world-of-goo.png';
-import Dishonored2 from '@/assets/blog/fixing-your-games-perceived-slowness-with-elevators/dishonored-2.jpg';
-import Splatoon from '@/assets/blog/fixing-your-games-perceived-slowness-with-elevators/splatoon.jpg';
-import AssassinsCreed from '@/assets/blog/fixing-your-games-perceived-slowness-with-elevators/assassins-creed.mp4';
-import Bayonetta2 from '@/assets/blog/fixing-your-games-perceived-slowness-with-elevators/bayonetta-2.mp4';
+import worldOfGoo from '@/assets/blog/fixing-your-games-perceived-slowness-with-elevators/world-of-goo.png';
+import dishonored2 from '@/assets/blog/fixing-your-games-perceived-slowness-with-elevators/dishonored-2.jpg';
+import splatoon from '@/assets/blog/fixing-your-games-perceived-slowness-with-elevators/splatoon.jpg';
+import assassinsCreed from '@/assets/blog/fixing-your-games-perceived-slowness-with-elevators/assassins-creed.mp4';
+import bayonetta2 from '@/assets/blog/fixing-your-games-perceived-slowness-with-elevators/bayonetta-2.mp4';
 
 import Notice from '@/components/notice/Notice.astro';
 
@@ -21,7 +21,7 @@ import Notice from '@/components/notice/Notice.astro';
     change), yadda yadda, you know the drill.
 </Notice>
 
-<p>{Bayonetta2}</p>
+<p>{bayonetta2}</p>
 
 Spending months on optimization only to realize your game _still feels slow_ can be pretty
 demoralizing. Try as you might, eventually you’ll reach a point where the technical solutions are
@@ -115,14 +115,7 @@ this idea up pretty easily by changing the sorts of progress messages that are d
 screen. Games like The Sims and World of Goo do this by making each step be utterly nonsense.
 
 <figure>
-    <Image
-        src={WorldOfGoo}
-        alt="World of Goo loading screen"
-        layout="responsive"
-        format="avif"
-        layout="responsive"
-        format="avif"
-    />
+    <Image src={worldOfGoo} alt="World of Goo loading screen" layout="responsive" format="avif" />
     <cite>World of Goo loading screen</cite>
 </figure>
 
@@ -139,10 +132,8 @@ level-specific guidance.
 
 <figure>
     <Image
-        src={Dishonored2}
+        src={dishonored2}
         alt="Dishonored 2, Dunwall loading screen"
-        layout="responsive"
-        format="avif"
         layout="responsive"
         format="avif"
     />
@@ -162,7 +153,7 @@ and let them run around like an idiot. This fit especially well given the franch
 conceit of all past events taking place in a digital reconstruction.
 
 <figure>
-    <video autoplay loop muted src={AssassinsCreed}></video>
+    <video autoplay loop muted src={assassinsCreed}></video>
     <cite>Assassin’s Creed loading zone</cite>
 </figure>
 
@@ -174,19 +165,12 @@ character models have physics effects applied to them.
 
 For a while people had to avoid this because it was patented by Namco.
 [That ended in November 2015](https://www.eff.org/deeplinks/2015/12/loading-screen-game-patent-finally-expires),
-and it’s now one of the best options for letting people kill time while their game loads. _Splatoon_
+and it’s now one of the best options for letting people kill time while their game loads. _splatoon_
 took full advantage of this by letting you play a series of squid-based mini games.
 
 <figure>
-    <Image
-        src={Splatoon}
-        alt="Splatoon mini-game promo"
-        layout="responsive"
-        format="avif"
-        layout="responsive"
-        format="avif"
-    />
-    <cite>Splatoon mini-game promo</cite>
+    <Image src={splatoon} alt="splatoon mini-game promo" layout="responsive" format="avif" />
+    <cite>splatoon mini-game promo</cite>
 </figure>
 
 This is a great choice for longer delays where the player can expect to wait for several minutes —
@@ -201,7 +185,7 @@ Bayonetta 2 made their loading screen a place to learn and practice special move
 part of gameplay. The result is a fun, educational playground. It’s even a mini game in its own way.
 
 <figure>
-    <video autoplay loop muted src={Bayonetta2}></video>
+    <video autoplay loop muted src={bayonetta2}></video>
     <cite>Bayonetta 2 loading screen with combo-move tutorial</cite>
 </figure>
 

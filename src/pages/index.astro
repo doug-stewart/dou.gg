@@ -5,27 +5,12 @@ import Bridge from '@/assets/icons/bridge.svg';
 import Cheese from '@/assets/icons/cheese.svg';
 import Cli from '@/assets/icons/cli.svg';
 import Me from '@/assets/icons/me.svg';
-import Funston from '@/assets/images/funston.png';
 import Layout from '@/layouts/Layout.astro';
-import { Image } from 'astro:assets';
 import BlogLinks from '@/components/blog-links/BlogLinks.astro';
 import PageHeader from '@/components/page-header/PageHeader.astro';
 ---
 
 <style>
-    .funston {
-        height: 100%;
-        left: 0;
-        mix-blend-mode: luminosity;
-        object-fit: auto 100%;
-        object-position: 0 0;
-        opacity: 0.12;
-        position: absolute;
-        top: 0;
-        width: 100%;
-        z-index: -1;
-    }
-
     .me {
         color: var(--green-2);
     }
@@ -141,5 +126,4 @@ import PageHeader from '@/components/page-header/PageHeader.astro';
             photography.
         </p>
     </section>
-    <Image src={Funston} alt="" role="presentation" class="funston" />
 </Layout>

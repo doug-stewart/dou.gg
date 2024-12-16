@@ -1,5 +1,6 @@
 ---
 import Button from '@/components/button/Button.astro';
+import PageHeader from '@/components/page-header/PageHeader.astro';
 import Asterism from '@/icons/asterism.svg';
 import Layout from '@/layouts/Layout.astro';
 
@@ -50,13 +51,9 @@ const time = new Date().toLocaleTimeString('en-US', {
 </script>
 
 <style>
-    .title {
-        grid-column: 1 / -1;
-    }
     .contact-form {
         display: grid;
-        grid-column: 1 / -1;
-        grid-template-columns: subgrid;
+        grid-template-columns: auto 1fr;
     }
 
     .field {
@@ -74,7 +71,7 @@ const time = new Date().toLocaleTimeString('en-US', {
 </style>
 
 <Layout title="Contact">
-    <h1 class="title"><Asterism class="asterism" />Want to get in touch?</h1>
+    <PageHeader>Want to get in touch?</PageHeader>
     <form class="contact-form">
         <label class="field">
             <span class="label type-5">Name</span>

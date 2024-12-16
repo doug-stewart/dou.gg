@@ -4,7 +4,10 @@ import '@/styles/variables.css';
 import '@/styles/global.css';
 import '@/styles/typography.css';
 
+import { Image } from 'astro:assets';
+
 import favicon from '@/assets/images/favicon.png';
+import funston from '@/assets/images/funston.png';
 import GlobalFooter from '@/components/global-footer/GlobalFooter.astro';
 import GlobalHeader from '@/components/global-header/GlobalHeader.astro';
 
@@ -21,6 +24,19 @@ const { title, bodyClass, wrapperClass, isErrorRoute } = Astro.props;
 <style>
     .wrapper {
         max-width: calc(var(--spacing) * 67);
+    }
+
+    .funston {
+        height: 100%;
+        left: 0;
+        mix-blend-mode: luminosity;
+        object-fit: auto 100%;
+        object-position: 0 0;
+        opacity: 0.12;
+        position: absolute;
+        top: 0;
+        width: 100%;
+        z-index: -1;
     }
 </style>
 
@@ -83,5 +99,6 @@ const { title, bodyClass, wrapperClass, isErrorRoute } = Astro.props;
             <slot />
         </main>
         <GlobalFooter isErrorRoute={isErrorRoute} />
+        <Image src={funston} alt="" role="presentation" class="funston" />
     </body>
 </html>
