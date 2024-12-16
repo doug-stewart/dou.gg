@@ -35,10 +35,10 @@ if (length) {
 
         a {
             --_bg: transparent;
-            --_bg-active: var(--purple-1);
+            --_bg-active: var(--purple-3);
 
             align-items: center;
-            background-color: color-mix(in srgb, transparent, var(--purple-1) 24%);
+            background-color: color-mix(in srgb, transparent, var(--purple-3) 24%);
             display: flex;
             font-size: 18px;
             gap: 0.5ch;
@@ -62,7 +62,7 @@ if (length) {
     {
         posts.map((post) => (
             <li>
-                <a href={`/blog/${post.slug}`}>
+                <a href={`/blog/${post.id}`}>
                     {post.data.title}
                     <ArrowRight role="presentation" />
                 </a>

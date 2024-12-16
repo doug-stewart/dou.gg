@@ -1,0 +1,124 @@
+---
+type Props = {
+    base: string;
+    images: Array<string>;
+    class?: string;
+};
+
+import { getImage } from 'astro:assets';
+import { nanoid } from 'nanoid';
+import Zoom from '@/assets/icons/zoom.svg';
+import Dialog from '@/components/dialog/Dialog.astro';
+
+const { base, images, class: classes } = Astro.props;
+
+const id = nanoid(5);
+
+const allBlogImages = Object.entries(
+    import.meta.glob('@/assets/blog/*/*.{jpg,png}', { eager: true })
+);
+
+const filteredImages = allBlogImages.filter((allImage) => {
+    const hasBase = allImage[0].includes(base);
+    const hasFile = images.some((blogImage) => allImage[0].includes(blogImage));
+    return hasBase && hasFile;
+});
+
+const imageImports = await filteredImages.map(async (image) => {
+    const key = image[0].match(/[ \w-]+?(?=\.)/g)?.at(0);
+    const processed = await getImage({ src: (image[1] as any).default, format: 'avif' });
+    return [key, processed];
+});
+
+const fulfilledImages = await Promise.all(imageImports).then((result) =>
+    Object.fromEntries(result)
+);
+---
+
+<style>
+    .list {
+        display: grid;
+        gap: calc(var(--spacing) / 2);
+        grid-auto-flow: column;
+        list-style: none;
+
+        a {
+            background: unset;
+            display: block;
+            position: relative;
+            z-index: 0;
+        }
+    }
+
+    @property --_reveal {
+        inherits: false;
+        initial-value: 0%;
+        syntax: '<percentage>';
+    }
+
+    .link {
+        background: unset;
+        display: block;
+        position: relative;
+        z-index: 0;
+    }
+
+    .overlay {
+        --_reveal: 0%;
+
+        background-color: var(--green-2);
+        color: var(--purple-5);
+        display: grid;
+        inset: 0;
+        mask: radial-gradient(circle at 50% 50%, var(--_bg-active) 50%, transparent 0%) no-repeat
+            50% 50% / calc(var(--_reveal) * 2) calc(var(--_reveal) * 2);
+        opacity: 0.72;
+        place-items: center;
+        position: absolute;
+        transition: --_reveal calc(var(--animation-timing) * 1) var(--animation-curve-out);
+
+        svg {
+            height: 48%;
+            width: 48%;
+        }
+    }
+
+    .link:hover,
+    .link:focus-visible {
+        .overlay {
+            --_reveal: 100%;
+        }
+    }
+</style>
+
+<ul class="list">
+    {
+        images.map((image) => (
+            <li>
+                <a
+                    href={fulfilledImages[`${image}-lrg`].src}
+                    data-dialog={`${image}-dialog-${id}`}
+                    class="link"
+                >
+                    <span class="overlay">
+                        <Zoom role="presentation" />
+                    </span>
+                    <img
+                        alt=""
+                        src={fulfilledImages[`${image}-sml`].src}
+                        height={fulfilledImages[`${image}-sml`].height}
+                        width={fulfilledImages[`${image}-sml`].width}
+                    />
+                </a>
+                <Dialog id={`${image}-dialog-${id}`}>
+                    <img
+                        alt=""
+                        src={fulfilledImages[`${image}-lrg`].src}
+                        height={fulfilledImages[`${image}-lrg`].height}
+                        width={fulfilledImages[`${image}-lrg`].width}
+                    />
+                </Dialog>
+            </li>
+        ))
+    }
+</ul>

@@ -1,8 +1,10 @@
 :root {
     /* COLORS: */
-    --purple-1: #58376c;
-    --purple-2: #24013a;
-    --purple-3: #1d002e;
+    --purple-1: #d792ff;
+    --purple-2: #c156ff;
+    --purple-3: #58376c;
+    --purple-4: #24013a;
+    --purple-5: #1d002e;
 
     --blue-1: #e7fefe;
     --blue-2: #b6fcfc;
@@ -50,7 +52,8 @@
     --animation-timing: 240ms;
 
     /* Z-INDEXES */
-    --z-overlay: 30;
-    --z-dialog: 20;
+    --z-overlay: 40;
+    --z-dialog: 30;
+    --z-nav: 20;
     --z-local: 10;
 }

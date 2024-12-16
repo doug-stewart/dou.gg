@@ -15,10 +15,38 @@ body,
 }
 
 h1,
+.type-1,
+h2,
+.type-2,
+h3,
+.type-3,
+h4,
+.type-4 {
+    line-height: 1.389;
+}
+
+h5,
+.type-5,
+h6,
+.type-6 {
+    line-height: 1.5;
+}
+
+h2,
+.type-2,
+h3,
+.type-3,
+h4,
+.type-4,
+h5,
+.type-5 {
+    color: var(--purple-1);
+}
+
+h1,
 .type-1 {
     font-size: var(--step-4);
     font-weight: 600;
-    line-height: 1.24;
     margin-block: calc(var(--spacing) * 2);
 
     &:has(strong) {
@@ -112,7 +140,8 @@ table,
     syntax: '<percentage>';
 }
 
-a {
+a,
+.link {
     --_anchor-underline: 0%;
     --_color: var(--green-2);
     --_bg: var(--_color);
@@ -134,7 +163,6 @@ a {
     padding-inline: 0.06em;
     position: relative;
     text-decoration: none;
-    transform: translateZ(0);
     transition-duration: var(--animation-timing);
     transition-property: --_anchor-underline, color;
     transition-timing-function: var(--animation-curve-out);

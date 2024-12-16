@@ -1,6 +1,6 @@
 body {
     --_bg-1: var(--blue-5);
-    --_bg-2: var(--purple-3);
+    --_bg-2: var(--purple-5);
 
     background: var(--_bg-1) radial-gradient(circle at 0 0, var(--_bg-2), var(--_bg-1)) no-repeat 0
         0;

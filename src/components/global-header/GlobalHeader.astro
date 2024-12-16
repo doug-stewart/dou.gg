@@ -7,11 +7,13 @@ import NavLink from '../nav-link/NavLink.astro';
         grid-area: header;
         position: sticky;
         top: var(--spacing);
+        z-index: var(--z-nav);
     }
 
     .nav {
         background-color: var(--green-2);
         border-radius: 3px;
+        box-shadow: 0 0 0 3px color-mix(in srgb, transparent, var(--blue-5) 12%);
         margin-inline: calc(var(--spacing) * 2 * -1);
         padding-inline: var(--spacing);
         width: fit-content;

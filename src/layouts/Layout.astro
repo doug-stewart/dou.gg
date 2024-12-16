@@ -18,7 +18,12 @@ interface Props {
 const { title, bodyClass, wrapperClass, isErrorRoute } = Astro.props;
 ---
 
-<!doctype html>
+<style>
+    .wrapper {
+        max-width: calc(var(--spacing) * 67);
+    }
+</style>
+
 <html lang="en">
     <head>
         <meta charset="UTF-8" />
@@ -37,6 +42,38 @@ const { title, bodyClass, wrapperClass, isErrorRoute } = Astro.props;
             if (!('anchorName' in document.documentElement.style)) {
                 import('https://unpkg.com/@oddbird/css-anchor-positioning');
             }
+        </script>
+        <script is:inline async>
+            const handleDialogToggle = (button) => {
+                const dialogId = button.getAttribute('data-dialog');
+                const dialog = document.getElementById(dialogId);
+
+                if (dialog.open) {
+                    dialog.close();
+                } else {
+                    dialog.showModal();
+                }
+            };
+
+            document.addEventListener('click', (event) => {
+                // Dialog Toggles
+                const dialogToggle = event.target.closest('[data-dialog]');
+                if (dialogToggle) {
+                    event.preventDefault();
+                    handleDialogToggle(dialogToggle);
+                }
+
+                // Dialog Close
+
+                // const dialogId = dialogBtn.getAttribute('data-dialog');
+                // const dialog = document.getElementById(dialogId);
+
+                // if (dialog.open) {
+                //     dialog.close();
+                // } else {
+                //     dialog.showModal();
+                // }
+            });
         </script>
     </head>
     <body class:list={[bodyClass]}>

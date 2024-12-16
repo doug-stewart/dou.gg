@@ -4,9 +4,24 @@ slug: 'fixing-your-games-perceived-slowness-with-elevators'
 publishDate: 2017-12-12
 ---
 
-<div class="notice">
-<p>This post was originally written for Kongregate and <a href="https://blog.kongregate.com/fixing-your-games-perceived-slowness-with-elevators/">published on their blog</a> on December 12th, 2017. I’m reposting it here for archival purposes and posterity (with minor change), yadda yadda, you know the drill.</p>
-</div>
+import { Image } from 'astro:assets';
+
+import WorldOfGoo from '@/assets/blog/fixing-your-games-perceived-slowness-with-elevators/world-of-goo.png';
+import Dishonored2 from '@/assets/blog/fixing-your-games-perceived-slowness-with-elevators/dishonored-2.jpg';
+import Splatoon from '@/assets/blog/fixing-your-games-perceived-slowness-with-elevators/splatoon.jpg';
+import AssassinsCreed from '@/assets/blog/fixing-your-games-perceived-slowness-with-elevators/assassins-creed.mp4';
+import Bayonetta2 from '@/assets/blog/fixing-your-games-perceived-slowness-with-elevators/bayonetta-2.mp4';
+
+import Notice from '@/components/notice/Notice.astro';
+
+<Notice>
+    This post was originally written by me for Kongregate and [published on their
+    blog](https://blog.kongregate.com/fixing-your-games-perceived-slowness-with-elevators/) on
+    December 12th, 2017. I’m reposting it here for archival purposes and posterity (with minor
+    change), yadda yadda, you know the drill.
+</Notice>
+
+<p>{Bayonetta2}</p>
 
 Spending months on optimization only to realize your game _still feels slow_ can be pretty
 demoralizing. Try as you might, eventually you’ll reach a point where the technical solutions are
@@ -82,11 +97,6 @@ When transitioning from one state in your game to another you might experience a
 wait for a server response or some generated content. While that new state is loading what do you do
 with the empty screen?
 
-![](./Fixing Your Game's Perceived Slowness with
-Elevators_files/s_87B916E1F9830FDA4A43D3D625DD68D4DD1C0BBBF41461FE63B936B1BFB5A9A4_1512673822928_facebook-temp-states.png)
-
-_Facebook Timeline temporary loading state_
-
 You know the information you’re about to receive and the form it’s going to take. Use that to your
 advantage by showing placeholder content. Your players will have a better understanding of what’s
 about to happen, and it’s a subtle way of letting them know the thing they’re waiting on isn’t your
@@ -104,9 +114,17 @@ Loading screens are often not much more than some basic art and a progress bar. 
 this idea up pretty easily by changing the sorts of progress messages that are displayed on the
 screen. Games like The Sims and World of Goo do this by making each step be utterly nonsense.
 
-![](/assets/blog/fixing-your-games-perceived-slowness-with-elevators/world-of-goo.png)
-
-_World of Goo loading screen_
+<figure>
+    <Image
+        src={WorldOfGoo}
+        alt="World of Goo loading screen"
+        layout="responsive"
+        format="avif"
+        layout="responsive"
+        format="avif"
+    />
+    <cite>World of Goo loading screen</cite>
+</figure>
 
 This technique can be a lot of fun for both you and your players. Just make sure that you have a
 good backlog of randomly selectable messages to pull from. It also works best when the load time
@@ -119,9 +137,17 @@ recent innovations of this technique is to add multiple tidbits that players can
 _Dishonored 2_ used this to great effect by providing you tips on general gameplay and
 level-specific guidance.
 
-![](/assets/blog/fixing-your-games-perceived-slowness-with-elevators/dishonored-2.jpg)
-
-_Dishonored 2, Dunwall loading screen_
+<figure>
+    <Image
+        src={Dishonored2}
+        alt="Dishonored 2, Dunwall loading screen"
+        layout="responsive"
+        format="avif"
+        layout="responsive"
+        format="avif"
+    />
+    <cite>Dishonored 2, Dunwall loading screen</cite>
+</figure>
 
 This is best used when the wait isn’t terribly long (especially if you’re only showing one piece of
 information on each loading screen). A good guideline is to speed-read through the tip three times
@@ -135,9 +161,10 @@ which to amuse themselves. The _Assassin’s Creed_ franchise put players in an 
 and let them run around like an idiot. This fit especially well given the franchise’s central
 conceit of all past events taking place in a digital reconstruction.
 
-<video autoplay loop muted src="/assets/blog/fixing-your-games-perceived-slowness-with-elevators/assassins-creed.mp4"></video>
-
-_Assassin’s Creed loading zone_
+<figure>
+    <video autoplay loop muted src={AssassinsCreed}></video>
+    <cite>Assassin’s Creed loading zone</cite>
+</figure>
 
 This technique works best when it’s only a moderate delay of no more than a minute or two. Any
 longer and you’re just standing in an empty room feeling bored. This one is especially fun if your
@@ -150,9 +177,17 @@ For a while people had to avoid this because it was patented by Namco.
 and it’s now one of the best options for letting people kill time while their game loads. _Splatoon_
 took full advantage of this by letting you play a series of squid-based mini games.
 
-![](/assets/blog/fixing-your-games-perceived-slowness-with-elevators/splatoon.jpg)
-
-_Splatoon mini-game promo_
+<figure>
+    <Image
+        src={Splatoon}
+        alt="Splatoon mini-game promo"
+        layout="responsive"
+        format="avif"
+        layout="responsive"
+        format="avif"
+    />
+    <cite>Splatoon mini-game promo</cite>
+</figure>
 
 This is a great choice for longer delays where the player can expect to wait for several minutes —
 for example, if your players are stuck waiting for an online lobby to become available. However, if
@@ -165,9 +200,10 @@ Each of these are great on their own, but what happens if you mix them? Somethin
 Bayonetta 2 made their loading screen a place to learn and practice special moves, which is a key
 part of gameplay. The result is a fun, educational playground. It’s even a mini game in its own way.
 
-<video autoplay loop muted src="/assets/blog/fixing-your-games-perceived-slowness-with-elevators/bayonetta-2.mp4"></video>
-
-_Bayonetta 2 loading screen with combo-move tutorial_
+<figure>
+    <video autoplay loop muted src={Bayonetta2}></video>
+    <cite>Bayonetta 2 loading screen with combo-move tutorial</cite>
+</figure>
 
 This option can be the best of all worlds. It’s fun for players, who get to mess around with no real
 consequences if they fail. If the session is cut short it isn’t a big deal, nor is it a big problem

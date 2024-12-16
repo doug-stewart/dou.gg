@@ -46,7 +46,9 @@ const cssCustomProps = [...environments, ...frameworks, ...languages, ...softwar
 );
 ---
 
-<style set:text={`:root {${cssCustomProps}}`}></style>
+<style set:text={`:root {${cssCustomProps}}`}>
+    /* . */
+</style>
 
 <style>
     @property --_icon-reveal {

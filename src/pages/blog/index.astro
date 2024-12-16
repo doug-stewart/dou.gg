@@ -1,15 +1,10 @@
 ---
-import Asterism from '@/icons/asterism.svg';
 import Layout from '@/layouts/Layout.astro';
 import BlogLinks from '@/components/blog-links/BlogLinks.astro';
+import PageHeader from '@/components/page-header/PageHeader.astro';
 ---
 
 <Layout title="Blog">
-    <header>
-        <h1 class="title">
-            <Asterism class="asterism" />
-            M'Blog
-        </h1>
-    </header>
+    <PageHeader> My collected nonsense </PageHeader>
     <BlogLinks />
 </Layout>

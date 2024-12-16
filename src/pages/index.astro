@@ -26,12 +26,19 @@ import PageHeader from '@/components/page-header/PageHeader.astro';
         z-index: -1;
     }
 
+    .me {
+        color: var(--green-2);
+    }
+
     .title,
     .about,
     .blog,
     .hobbies {
         margin-block-end: calc(var(--spacing) * 3);
-        max-width: calc(var(--spacing) * 67);
+
+        h2 {
+            color: inherit;
+        }
 
         svg {
             height: 0.84em;
@@ -39,18 +46,8 @@ import PageHeader from '@/components/page-header/PageHeader.astro';
         }
     }
 
-    .me {
-        color: var(--green-2);
-    }
-
-    .about p,
-    .hobbies p {
-        font-size: var(--step-2);
-        font-weight: 200;
-    }
-
     .about,
-    .blog h2 {
+    .hobbies {
         a {
             --_color: var(--blue-1);
             --_bg-active: var(--blue-1);
@@ -61,6 +58,11 @@ import PageHeader from '@/components/page-header/PageHeader.astro';
             &:hover {
                 --_color: var(--green-6);
             }
+        }
+
+        p {
+            font-size: var(--step-2);
+            font-weight: 200;
         }
     }
 

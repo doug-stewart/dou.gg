@@ -1,6 +1,6 @@
 ---
 import dayjs from 'dayjs';
-import { getEntry } from 'astro:content';
+import { getEntry, render } from 'astro:content';
 
 import Layout from '@/layouts/Layout.astro';
 import PageHeader from '@/components/page-header/PageHeader.astro';
@@ -16,7 +16,7 @@ try {
 }
 
 const { title, publishDate } = post.data;
-const body = post.rendered?.html;
+const { Content } = await render(post);
 ---
 
 <style>
@@ -30,6 +30,30 @@ const body = post.rendered?.html;
     .heading,
     .content {
         max-width: calc(var(--spacing) * 67);
+
+        figure {
+            background-color: color-mix(in srgb, transparent, var(--purple-5) 36%);
+            border: 1px solid color-mix(in srgb, transparent, var(--blue-1) 6%);
+            border-radius: 3px;
+            display: block;
+            padding: var(--spacing);
+            width: 100%;
+
+            img,
+            video {
+                border-radius: 3px;
+                display: block;
+                max-width: 100%;
+            }
+        }
+
+        cite {
+            color: var(--blue-2);
+            display: block;
+            letter-spacing: 0.05em;
+            padding-block-start: var(--spacing);
+            text-align: center;
+        }
     }
 </style>
 
@@ -43,5 +67,8 @@ const body = post.rendered?.html;
             —
         </p>
     </PageHeader>
-    <div class="content" set:html={body} />
+
+    <div class="content">
+        <Content />
+    </div>
 </Layout>
