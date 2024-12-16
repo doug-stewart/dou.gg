@@ -60,18 +60,6 @@ textarea {
     }
 }
 
-.wrapper {
-    align-content: start;
-    display: grid;
-    gap: 2px;
-    grid-area: wrapper;
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-
-    @media (width > 400px) {
-        grid-template-columns: repeat(auto-fit, minmax(var(--grid-size), 1fr));
-    }
-}
-
 .label-group,
 .label-group__set {
     display: grid;

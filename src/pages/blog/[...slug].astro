@@ -2,8 +2,8 @@
 import dayjs from 'dayjs';
 import { getEntry } from 'astro:content';
 
-import Asterism from '@/icons/asterism.svg';
 import Layout from '@/layouts/Layout.astro';
+import PageHeader from '@/components/page-header/PageHeader.astro';
 
 const { slug } = Astro.params;
 
@@ -19,20 +19,29 @@ const { title, publishDate } = post.data;
 const body = post.rendered?.html;
 ---
 
+<style>
+    .date {
+        color: var(--green-2);
+        font-weight: 500;
+        margin-block-start: 0.5em;
+        text-transform: uppercase;
+    }
+
+    .heading,
+    .content {
+        max-width: calc(var(--spacing) * 67);
+    }
+</style>
+
 <Layout title={title}>
-    <div>
-        <header>
-            <h1 class="title">
-                <Asterism class="asterism" />
-                {title}
-            </h1>
-            <p>
-                <time datetime={`${dayjs(publishDate).format('YYYY-MM-DD')}`}>
-                    {dayjs(publishDate).format('MMM D, YYYY')}
-                </time>
-                —
-            </p>
-        </header>
-        <Fragment set:html={body} />
-    </div>
+    <PageHeader class="heading">
+        {title}
+        <p class="date" slot="after-text">
+            <time datetime={`${dayjs(publishDate).format('YYYY-MM-DD')}`}>
+                {dayjs(publishDate).format('MMM D, YYYY')}
+            </time>
+            —
+        </p>
+    </PageHeader>
+    <div class="content" set:html={body} />
 </Layout>

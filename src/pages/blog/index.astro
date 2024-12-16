@@ -1,12 +1,7 @@
 ---
-import { getCollection } from 'astro:content';
-
 import Asterism from '@/icons/asterism.svg';
 import Layout from '@/layouts/Layout.astro';
-
-const posts = await getCollection('blog').then((response) =>
-    response.sort((a, b) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf())
-);
+import BlogLinks from '@/components/blog-links/BlogLinks.astro';
 ---
 
 <Layout title="Blog">
@@ -16,13 +11,5 @@ const posts = await getCollection('blog').then((response) =>
             M'Blog
         </h1>
     </header>
-    <ol>
-        {
-            posts.map((post) => (
-                <li>
-                    <a href={`/blog/${post.slug}`}>{post.data.title}</a>
-                </li>
-            ))
-        }
-    </ol>
+    <BlogLinks />
 </Layout>

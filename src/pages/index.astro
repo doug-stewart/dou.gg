@@ -1,29 +1,16 @@
 ---
-import { getCollection } from 'astro:content';
-
 import ArrowDown from '@/assets/icons/arrow-down.svg';
 import ArrowRight from '@/assets/icons/arrow-right.svg';
-import Asterism from '@/assets/icons/asterism.svg';
 import Bridge from '@/assets/icons/bridge.svg';
 import Cheese from '@/assets/icons/cheese.svg';
 import Cli from '@/assets/icons/cli.svg';
 import Me from '@/assets/icons/me.svg';
-import Wiggle from '@/assets/images/wiggle.svg';
 import Funston from '@/assets/images/funston.png';
 import Layout from '@/layouts/Layout.astro';
 import { Image } from 'astro:assets';
-
-const posts = await getCollection('blog').then((response) =>
-    response.sort((a, b) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf())
-);
+import BlogLinks from '@/components/blog-links/BlogLinks.astro';
+import PageHeader from '@/components/page-header/PageHeader.astro';
 ---
-
-<style
-    set:text={`
-    :root {
-        --wiggle: url(${Wiggle.src});
-    }`}
-></style>
 
 <style>
     .funston {
@@ -43,25 +30,12 @@ const posts = await getCollection('blog').then((response) =>
     .about,
     .blog,
     .hobbies {
-        grid-column: 1 / -1;
         margin-block-end: calc(var(--spacing) * 3);
         max-width: calc(var(--spacing) * 67);
 
-        svg:not(.asterism) {
+        svg {
             height: 0.84em;
             width: auto;
-        }
-    }
-
-    .title {
-        background: var(--wiggle) repeat-x 0 100% / auto calc(var(--spacing) / 2);
-        font-size: var(--step-5);
-        padding-block-end: calc(var(--spacing) * 3 + var(--spacing) / 2);
-
-        span {
-            align-items: center;
-            display: inline-flex;
-            gap: 0.5ch;
         }
     }
 
@@ -90,38 +64,6 @@ const posts = await getCollection('blog').then((response) =>
         }
     }
 
-    .blog {
-        ol {
-            list-style: none;
-            padding-inline: 0;
-        }
-
-        li {
-            padding: 0;
-
-            &:not(:last-child) {
-                margin-block-end: calc(var(--spacing) * 0.5);
-            }
-            a {
-                --_bg: transparent;
-                --_bg-active: var(--purple-1);
-
-                align-items: center;
-                background-color: color-mix(in srgb, transparent, var(--purple-1) 24%);
-                display: flex;
-                font-size: 18px;
-                gap: 0.5ch;
-                padding: 1em;
-                width: fit-content;
-
-                &:focus-visible,
-                &:hover {
-                    --_color: var(--blue-1);
-                }
-            }
-        }
-    }
-
     .more {
         margin-block-start: calc(var(--spacing) * 2);
 
@@ -142,29 +84,26 @@ const posts = await getCollection('blog').then((response) =>
     }
 </style>
 
-<Layout title="Home" bodyClass="home-page" wrapperClass="wrapper--home">
-    <header class="title">
-        <Asterism role="presentation" class="asterism" />
-        <h1>
-            Hi! I’m
-            <span>
-                <Me role="presentation" class="me" />
-                <strong class="me">Doug Stewart</strong>
-            </span> a
-            <span>
-                <Cli role="presentation" />
-                <strong>software developer</strong>
-            </span> and
-            <span>
-                <Cheese role="presentation" />
-                <strong>team leader</strong>
-            </span> living in
-            <span>
-                <Bridge role="presentation" />
-                <strong>San Francisco, CA</strong>
-            </span>.
-        </h1>
-    </header>
+<Layout title="Home">
+    <PageHeader class="title">
+        Hi! I’m
+        <span>
+            <Me role="presentation" class="me" />
+            <strong class="me">Doug Stewart</strong>
+        </span> a
+        <span>
+            <Cli role="presentation" />
+            <strong>software developer</strong>
+        </span> and
+        <span>
+            <Cheese role="presentation" />
+            <strong>team leader</strong>
+        </span> living in
+        <span>
+            <Bridge role="presentation" />
+            <strong>San Francisco, CA</strong>
+        </span>.
+    </PageHeader>
     <section class="about">
         <p>
             For more than 15 years I’ve been making amazing websites and leading teams for <a
@@ -189,18 +128,7 @@ const posts = await getCollection('blog').then((response) =>
     </section>
     <section class="blog">
         <h2>Sometimes I write <ArrowDown role="presentation" /></h2>
-        <ol>
-            {
-                posts.map((post) => (
-                    <li>
-                        <a href={`/blog/${post.slug}`}>
-                            {post.data.title}
-                            <ArrowRight role="presentation" />
-                        </a>
-                    </li>
-                ))
-            }
-        </ol>
+        <BlogLinks />
         <p class="more">
             <a href="/blog">There&rsquo;s more <ArrowRight role="presentation" /></a>
         </p>
