@@ -1,15 +1,18 @@
 body {
-    background: var(--blue-4)
-        radial-gradient(circle at top left, var(--green-5) 0, var(--blue-4) 80vmin) no-repeat 0 0;
+    --_bg-1: var(--blue-5);
+    --_bg-2: var(--purple-3);
+
+    background: var(--_bg-1) radial-gradient(circle at 0 0, var(--_bg-2), var(--_bg-1)) no-repeat 0
+        0;
     color: var(--blue-1);
     display: grid;
-    gap: calc(var(--spacing) * 4);
+    gap: calc(var(--spacing) * 5);
     grid-template:
-        'header' 0
+        'header' auto
         'wrapper' 1fr
         'footer' auto
         / 1fr;
-    padding-block: calc(var(--spacing) * 2) calc(var(--spacing) * 3);
+    padding-block: var(--spacing) calc(var(--spacing) * 3);
     padding-inline: calc(var(--spacing) * 3);
 }
 
@@ -79,7 +82,7 @@ textarea {
 
 .label-group__label,
 .label-group__item {
-    font-size: var(--type-4);
+    font-size: var(--step-4);
     line-height: 1.6;
 }
 

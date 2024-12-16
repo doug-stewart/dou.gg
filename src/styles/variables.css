@@ -1,9 +1,14 @@
 :root {
     /* COLORS: */
+    --purple-1: #58376c;
+    --purple-2: #24013a;
+    --purple-3: #1d002e;
+
     --blue-1: #e7fefe;
     --blue-2: #b6fcfc;
     --blue-3: #3adfdf;
     --blue-4: #00181c;
+    --blue-5: #001317;
 
     --green-1: #c6fcec;
     --green-2: #00e6b4;
@@ -16,27 +21,24 @@
     --yellow-2: #f9f871;
     --yellow-3: #bebd13;
 
-    /*
-    TYPOGRAPHY:
-     https://utopia.fyi/type/calculator?c=320,12,1.2,1240,16,1.2,5,2,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l&g=s,l,xl,12
-    */
+    /* TYPOGRAPHY: */
 
-    /* Step -2: 8.3333px → 11.1111px */
-    --type--2: clamp(0.5208rem, 0.4604rem + 0.3019vw, 0.6944rem);
-    /* Step -1: 10px → 13.3333px */
-    --type--1: clamp(0.625rem, 0.5525rem + 0.3623vw, 0.8333rem);
-    /* Step 0: 12px → 16px */
-    --type-0: clamp(0.75rem, 0.663rem + 0.4348vw, 1rem);
-    /* Step 1: 14.4px → 19.2px */
-    --type-1: clamp(0.9rem, 0.7957rem + 0.5217vw, 1.2rem);
-    /* Step 2: 17.28px → 23.04px */
-    --type-2: clamp(1.08rem, 0.9548rem + 0.6261vw, 1.44rem);
-    /* Step 3: 20.736px → 27.648px */
-    --type-3: clamp(1.296rem, 1.1457rem + 0.7513vw, 1.728rem);
-    /* Step 4: 24.8832px → 33.1776px */
-    --type-4: clamp(1.5552rem, 1.3749rem + 0.9016vw, 2.0736rem);
-    /* Step 5: 29.8598px → 39.8131px */
-    --type-5: clamp(1.8662rem, 1.6499rem + 1.0819vw, 2.4883rem);
+    /* Step -2: 8.3333px → 9.6px */
+    --step--2: clamp(0.5208rem, 0.4933rem + 0.1377vw, 0.6rem);
+    /* Step -1: 10px → 12px */
+    --step--1: clamp(0.625rem, 0.5815rem + 0.2174vw, 0.75rem);
+    /* Step 0: 12px → 15px */
+    --step-0: clamp(0.75rem, 0.6848rem + 0.3261vw, 0.9375rem);
+    /* Step 1: 14.4px → 18.75px */
+    --step-1: clamp(0.9rem, 0.8054rem + 0.4728vw, 1.1719rem);
+    /* Step 2: 17.28px → 23.4375px */
+    --step-2: clamp(1.08rem, 0.9461rem + 0.6693vw, 1.4648rem);
+    /* Step 3: 20.736px → 29.2969px */
+    --step-3: clamp(1.296rem, 1.1099rem + 0.9305vw, 1.8311rem);
+    /* Step 4: 24.8832px → 36.6211px */
+    --step-4: clamp(1.5552rem, 1.3rem + 1.2759vw, 2.2888rem);
+    /* Step 5: 29.8598px → 45.7764px */
+    --step-5: clamp(1.8662rem, 1.5202rem + 1.7301vw, 2.861rem);
 
     /* LAYOUT: */
     --spacing: clamp(0.625rem, 0.5833rem + 0.2083vw, 0.75rem); /* 10-12px */

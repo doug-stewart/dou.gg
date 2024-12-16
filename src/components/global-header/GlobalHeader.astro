@@ -5,20 +5,29 @@ import NavLink from '../nav-link/NavLink.astro';
 <style>
     .header {
         grid-area: header;
+        position: sticky;
+        top: var(--spacing);
+    }
 
-        ul {
-            display: grid;
-            gap: calc(var(--spacing) * 2);
-            grid-auto-flow: column;
-            justify-content: end;
-            list-style: none;
-        }
+    .nav {
+        background-color: var(--green-2);
+        border-radius: 3px;
+        margin-inline: calc(var(--spacing) * 2 * -1);
+        padding-inline: var(--spacing);
+        width: fit-content;
+    }
+
+    .list {
+        display: grid;
+        grid-auto-flow: column;
+        justify-content: end;
+        list-style: none;
     }
 </style>
 
 <header class="header">
     <nav class="nav">
-        <ul class="nav__list">
+        <ul class="list">
             <li><NavLink href="/">Home</NavLink></li>
             <li><NavLink href="/blog">Blog</NavLink></li>
             <li><NavLink href="/contact">Contact</NavLink></li>

@@ -1,19 +1,29 @@
 ---
+import Asterism from '@/assets/icons/asterism.svg';
+
 const { isErrorRoute } = Astro.props;
 ---
 
 <style>
     .footer {
+        font-weight: 600;
         grid-area: footer;
-        margin-block-start: calc(var(--spacing) * 2);
 
         a {
             font-weight: 600;
         }
     }
+
+    .asterism {
+        color: var(--green-2);
+        height: auto;
+        opacity: 0.24;
+        width: 2em;
+    }
 </style>
 
 <footer class="footer">
+    <Asterism role="presentation" class="asterism" />
     <p>
         {isErrorRoute ? 'Imperfectly made with love by me.' : 'Made with love by me.'}
         <br />

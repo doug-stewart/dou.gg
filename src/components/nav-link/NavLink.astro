@@ -6,16 +6,17 @@ const isActive = (currentPath.startsWith(href) && href !== '/') || currentPath =
 
 <style>
     a {
+        background-image: unset;
+        color: var(--purple-2);
+        display: block;
         font-weight: 600;
+        padding: var(--spacing);
         text-transform: uppercase;
 
+        &:focus-visible,
+        &:hover,
         &.active {
-            background-image: unset;
-
-            &:focus-visible,
-            &:hover {
-                color: var(--green-2);
-            }
+            text-decoration: underline;
         }
     }
 </style>
