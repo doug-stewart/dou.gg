@@ -4,7 +4,9 @@ body,
     font-optical-sizing: auto;
     font-size: var(--step-0);
     font-weight: 300;
-    line-height: 1.5;
+    letter-spacing: 0.01em;
+    line-height: 1.618;
+    text-wrap: pretty;
 }
 
 .asterism {
@@ -37,9 +39,7 @@ h2,
 h3,
 .type-3,
 h4,
-.type-4,
-h5,
-.type-5 {
+.type-4 {
     color: var(--purple-1);
 }
 
@@ -47,7 +47,7 @@ h1,
 .type-1 {
     font-size: var(--step-4);
     font-weight: 600;
-    margin-block: calc(var(--spacing) * 2);
+    margin-block: calc(var(--spacing) * 3);
 
     &:has(strong) {
         font-weight: 200;
@@ -63,7 +63,7 @@ h2,
     font-size: var(--step-2);
     font-weight: 600;
     line-height: 1.24;
-    margin-block: calc(var(--spacing) * 2);
+    margin-block: calc(var(--spacing) * 3) calc(var(--spacing) * 1.5);
     text-transform: uppercase;
 }
 
@@ -71,14 +71,12 @@ h3,
 .type-3 {
     font-size: var(--step-1);
     font-weight: 500;
-    margin-block: var(--spacing);
 }
 
 h4,
 .type-4 {
     font-size: var(--step-1);
-    font-weight: 300;
-    margin-block: var(--spacing);
+    font-weight: 400;
 }
 
 h5,
@@ -96,13 +94,10 @@ h6,
 
 cite,
 .type--1 {
+    color: var(--blue-2);
     font-size: var(--step--1);
-}
-dd,
-dt,
-li,
-p {
-    text-wrap: pretty;
+    font-style: italic;
+    font-weight: 500;
 }
 
 h1,
@@ -178,7 +173,7 @@ a,
 b,
 dt,
 strong {
-    font-weight: 600;
+    font-weight: 700;
 }
 
 em,
@@ -196,12 +191,16 @@ q {
     }
 }
 
+h3,
+.type-3,
+h4,
+.type-4,
 figure,
 ol:where(:not([class])),
 p,
 ul:where(:not([class])),
 table {
-    margin-block: 0.8rem;
+    margin-block: calc(var(--spacing) * 1.5);
 
     :where(h4, h5, h6) + & {
         margin-block-start: unset;
@@ -246,10 +245,5 @@ figure:where(:has(blockquote)) {
         font-size: var(--step-2);
         font-weight: 200;
         padding-inline: calc(var(--spacing) * 2);
-    }
-
-    cite {
-        font-style: italic;
-        font-weight: 600;
     }
 }

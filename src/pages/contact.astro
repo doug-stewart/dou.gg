@@ -1,99 +1,16 @@
 ---
-import Button from '@/components/button/Button.astro';
+import { ContactForm } from '@/components/contact-form/ContactForm';
 import PageHeader from '@/components/page-header/PageHeader.astro';
-import Asterism from '@/icons/asterism.svg';
 import Layout from '@/layouts/Layout.astro';
-
-const time = new Date().toLocaleTimeString('en-US', {
-    hour: 'numeric',
-    minute: 'numeric',
-    second: 'numeric',
-    hour12: false,
-});
 ---
-
-<script>
-    let inFlight = false;
-    const form: HTMLFormElement | null = document.querySelector('.contact-form');
-
-    const handleSubmit = async (event: Event) => {
-        event.preventDefault();
-
-        if (!form || inFlight) return;
-        inFlight = true;
-
-        const formData = new FormData(form);
-        const data = {
-            name: (formData.get('name') as string).trim(),
-            email: (formData.get('email') as string).trim(),
-            message: (formData.get('message') as string).trim(),
-        };
-
-        form.classList.add('is-sending');
-
-        const response = await fetch('/api/email', {
-            method: 'POST',
-            body: JSON.stringify(data),
-        });
-
-        if (response.ok) {
-            form.reset();
-            form.classList.remove('is-sending');
-        } else {
-            form.classList.remove('is-sending');
-            form.classList.add('has-error');
-        }
-
-        inFlight = false;
-    };
-
-    form?.addEventListener('submit', handleSubmit);
-</script>
-
-<style>
-    .contact-form {
-        display: grid;
-        grid-template-columns: auto 1fr;
-    }
-
-    .field {
-        display: grid;
-        grid-column: 1 / -1;
-        grid-template-columns: subgrid;
-
-        input,
-        textarea,
-        .submit {
-            grid-column: 2 / -1;
-            max-width: 52ch;
-        }
-    }
-</style>
 
 <Layout title="Contact">
     <PageHeader>Want to get in touch?</PageHeader>
-    <form class="contact-form">
-        <label class="field">
-            <span class="label type-5">Name</span>
-            <input type="text" name="name" value={`Test - ${time}`} required />
-        </label>
-        <label class="field">
-            <span class="label type-5">Email</span>
-            <input type="email" name="email" value="test@test.com" required />
-        </label>
-        <label class="field">
-            <span class="label type-5">Message</span>
-            <textarea name="message" required
-                >{
-                    `Time Sent: {time}
-
-Lorem ipsum odor amet, consectetuer adipiscing elit. Habitasse quis iaculis aliquet non quam laoreet dis. Himenaeos porttitor ex nec sollicitudin habitant; pulvinar magnis dictum. Suscipit risus ad suspendisse; finibus nisi efficitur mi. Tortor odio taciti dapibus sapien nunc lacus donec elit. Aliquet fermentum quam etiam sapien nostra himenaeos. Enim rutrum vivamus iaculis massa nec consectetur. Curae augue odio elementum, integer pulvinar blandit mus. Id fringilla sodales ligula donec dignissim taciti.
-
-Aenean suspendisse eget penatibus ad donec feugiat semper. Vitae magna commodo est lacinia class at etiam urna ipsum. Ad sodales at ridiculus cubilia ex quisque. Nisi nostra senectus efficitur sit nostra blandit vulputate. Semper ut odio eleifend consectetur commodo aenean vivamus. Eget nascetur lobortis orci eu adipiscing sodales cubilia. Justo nisi ultricies ex etiam nascetur nostra.
-`
-                }</textarea
-            >
-        </label>
-        <Button kind="button" type="submit" class="submit">Send it</Button>
-    </form>
+    <p>
+        Something something something something, you can reach out to me on
+        <a href="https://www.linkedin.com/in/dougmstewart/">LinkedIn</a>. If you just want to find
+        out more about me you can always
+        <a href="/downloads/doug-stewart-resume.pdf" download>download my resume</a>.
+    </p>
+    <ContactForm client:load />
 </Layout>

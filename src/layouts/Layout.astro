@@ -3,6 +3,7 @@ import '@/styles/reset.css';
 import '@/styles/variables.css';
 import '@/styles/global.css';
 import '@/styles/typography.css';
+import '@/styles/forms.css';
 
 import { Image } from 'astro:assets';
 
@@ -73,23 +74,11 @@ const { title, bodyClass, wrapperClass, isErrorRoute } = Astro.props;
             };
 
             document.addEventListener('click', (event) => {
-                // Dialog Toggles
                 const dialogToggle = event.target.closest('[data-dialog]');
                 if (dialogToggle) {
                     event.preventDefault();
                     handleDialogToggle(dialogToggle);
                 }
-
-                // Dialog Close
-
-                // const dialogId = dialogBtn.getAttribute('data-dialog');
-                // const dialog = document.getElementById(dialogId);
-
-                // if (dialog.open) {
-                //     dialog.close();
-                // } else {
-                //     dialog.showModal();
-                // }
             });
         </script>
     </head>
@@ -99,6 +88,13 @@ const { title, bodyClass, wrapperClass, isErrorRoute } = Astro.props;
             <slot />
         </main>
         <GlobalFooter isErrorRoute={isErrorRoute} />
-        <Image src={funston} alt="" role="presentation" class="funston" />
+        <Image
+            src={funston}
+            alt=""
+            role="presentation"
+            class="funston"
+            layout="responsive"
+            format="avif"
+        />
     </body>
 </html>

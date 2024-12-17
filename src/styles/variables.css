@@ -1,27 +1,30 @@
 :root {
     /* COLORS: */
-    --purple-1: #d792ff;
-    --purple-2: #c156ff;
-    --purple-3: #58376c;
-    --purple-4: #24013a;
-    --purple-5: #1d002e;
+    --red-1: hsl(343, 92%, 95%);
+    --red-2: hsl(343, 100%, 79%);
 
-    --blue-1: #e7fefe;
-    --blue-2: #b6fcfc;
-    --blue-3: #3adfdf;
-    --blue-4: #00181c;
-    --blue-5: #001317;
+    --purple-1: hsl(278, 100%, 79%);
+    --purple-2: hsl(278, 100%, 67%);
+    --purple-3: hwb(277 22% 58%);
+    --purple-4: hsl(277, 97%, 12%);
+    --purple-5: hsl(278, 100%, 9%);
 
-    --green-1: #c6fcec;
-    --green-2: #00e6b4;
-    --green-3: #008064;
-    --green-4: #004135;
-    --green-5: #003027;
-    --green-6: #01281d;
+    --blue-1: hsl(180, 92%, 95%);
+    --blue-2: hsl(180, 92%, 85%);
+    --blue-3: hsl(180, 72%, 55%);
+    --blue-4: hsl(189, 100%, 5%);
+    --blue-5: hsl(190, 100%, 5%);
 
-    --yellow-1: #f9ffb8;
-    --yellow-2: #f9f871;
-    --yellow-3: #bebd13;
+    --green-1: hsl(162, 90%, 88%);
+    --green-2: hsl(167, 100%, 45%);
+    --green-3: hsl(167, 100%, 25%);
+    --green-4: hsl(169, 100%, 13%);
+    --green-5: hsl(169, 100%, 9%);
+    --green-6: hsl(163, 95%, 8%);
+
+    --yellow-1: hsl(65, 100%, 86%);
+    --yellow-2: hsl(60, 92%, 71%);
+    --yellow-3: hsl(60, 82%, 41%);
 
     /* TYPOGRAPHY: */
 

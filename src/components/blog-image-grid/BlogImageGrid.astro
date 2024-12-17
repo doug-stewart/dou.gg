@@ -24,7 +24,7 @@ const filteredImages = allBlogImages.filter((allImage) => {
     return hasBase && hasFile;
 });
 
-const imageImports = await filteredImages.map(async (image) => {
+const imageImports = filteredImages.map(async (image) => {
     const key = image[0].match(/[ \w-]+?(?=\.)/g)?.at(0);
     const processed = await getImage({ src: (image[1] as any).default, format: 'avif' });
     return [key, processed];
@@ -91,7 +91,7 @@ const fulfilledImages = await Promise.all(imageImports).then((result) =>
     }
 </style>
 
-<ul class="list">
+<ul class:list={['list', classes]}>
     {
         images.map((image) => (
             <li>

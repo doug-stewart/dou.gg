@@ -15,6 +15,10 @@ try {
     return { status: 404, error };
 }
 
+if (!post) {
+    return { status: 404 };
+}
+
 const { title, publishDate } = post.data;
 const { Content } = await render(post);
 ---
@@ -32,8 +36,8 @@ const { Content } = await render(post);
         max-width: calc(var(--spacing) * 67);
 
         figure {
-            background-color: color-mix(in srgb, transparent, var(--purple-5) 36%);
-            border: 1px solid color-mix(in srgb, transparent, var(--blue-1) 6%);
+            background-color: color-mix(in srgb, transparent, var(--purple-5) 48%);
+            border: 1px solid color-mix(in srgb, transparent, var(--blue-1) 12%);
             border-radius: 3px;
             display: block;
             padding: var(--spacing);
@@ -48,7 +52,6 @@ const { Content } = await render(post);
         }
 
         cite {
-            color: var(--blue-2);
             display: block;
             letter-spacing: 0.05em;
             padding-block-start: var(--spacing);
