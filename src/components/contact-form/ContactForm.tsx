@@ -2,6 +2,7 @@
 
 import type { SubmitHandler } from 'react-hook-form';
 import { useForm } from 'react-hook-form';
+import clsx from 'clsx';
 
 type Inputs = {
     name: string;
@@ -17,6 +18,7 @@ Lorem ipsum odor amet, consectetuer adipiscing elit. Habitasse quis iaculis aliq
 Aenean suspendisse eget penatibus ad donec feugiat semper. Vitae magna commodo est lacinia class at etiam urna ipsum. Ad sodales at ridiculus cubilia ex quisque.`;
 
 const ContactForm = () => {
+    const messageMax = 1200;
     const time = new Date().toLocaleTimeString('en-US', {
         hour: 'numeric',
         minute: 'numeric',
@@ -26,6 +28,7 @@ const ContactForm = () => {
 
     const {
         register,
+        watch,
         handleSubmit,
         formState: { errors },
     } = useForm<Inputs>({
@@ -36,6 +39,10 @@ const ContactForm = () => {
             message: TestBody,
         },
     });
+
+    const messageLength = watch('message').length;
+    const messageLengthWarn = messageMax - 100 < messageLength && messageLength < messageMax;
+    const messageLengthError = messageLength > messageMax;
 
     const onSubmit: SubmitHandler<Inputs> = (data) => console.log(data);
 
@@ -57,10 +64,25 @@ const ContactForm = () => {
             </label>
             <label className="field">
                 <span className="label">What&rsquo;s up?</span>
-                <textarea
-                    className="input"
-                    {...register('message', { required: true, minLength: 5, maxLength: 1200 })}
-                />
+                <div className="textarea">
+                    <textarea
+                        className="input"
+                        {...register('message', {
+                            required: true,
+                            minLength: 5,
+                            maxLength: messageMax,
+                        })}
+                    />
+                    <p
+                        className={clsx(
+                            'textarea-count',
+                            messageLengthWarn && 'is-warn',
+                            messageLengthError && 'is-over'
+                        )}
+                    >
+                        {messageLength} / {messageMax}
+                    </p>
+                </div>
                 {errors.message && <span className="error">Lorem ipsuom dolor sit amet.</span>}
             </label>
             <button type="submit" className="submit">

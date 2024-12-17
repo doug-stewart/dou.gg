@@ -1,3 +1,8 @@
+::selection {
+    background-color: var(--blue-2);
+    color: var(--blue-5);
+}
+
 body,
 .type-0 {
     font-family: 'Jost', system-ui, sans-serif;
