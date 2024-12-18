@@ -1,7 +1,6 @@
 ---
 import '@/styles/reset.css';
 import '@/styles/variables.css';
-import '@/styles/global.css';
 import '@/styles/typography.css';
 import '@/styles/forms.css';
 
@@ -23,8 +22,26 @@ const { title, bodyClass, wrapperClass, isErrorRoute } = Astro.props;
 ---
 
 <style>
+    body {
+        --_bg-1: var(--blue-5);
+        --_bg-2: var(--purple-5);
+
+        background: var(--_bg-1) radial-gradient(circle at 0 0, var(--_bg-2), var(--_bg-1))
+            no-repeat 0 0;
+        color: var(--blue-1);
+        display: grid;
+        gap: calc(var(--spacing) * 5);
+        grid-template:
+            'header' auto
+            'wrapper' 1fr
+            'footer' auto
+            / 1fr;
+        padding-block: var(--spacing) calc(var(--spacing) * 3);
+        padding-inline: calc(var(--spacing) * 3);
+    }
+
     .wrapper {
-        max-width: calc(var(--spacing) * 67);
+        max-width: calc(var(--spacing) * 68);
     }
 
     .funston {
