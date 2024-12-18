@@ -1,16 +1,16 @@
 'use client';
 
+import clsx from 'clsx';
 import { useState } from 'react';
 import type { SubmitHandler } from 'react-hook-form';
 import { useForm } from 'react-hook-form';
-import clsx from 'clsx';
 
-type Inputs = {
+interface Inputs {
     name: string;
     email: string;
     subject: string;
     message: string;
-};
+}
 
 const ContactForm = () => {
     const messageMax = 1200;
@@ -114,7 +114,7 @@ const ContactForm = () => {
                             className={clsx(
                                 'textarea-count',
                                 messageLengthWarn && 'is-warn',
-                                messageLengthError && 'is-over'
+                                messageLengthError && 'is-over',
                             )}
                         >
                             {messageLength} / {messageMax}

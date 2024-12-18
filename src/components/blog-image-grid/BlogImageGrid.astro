@@ -6,16 +6,14 @@ type Props = {
 };
 
 import { getImage } from 'astro:assets';
-import { nanoid } from 'nanoid';
+
 import Zoom from '@/assets/icons/zoom.svg';
 import Dialog from '@/components/dialog/Dialog.astro';
 
 const { base, images, class: classes } = Astro.props;
 
-const id = nanoid(5);
-
 const allBlogImages = Object.entries(
-    import.meta.glob('@/assets/blog/*/*.{jpg,png}', { eager: true })
+    import.meta.glob('@/assets/blog/*/*.{jpg,png}', { eager: true }),
 );
 
 const filteredImages = allBlogImages.filter((allImage) => {
@@ -24,14 +22,14 @@ const filteredImages = allBlogImages.filter((allImage) => {
     return hasBase && hasFile;
 });
 
-const imageImports = filteredImages.map(async (image) => {
+const imageImports = filteredImages.map(async (image: any) => {
     const key = image[0].match(/[ \w-]+?(?=\.)/g)?.at(0);
-    const processed = await getImage({ src: (image[1] as any).default, format: 'avif' });
+    const processed = await getImage({ src: image[1].default, format: 'avif' });
     return [key, processed];
 });
 
 const fulfilledImages = await Promise.all(imageImports).then((result) =>
-    Object.fromEntries(result)
+    Object.fromEntries(result),
 );
 ---
 
@@ -97,7 +95,7 @@ const fulfilledImages = await Promise.all(imageImports).then((result) =>
             <li>
                 <a
                     href={fulfilledImages[`${image}-lrg`].src}
-                    data-dialog={`${image}-dialog-${id}`}
+                    data-dialog={`${image}-dialog`}
                     class="link"
                 >
                     <span class="overlay">
@@ -110,7 +108,7 @@ const fulfilledImages = await Promise.all(imageImports).then((result) =>
                         width={fulfilledImages[`${image}-sml`].width}
                     />
                 </a>
-                <Dialog id={`${image}-dialog-${id}`}>
+                <Dialog id={`${image}-dialog`}>
                     <img
                         alt=""
                         src={fulfilledImages[`${image}-lrg`].src}

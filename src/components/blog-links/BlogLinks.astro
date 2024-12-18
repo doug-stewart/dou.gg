@@ -4,13 +4,14 @@ type Props = {
     class?: string;
 };
 
-import ArrowRight from '@/assets/icons/arrow-right.svg';
 import { getCollection } from 'astro:content';
+
+import ArrowRight from '@/assets/icons/arrow-right.svg';
 
 const { length, class: classes } = Astro.props;
 
 let posts = await getCollection('blog').then((response) =>
-    response.sort((a, b) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf())
+    response.sort((a, b) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf()),
 );
 
 if (length) {
