@@ -93,18 +93,21 @@ textarea {
     }
 }
 
+.field.has-error .input,
+.field.has-error .label,
 label:has(:is(input, textarea):user-invalid),
 label ~ :is(input, textarea):user-invalid {
     color: var(--red-2);
 }
 
+.field.has-error .input,
 :is(input, textarea):user-invalid {
     background-color: var(--red-1);
 }
 
 .form {
-    background-color: color-mix(in srgb, transparent, var(--purple-5) 36%);
-    border: 1px solid color-mix(in srgb, transparent, var(--blue-1) 6%);
+    background-color: color-mix(in srgb, transparent, var(--purple-5) 60%);
+    border: 1px solid color-mix(in srgb, transparent, var(--blue-1) 12%);
     border-radius: 3px;
     display: grid;
     gap: var(--spacing);
@@ -153,8 +156,12 @@ label ~ :is(input, textarea):user-invalid {
     padding-block-end: 2.52em;
     position: relative;
 
-    textarea:focus-visible {
-        outline: none;
+    textarea {
+        background-color: transparent;
+
+        &:focus-visible {
+            outline: none;
+        }
     }
 
     &:focus-within {
@@ -185,4 +192,37 @@ label ~ :is(input, textarea):user-invalid {
 
 .submit {
     grid-column: 2 / -1;
+}
+
+.form-status--failed,
+.form-status--succeeded {
+    background-image: linear-gradient(
+        to right,
+        color-mix(in srgb, transparent, var(--_bg-color) 36%),
+        transparent
+    );
+    border-radius: 3px;
+    margin-block-end: calc(var(--spacing) * 3);
+    padding-block: calc(var(--spacing) * 2);
+    padding-inline: calc(var(--spacing) * 2);
+
+    strong {
+        display: block;
+    }
+}
+
+.form-status--failed {
+    --_bg-color: var(--red-2);
+    color: var(--red-1);
+
+    a {
+        --_color: var(--red-2);
+        --_bg: var(--red-2);
+        --_bg-active: var(--red-1);
+    }
+}
+
+.form-status--succeeded {
+    --_bg-color: var(--green-2);
+    color: var(--green-1);
 }
