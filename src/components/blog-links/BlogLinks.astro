@@ -10,8 +10,8 @@ import ArrowRight from '@/assets/icons/arrow-right.svg';
 
 const { length, class: classes } = Astro.props;
 
-let posts = await getCollection('blog').then((response) =>
-    response.sort((a, b) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf()),
+let posts = await getCollection('blog').then((response: any) =>
+    response.sort((a: any, b: any) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf()),
 );
 
 if (length) {
@@ -61,7 +61,7 @@ if (length) {
 
 <ol class:list={['list', classes]}>
     {
-        posts.map((post) => (
+        posts.map((post: any) => (
             <li>
                 <a href={`/blog/${post.id}`}>
                     {post.data.title}
