@@ -1,13 +1,15 @@
 {
     "name": "dou.gg",
     "type": "module",
-    "version": "0.0.1",
+    "version": "1.0.0",
     "scripts": {
         "dev": "astro dev",
         "start": "astro dev",
         "build": "astro check && astro build",
         "preview": "astro preview",
         "astro": "astro",
+        "deploy": "astro build && wrangler pages deploy",
+        "cf-typegen": "wrangler types",
         "lint": "npm run lint:css ; npm run lint:ts ; npm run lint:js",
         "lint:css": "stylelint \"**/*.{css,scss,html,astro,jsx}\" --fix",
         "lint:js": "eslint . --fix",
