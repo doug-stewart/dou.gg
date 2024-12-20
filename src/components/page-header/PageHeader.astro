@@ -1,0 +1,43 @@
+---
+import Asterism from '@/assets/icons/asterism.svg';
+import wiggle from '@/assets/images/wiggle.svg';
+
+const { props } = Astro;
+---
+
+<style
+    set:text={`
+    :root {
+        --wiggle: url(${wiggle.src});
+    }`}
+></style>
+
+<style>
+    header {
+        background: var(--wiggle) repeat-x 0 100% / auto calc(var(--spacing) / 2);
+        margin-block-end: calc(var(--spacing) * 3);
+        padding-block-end: calc(var(--spacing) * 3 + var(--spacing) / 2);
+
+        svg {
+            font-size: var(--step-4);
+        }
+
+        span {
+            align-items: center;
+            display: inline-flex;
+            gap: 0.5ch;
+        }
+
+        h1 {
+            margin-block: var(--spacing) 0;
+        }
+    }
+</style>
+
+<header {...props}>
+    <Asterism role="presentation" class="asterism" />
+    <h1>
+        <slot />
+    </h1>
+    <slot name="after-text" />
+</header>

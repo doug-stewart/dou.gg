@@ -1,19 +1,63 @@
 ---
 import '@/styles/reset.css';
-import '@/styles/global.css';
+import '@/styles/variables.css';
 import '@/styles/typography.css';
+import '@/styles/forms.css';
+
+import { Image } from 'astro:assets';
 
 import favicon from '@/assets/images/favicon.png';
+import funston from '@/assets/images/funston.png';
+import GlobalFooter from '@/components/global-footer/GlobalFooter.astro';
+import GlobalHeader from '@/components/global-header/GlobalHeader.astro';
 
 interface Props {
     title: string;
+    bodyClass?: string;
+    wrapperClass?: string;
+    isErrorRoute?: boolean;
 }
 
-const { title } = Astro.props;
-const currentPath = Astro.url.pathname;
+const { title, bodyClass, wrapperClass, isErrorRoute } = Astro.props;
 ---
 
-<!doctype html>
+<style>
+    body {
+        --_bg-1: var(--blue-5);
+        --_bg-2: var(--purple-5);
+
+        background: var(--_bg-1) radial-gradient(circle at 0 0, var(--_bg-2), var(--_bg-1))
+            no-repeat 0 0;
+        color: var(--blue-1);
+        display: grid;
+        gap: calc(var(--spacing) * 5);
+        grid-template:
+            'header' auto
+            'wrapper' 1fr
+            'footer' auto
+            / 1fr;
+        padding-block: var(--spacing) calc(var(--spacing) * 3);
+        padding-inline: calc(var(--spacing) * 3);
+    }
+
+    .wrapper {
+        max-width: calc(var(--spacing) * 68);
+    }
+
+    .funston {
+        height: 100%;
+        left: 0;
+        mix-blend-mode: luminosity;
+        object-fit: auto 100%;
+        object-position: 0 0;
+        opacity: 0.12;
+        position: absolute;
+        top: 0;
+        width: 100%;
+        z-index: -1;
+    }
+</style>
+
 <html lang="en">
     <head>
         <meta charset="UTF-8" />
@@ -22,6 +66,7 @@ const currentPath = Astro.url.pathname;
         <link rel="icon" type="image/png" href={favicon.src} />
         <meta name="generator" content={Astro.generator} />
         <title>{`{ ${title} }: Dou.gg`}</title>
+        <link rel="sitemap" href="/sitemap-index.xml" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
         <link
@@ -30,37 +75,45 @@ const currentPath = Astro.url.pathname;
         />
         <script is:inline type="module">
             if (!('anchorName' in document.documentElement.style)) {
+                // eslint-disable-next-line
                 import('https://unpkg.com/@oddbird/css-anchor-positioning');
             }
         </script>
+        <script>
+            const handleDialogToggle = (button: Element) => {
+                //eslint-disable-next-line
+                const dialogId = button.getAttribute('data-dialog') as string;
+                const dialog = document.getElementById(dialogId) as HTMLDialogElement;
+
+                if (dialog.open) {
+                    dialog.close();
+                } else {
+                    dialog.showModal();
+                }
+            };
+
+            document.addEventListener('click', (event) => {
+                const dialogToggle = (event.target as Element).closest('[data-dialog]');
+                if (dialogToggle) {
+                    event.preventDefault();
+                    handleDialogToggle(dialogToggle);
+                }
+            });
+        </script>
     </head>
-    <body>
-        <header class="header">
-            <nav class="nav">
-                <ul class="nav__list">
-                    {
-                        currentPath !== '/' && (
-                            <li class={currentPath === '/' ? 'active' : ''}>
-                                <a href="/">Home</a>
-                            </li>
-                        )
-                    }
-                    <!-- <li class={currentPath.startsWith('/blog') ? 'active' : ''}>
-                        <a href="/blog">Blog</a>
-                    </li> -->
-                    <li class={currentPath === '/contact' ? 'active' : ''}>
-                        <a href="/contact">Contact</a>
-                    </li>
-                </ul>
-            </nav>
-        </header>
-        <main class="wrapper">
+    <body class:list={[bodyClass]}>
+        <GlobalHeader />
+        <main class:list={['wrapper', wrapperClass]}>
             <slot />
         </main>
-        <footer class="footer">
-            Made with love by <a href="mailto:hi@dou.gg">hi@dou.gg</a> in {
-                new Date().getFullYear()
-            }.
-        </footer>
+        <GlobalFooter isErrorRoute={isErrorRoute} />
+        <Image
+            src={funston}
+            alt=""
+            role="presentation"
+            class="funston"
+            layout="responsive"
+            format="avif"
+        />
     </body>
 </html>

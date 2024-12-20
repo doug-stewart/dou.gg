@@ -1,15 +1,14 @@
-/* eslint-disable import/named, import/no-unresolved */
 import cloudflare from '@astrojs/cloudflare';
+import mdx from '@astrojs/mdx';
+import react from '@astrojs/react';
+import sitemap from '@astrojs/sitemap';
 import { defineConfig } from 'astro/config';
 
-import icon from 'astro-icon';
-
-// https://astro.build/config
 export default defineConfig({
     site: 'https://dou.gg',
     adapter: cloudflare(),
     output: 'server',
-    integrations: [icon()],
+    integrations: [mdx(), sitemap(), react()],
     experimental: {
         responsiveImages: true,
         svg: true,

@@ -1,0 +1,62 @@
+:root {
+    /* COLORS: */
+    --red-1: hsl(343, 92%, 95%);
+    --red-2: hsl(343, 100%, 79%);
+
+    --purple-1: hsl(278, 100%, 79%);
+    --purple-2: hsl(278, 100%, 67%);
+    --purple-3: hsl(278, 31%, 32%);
+    --purple-4: hsl(277, 97%, 12%);
+    --purple-5: hsl(278, 100%, 9%);
+
+    --blue-1: hsl(180, 92%, 95%);
+    --blue-2: hsl(180, 92%, 85%);
+    --blue-3: hsl(180, 72%, 55%);
+    --blue-4: hsl(189, 100%, 5%);
+    --blue-5: hsl(190, 100%, 5%);
+
+    --green-1: hsl(162, 90%, 88%);
+    --green-2: hsl(167, 100%, 45%);
+    --green-3: hsl(167, 100%, 25%);
+    --green-4: hsl(169, 100%, 13%);
+    --green-5: hsl(169, 100%, 9%);
+    --green-6: hsl(163, 95%, 8%);
+
+    --yellow-1: hsl(65, 100%, 86%);
+    --yellow-2: hsl(60, 92%, 71%);
+    --yellow-3: hsl(60, 82%, 41%);
+
+    /* TYPOGRAPHY: */
+
+    /* Step -2: 8.3333px → 9.6px */
+    --step--2: clamp(0.5208rem, 0.4933rem + 0.1377vw, 0.6rem);
+    /* Step -1: 10px → 12px */
+    --step--1: clamp(0.625rem, 0.5815rem + 0.2174vw, 0.75rem);
+    /* Step 0: 12px → 15px */
+    --step-0: clamp(0.75rem, 0.6848rem + 0.3261vw, 0.9375rem);
+    /* Step 1: 14.4px → 18.75px */
+    --step-1: clamp(0.9rem, 0.8054rem + 0.4728vw, 1.1719rem);
+    /* Step 2: 17.28px → 23.4375px */
+    --step-2: clamp(1.08rem, 0.9461rem + 0.6693vw, 1.4648rem);
+    /* Step 3: 20.736px → 29.2969px */
+    --step-3: clamp(1.296rem, 1.1099rem + 0.9305vw, 1.8311rem);
+    /* Step 4: 24.8832px → 36.6211px */
+    --step-4: clamp(1.5552rem, 1.3rem + 1.2759vw, 2.2888rem);
+    /* Step 5: 29.8598px → 45.7764px */
+    --step-5: clamp(1.8662rem, 1.5202rem + 1.7301vw, 2.861rem);
+
+    /* LAYOUT: */
+    --spacing: clamp(0.625rem, 0.5833rem + 0.2083vw, 0.75rem); /* 10-12px */
+    --grid-size: calc(var(--spacing) * 6); /* 60-72px */
+
+    /* ANIMATIONS: */
+    --animation-curve-in: cubic-bezier(0.64, 0, 0.78, 0);
+    --animation-curve-out: cubic-bezier(0.25, 1, 0.5, 1);
+    --animation-timing: 240ms;
+
+    /* Z-INDEXES */
+    --z-overlay: 40;
+    --z-dialog: 30;
+    --z-nav: 20;
+    --z-local: 10;
+}

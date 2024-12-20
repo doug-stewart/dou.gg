@@ -1,0 +1,41 @@
+---
+const currentPath = Astro.url.pathname;
+const { href, class: classes, ...props } = Astro.props;
+const isActive = (currentPath.startsWith(href) && href !== '/') || currentPath === href;
+---
+
+<style>
+    a {
+        color: var(--purple-4);
+        display: block;
+        font-weight: 700;
+        padding: var(--spacing);
+        position: relative;
+        text-transform: uppercase;
+
+        &::after {
+            background: var(--purple-4);
+            content: '';
+            height: 1px;
+            inset-block-start: 1.4lh;
+            inset-inline: var(--spacing);
+            opacity: 0;
+            position: absolute;
+            transition-duration: var(--animation-timing);
+            transition-property: opacity transform;
+            transition-timing-function: var(--animation-curve-out);
+            translate: 0 0.12em;
+        }
+
+        &:focus-visible,
+        &:hover,
+        &.active {
+            &::after {
+                opacity: 1;
+                translate: 0 0;
+            }
+        }
+    }
+</style>
+
+<a class:list={[classes, { active: isActive }]} href={href} {...props}><slot /></a>

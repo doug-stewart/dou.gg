@@ -1,9 +1,9 @@
 ---
 import { Image } from 'astro:assets';
 
-import Asterism from '@/icons/asterism.svg';
 import lucy from '@/assets/images/lucy-bg.png';
 import glow from '@/assets/images/lucy-glow.png';
+import PageHeader from '@/components/page-header/PageHeader.astro';
 import Layout from '@/layouts/Layout.astro';
 
 import '@/styles/error.css';
@@ -16,12 +16,9 @@ interface Props {
 const { title, headline } = Astro.props;
 ---
 
-<Layout title={title}>
+<Layout title={title} isErrorRoute={true}>
     <div class="error">
-        <h1 class="title">
-            <Asterism class="asterism" />
-            {headline}
-        </h1>
+        <PageHeader>{headline}</PageHeader>
         <p class="notice">
             If I sent you here, uh, sorry! Could you please <a href="mailto:hi@dou.gg"
                 >let me know</a
