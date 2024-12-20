@@ -35,4 +35,4 @@ Disallow: /
 User-agent: YouBot
 Disallow: /
 
-Sitemap: https://<YOUR SITE>/sitemap-index.xml
+Sitemap: https://dou.gg/sitemap-index.xml
