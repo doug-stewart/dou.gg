@@ -12,15 +12,10 @@ interface Inputs {
     message: string;
 }
 
-const ContactForm = () => {
-    const messageMax = 1200;
-    const time = new Date().toLocaleTimeString('en-US', {
-        hour: 'numeric',
-        minute: 'numeric',
-        second: 'numeric',
-        hour12: false,
-    });
+const MESSAGE_MAX = 1200;
+const MESSAGE_MIN = 5;
 
+const ContactForm = () => {
     const [status, setStatus] = useState<'idle' | 'success' | 'error'>('idle');
 
     const {
@@ -32,7 +27,7 @@ const ContactForm = () => {
         formState: { errors },
     } = useForm<Inputs>({
         defaultValues: {
-            name: `Test - ${time}`,
+            name: '',
             email: '',
             subject: '',
             message: '',
@@ -40,8 +35,8 @@ const ContactForm = () => {
     });
 
     const messageLength = watch('message').length;
-    const messageLengthWarn = messageMax - 100 < messageLength && messageLength < messageMax;
-    const messageLengthError = messageLength > messageMax;
+    const messageLengthWarn = MESSAGE_MAX - 100 < messageLength && messageLength < MESSAGE_MAX;
+    const messageLengthError = messageLength > MESSAGE_MAX;
 
     const onSubmit: SubmitHandler<Inputs> = async (data) => {
         console.log(data);
@@ -85,7 +80,9 @@ const ContactForm = () => {
                         className="input"
                         {...register('name', { required: true, minLength: 3 })}
                     />
-                    {errors.name && <span className="error">Lorem ipsuom dolor sit amet.</span>}
+                    {errors.name && (
+                        <span className="error">Name is required and must be &gt;3 characters</span>
+                    )}
                 </label>
                 <label className={clsx('field', errors.email && 'has-error')}>
                     <span className="label">Email Address</span>
@@ -94,7 +91,9 @@ const ContactForm = () => {
                         type="email"
                         {...register('email', { required: true })}
                     />
-                    {errors.email && <span className="error">Lorem ipsuom dolor sit amet.</span>}
+                    {errors.email && (
+                        <span className="error">Please enter a valid email address</span>
+                    )}
                 </label>
                 <label className={clsx('field', errors.subject && 'has-error')} tabIndex={-1}>
                     <span className="label">Subject</span>
@@ -106,8 +105,8 @@ const ContactForm = () => {
                         <textarea
                             {...register('message', {
                                 required: true,
-                                minLength: 5,
-                                maxLength: messageMax,
+                                minLength: MESSAGE_MIN,
+                                maxLength: MESSAGE_MAX,
                             })}
                         />
                         <p
@@ -117,10 +116,14 @@ const ContactForm = () => {
                                 messageLengthError && 'is-over',
                             )}
                         >
-                            {messageLength} / {messageMax}
+                            {messageLength} / {MESSAGE_MAX}
                         </p>
                     </div>
-                    {errors.message && <span className="error">Lorem ipsuom dolor sit amet.</span>}
+                    {errors.message && (
+                        <span className="error">
+                            Your message must be within {MESSAGE_MIN}–{MESSAGE_MAX} characters
+                        </span>
+                    )}
                 </label>
                 <button type="submit" className="submit">
                     Send it
