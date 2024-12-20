@@ -26,10 +26,9 @@ const { title, bodyClass, wrapperClass, isErrorRoute } = Astro.props;
         --_bg-1: var(--blue-5);
         --_bg-2: var(--purple-5);
 
-        background-color: var(--_bg-1);
+        background-color: var(--_bg-2);
         color: var(--blue-1);
         display: grid;
-        gap: calc(var(--spacing) * 5);
         grid-template:
             'header' auto
             'wrapper' 1fr
@@ -37,18 +36,19 @@ const { title, bodyClass, wrapperClass, isErrorRoute } = Astro.props;
             / 1fr;
         padding-block: var(--spacing) calc(var(--spacing) * 3);
         padding-inline: calc(var(--spacing) * 3);
+        position: relative;
     }
 
     .wrapper {
+        margin-block: calc(var(--spacing) * 5);
         max-width: calc(var(--spacing) * 68);
     }
 
     .page-bg {
-        background: var(--_bg-1) radial-gradient(circle at 0 0, var(--_bg-2), var(--_bg-1))
+        background: var(--_bg-2) radial-gradient(circle at 0 0, var(--_bg-2), var(--_bg-1))
             no-repeat 0 0;
         inset: 0;
         isolation: isolate;
-
         position: absolute;
         z-index: -1;
 
@@ -68,7 +68,6 @@ const { title, bodyClass, wrapperClass, isErrorRoute } = Astro.props;
         display: block;
         height: 100%;
         mix-blend-mode: luminosity;
-        object-fit: contain;
         object-position: 0 0;
         opacity: 0.12;
         width: 100%;
