@@ -24,14 +24,12 @@ button,
     text-transform: uppercase;
     transition-duration: var(--animation-timing);
     transition-property: --_button-progress, border-radius, color;
-    transition-timing-function: var(--animation-curve-out);
+    transition-timing-function: var(--animation-curve);
 
     &:focus-visible,
     &:hover {
         --_button-progress: 100%;
         --_color: var(--green-6);
-
-        transition-timing-function: var(--animation-curve-in);
     }
 
     img,

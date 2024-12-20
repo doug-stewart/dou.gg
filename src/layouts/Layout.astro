@@ -26,8 +26,7 @@ const { title, bodyClass, wrapperClass, isErrorRoute } = Astro.props;
         --_bg-1: var(--blue-5);
         --_bg-2: var(--purple-5);
 
-        background: var(--_bg-1) radial-gradient(circle at 0 0, var(--_bg-2), var(--_bg-1))
-            no-repeat 0 0;
+        background-color: var(--_bg-1);
         color: var(--blue-1);
         display: grid;
         gap: calc(var(--spacing) * 5);
@@ -44,17 +43,35 @@ const { title, bodyClass, wrapperClass, isErrorRoute } = Astro.props;
         max-width: calc(var(--spacing) * 68);
     }
 
+    .page-bg {
+        background: var(--_bg-1) radial-gradient(circle at 0 0, var(--_bg-2), var(--_bg-1))
+            no-repeat 0 0;
+        inset: 0;
+        isolation: isolate;
+
+        position: absolute;
+        z-index: -1;
+
+        &::before {
+            background-image: url("data:image/svg+xml;utf8,<svg viewBox='0 0 250 250' xmlns='http://www.w3.org/2000/svg' height='250' width='250'><filter id='noiseFilter'><feTurbulence type='fractalNoise' baseFrequency='5' numOctaves='3' stitchTiles='stitch'/></filter><rect width='100%' height='100%' filter='url(%23noiseFilter)'/></svg>"),
+                linear-gradient(#333 0, #333 100%);
+            content: '';
+            filter: contrast(300%) brightness(300%);
+            inset: 0;
+            mix-blend-mode: multiply;
+            position: absolute;
+            z-index: 1;
+        }
+    }
+
     .funston {
+        display: block;
         height: 100%;
-        left: 0;
         mix-blend-mode: luminosity;
-        object-fit: auto 100%;
+        object-fit: contain;
         object-position: 0 0;
         opacity: 0.12;
-        position: absolute;
-        top: 0;
         width: 100%;
-        z-index: -1;
     }
 </style>
 
@@ -107,13 +124,15 @@ const { title, bodyClass, wrapperClass, isErrorRoute } = Astro.props;
             <slot />
         </main>
         <GlobalFooter isErrorRoute={isErrorRoute} />
-        <Image
-            src={funston}
-            alt=""
-            role="presentation"
-            class="funston"
-            layout="responsive"
-            format="avif"
-        />
+        <div class="page-bg">
+            <Image
+                src={funston}
+                alt=""
+                role="presentation"
+                class="funston"
+                layout="responsive"
+                format="avif"
+            />
+        </div>
     </body>
 </html>
