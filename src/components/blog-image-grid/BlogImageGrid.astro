@@ -1,7 +1,12 @@
 ---
+type Image = {
+    src: string;
+    alt: string;
+};
+
 type Props = {
     base: string;
-    images: Array<string>;
+    images: Array<Image>;
     class?: string;
 };
 
@@ -18,7 +23,7 @@ const allBlogImages = Object.entries(
 
 const filteredImages = allBlogImages.filter((allImage) => {
     const hasBase = allImage[0].includes(base);
-    const hasFile = images.some((blogImage) => allImage[0].includes(blogImage));
+    const hasFile = images.some((blogImage) => allImage[0].includes(blogImage.src));
     return hasBase && hasFile;
 });
 
@@ -91,29 +96,29 @@ const fulfilledImages = await Promise.all(imageImports).then((result) =>
 
 <ul class:list={['list', classes]}>
     {
-        images.map((image) => (
+        images.map(({ src, alt }) => (
             <li>
                 <a
-                    href={fulfilledImages[`${image}-lrg`].src}
-                    data-dialog={`${image}-dialog`}
+                    href={fulfilledImages[`${src}-lrg`].src}
+                    data-dialog={`${src}-dialog`}
                     class="link"
                 >
                     <span class="overlay">
                         <Zoom role="presentation" />
                     </span>
                     <img
-                        alt=""
-                        src={fulfilledImages[`${image}-sml`].src}
-                        height={fulfilledImages[`${image}-sml`].height}
-                        width={fulfilledImages[`${image}-sml`].width}
+                        alt={`Thumbnail: ${alt}`}
+                        src={fulfilledImages[`${src}-sml`].src}
+                        height={fulfilledImages[`${src}-sml`].height}
+                        width={fulfilledImages[`${src}-sml`].width}
                     />
                 </a>
-                <Dialog id={`${image}-dialog`}>
+                <Dialog id={`${src}-dialog`}>
                     <img
-                        alt=""
-                        src={fulfilledImages[`${image}-lrg`].src}
-                        height={fulfilledImages[`${image}-lrg`].height}
-                        width={fulfilledImages[`${image}-lrg`].width}
+                        alt={`Full Size: ${alt}`}
+                        src={fulfilledImages[`${src}-lrg`].src}
+                        height={fulfilledImages[`${src}-lrg`].height}
+                        width={fulfilledImages[`${src}-lrg`].width}
                     />
                 </Dialog>
             </li>
