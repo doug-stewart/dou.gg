@@ -10,7 +10,7 @@ body,
     font-size: var(--step-0);
     font-weight: 300;
     letter-spacing: 0.01em;
-    line-height: 1.618;
+    line-height: clamp(24px, 1.618em, 2em);
     text-wrap: pretty;
 }
 
