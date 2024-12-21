@@ -21,59 +21,6 @@ interface Props {
 const { title, bodyClass, wrapperClass, isErrorRoute } = Astro.props;
 ---
 
-<style>
-    body {
-        --_bg-1: var(--blue-5);
-        --_bg-2: var(--purple-5);
-
-        background-color: var(--_bg-2);
-        color: var(--blue-1);
-        display: grid;
-        grid-template:
-            'header' auto
-            'wrapper' 1fr
-            'footer' auto
-            / 1fr;
-        padding-block: var(--spacing) calc(var(--spacing) * 3);
-        padding-inline: calc(var(--spacing) * 3);
-        position: relative;
-    }
-
-    .wrapper {
-        margin-block: calc(var(--spacing) * 5);
-        max-width: calc(var(--spacing) * 68);
-    }
-
-    .page-bg {
-        background: var(--_bg-2) radial-gradient(circle at 0 0, var(--_bg-2), var(--_bg-1))
-            no-repeat 0 0;
-        inset: 0;
-        isolation: isolate;
-        overflow: clip;
-        position: absolute;
-        z-index: -1;
-
-        &::before {
-            background-image: url("data:image/svg+xml;utf8,<svg viewBox='0 0 250 250' xmlns='http://www.w3.org/2000/svg' height='250' width='250'><filter id='noiseFilter'><feTurbulence type='fractalNoise' baseFrequency='5' numOctaves='3' stitchTiles='stitch'/></filter><rect width='100%' height='100%' filter='url(%23noiseFilter)'/></svg>"),
-                linear-gradient(#333 0, #333 100%);
-            content: '';
-            filter: contrast(300%) brightness(300%);
-            inset: 0;
-            mix-blend-mode: multiply;
-            position: absolute;
-            z-index: 1;
-        }
-    }
-
-    .funston {
-        display: block;
-        height: auto;
-        mix-blend-mode: luminosity;
-        opacity: 0.12;
-        width: 100%;
-    }
-</style>
-
 <html lang="en">
     <head>
         <meta charset="UTF-8" />
@@ -89,6 +36,58 @@ const { title, bodyClass, wrapperClass, isErrorRoute } = Astro.props;
             href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap"
             rel="stylesheet"
         />
+        <style>
+            body {
+                --_bg-1: var(--blue-5);
+                --_bg-2: var(--purple-5);
+
+                background-color: var(--_bg-2);
+                color: var(--blue-1);
+                display: grid;
+                grid-template:
+                    'header' auto
+                    'wrapper' 1fr
+                    'footer' auto
+                    / 1fr;
+                padding-block: var(--spacing) calc(var(--spacing) * 3);
+                padding-inline: calc(var(--spacing) * 3);
+                position: relative;
+            }
+
+            .wrapper {
+                margin-block: calc(var(--spacing) * 5);
+                max-width: calc(var(--spacing) * 68);
+            }
+
+            .page-bg {
+                background: var(--_bg-2) radial-gradient(circle at 0 0, var(--_bg-2), var(--_bg-1))
+                    no-repeat 0 0;
+                inset: 0;
+                isolation: isolate;
+                overflow: clip;
+                position: absolute;
+                z-index: -1;
+
+                &::before {
+                    background-image: url("data:image/svg+xml;utf8,<svg viewBox='0 0 250 250' xmlns='http://www.w3.org/2000/svg' height='250' width='250'><filter id='noiseFilter'><feTurbulence type='fractalNoise' baseFrequency='5' numOctaves='3' stitchTiles='stitch'/></filter><rect width='100%' height='100%' filter='url(%23noiseFilter)'/></svg>"),
+                        linear-gradient(#333 0, #333 100%);
+                    content: '';
+                    filter: contrast(300%) brightness(300%);
+                    inset: 0;
+                    mix-blend-mode: multiply;
+                    position: absolute;
+                    z-index: 1;
+                }
+            }
+
+            .funston {
+                display: block;
+                height: auto;
+                mix-blend-mode: luminosity;
+                opacity: 0.12;
+                width: 100%;
+            }
+        </style>
         <script is:inline type="module">
             if (!('anchorName' in document.documentElement.style)) {
                 // eslint-disable-next-line
