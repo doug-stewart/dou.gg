@@ -235,19 +235,26 @@ ol li::marker {
     font-weight: 600;
 }
 
-figure:where(:has(blockquote)) {
+figure {
     position: relative;
 
-    &::before {
-        border-inline-start: 4px solid;
-        content: '';
-        inset-block: 0;
-        inset-inline-start: 0;
-        position: absolute;
+    &:where(:has(img, video)) {
+        background-color: color-mix(in srgb, transparent, var(--purple-5) 48%);
+        border: 1px solid color-mix(in srgb, transparent, var(--blue-1) 12%);
+        border-radius: 3px;
+        display: block;
+        padding: var(--spacing);
+        width: 100%;
     }
 
-    > p {
-        padding-inline: calc(var(--spacing) * 2);
+    &:where(:has(blockquote)) {
+        &::before {
+            border-inline-start: 4px solid;
+            content: '';
+            inset-block: 0;
+            inset-inline-start: 0;
+            position: absolute;
+        }
     }
 
     blockquote {
@@ -255,4 +262,22 @@ figure:where(:has(blockquote)) {
         font-weight: 200;
         padding-inline: calc(var(--spacing) * 2);
     }
+
+    img,
+    video {
+        border-radius: 3px;
+        display: block;
+        max-width: 100%;
+    }
+
+    > p {
+        padding-inline: calc(var(--spacing) * 2);
+    }
+}
+
+cite {
+    display: block;
+    letter-spacing: 0.05em;
+    padding-block-start: var(--spacing);
+    text-align: center;
 }
