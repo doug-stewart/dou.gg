@@ -21,10 +21,6 @@ const time = new Date().toLocaleTimeString('en-US', {
         const data = Object.fromEntries(formData);
 
         const response = await fetch('/api/email', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
             body: JSON.stringify(data),
         });
 
@@ -79,7 +75,7 @@ const time = new Date().toLocaleTimeString('en-US', {
         </label>
         <label>
             <span>Message</span>
-            <textarea name="email" required>
+            <textarea name="message" required>
                 Time Sent: {time}
                 {' '}
                 Lorem ipsum odor amet, consectetuer adipiscing elit. Habitasse quis iaculis aliquet non
