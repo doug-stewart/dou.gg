@@ -13,7 +13,7 @@ import Layout from '@/layouts/Layout.astro';
         const formData = new FormData(form);
         const data = Object.fromEntries(formData);
 
-        const response = await fetch('/api/send-email', {
+        const response = await fetch('https://email.dou.gg/', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
