@@ -1,0 +1,226 @@
+---
+# Bookmarks
+
+- title: Frequently Visited Sites
+  bookmarks:
+    - name: "Amazon"
+      link: http://www.amazon.com/
+    - name: "Dropbox"
+      link: https://www.dropbox.com/
+    - name: "Feedly"
+      link: http://www.feedly.com/
+    - name: "Gmail"
+      link: http://www.gmail.com/
+    - name: "GrubHub"
+      link: http://www.grubhub.com/
+    - name: "Netflix"
+      link: http://www.netflix.com/
+    - name: "Pocket Casts"
+      link: https://play.pocketcasts.com/
+    - name: "ReviewMeta"
+      link: https://reviewmeta.com/
+    - name: "YouTube"
+      link: http://www.youtube.com/
+
+- title: Network (Local)
+  bookmarks:
+    - name: "Plex"
+      link: http://10.0.1.100:32400/web
+    - name: "SickChill"
+      link: http://10.0.1.100:8083/
+    - name: "Synology DiskStation"
+      link: https://10.0.1.100:5001/
+    - name: "UniFi Controller"
+      link: https://10.0.1.100:8443/
+
+- title: Download Sites
+  bookmarks:
+    - name: "1337x"
+      link: https://1337x.to/
+    - name: "ETTV"
+      link: https://www.ettv.tv/
+    - name: "IsoHunt"
+      link: https://isohunts.to/
+    - name: "KickAssTorrents"
+      link: https://katcr.co/
+    - name: "The Pirate Bay"
+      link: https://thepiratebay.org/
+    - name: "RARBG"
+      link: https://rarbgget.org/
+    - name: "TorrenGalaxy"
+      link: https://torrentgalaxy.org/
+    - name: "Torrents"
+      link: https://torrents.me/
+
+- title: Wallpaper Sites
+  bookmarks:
+    - name: "Alpha Coders"
+      link: http://wall.alphacoders.com/
+    - name: "ArtStation"
+      link: https://www.artstation.com/
+    - name: "InterfaceLIFT"
+      link: http://www.interfacelift.com/
+    - name: "Wallhaven"
+      link: http://alpha.wallhaven.cc/latest
+
+- title: Magazines &amp; Blogs
+  bookmarks:
+    - name: "24 Ways"
+      link: http://www.24ways.org/
+    - name: "A List Apart"
+      link: http://www.alistapart.com/
+    - name: "Android Authority"
+      link: http://www.androidauthority.com/
+    - name: "Ars Technica"
+      link: http://www.arstechnica.com/index.ars
+    - name: "CSS-Tricks"
+      link: http://www.css-tricks.com/
+    - name: "Engadget"
+      link: http://www.engadget.com/
+    - name: "I Love Typography"
+      link: http://www.ilovetypography.com/
+    - name: "Jeffrey Zeldman Presents The Daily Report"
+      link: http://www.zeldman.com/
+    - name: "Lifehacker"
+      link: http://www.lifehacker.com/
+    - name: "ProPublica"
+      link: https://www.propublica.org/
+    - name: "Slashdot"
+      link: http://www.slashdot.org/
+    - name: "Smashing Magazine"
+      link: http://www.smashingmagazine.com/
+    - name: "Sony Alpha Rumors"
+      link: http://www.sonyalpharumors.com/
+    - name: "Vox"
+      link: http://www.vox.com/
+    - name: "Wired News"
+      link: http://www.wired.com/
+
+- title: Webcomics
+  bookmarks:
+    - name: "Ava&rsquo;s Demon"
+      link: http://www.avasdemon.com/
+    - name: "Blindsprings"
+      link: http://www.blindsprings.com/
+    - name: "C-Cassandra"
+      link: http://c-cassandra.tumblr.com/
+    - name: "Cat's Cafe"
+      link: https://tapas.io/series/Cats-Cafe
+    - name: "Catana Comics"
+      link: https://catanacomics.com/
+    - name: "Coon Comic"
+      link: http://cooncomic.com/
+    - name: "Drive"
+      link: http://www.drivecomic.com/
+    - name: "Dumbing of Age"
+      link: http://www.dumbingofage.com/
+    - name: "Emra"
+      link: https://tapas.io/series/Erma
+    - name: "Fowl Language Comics"
+      link: http://www.fowllanguagecomics.com/
+    - name: "The Gamercat"
+      link: http://www.thegamercat.com/
+    - name: "Girls with Slingshots"
+      link: http://www.daniellecorsetto.com/
+    - name: "Gunnerkrigg Court"
+      link: http://www.gunnerkrigg.com/
+    - name: "Ichabod the Optimistic Canine"
+      link: http://itoc.cfw.me/comics/
+    - name: "Indexed"
+      link: http://www.thisisindexed.com/
+    - name: "Johnny Wander"
+      link: http://www.johnnywander.com/
+    - name: "Looking For Group"
+      link: http://www.lfgcomic.com/
+    - name: "Mary Death"
+      link: http://www.marydeathcomics.com/
+    - name: "The Meek"
+      link: http://www.meekcomic.com/
+    - name: "My Junk Drawer"
+      link: https://www.instagram.com/amymebberson/
+    - name: "PHD Comics"
+      link: http://www.phdcomics.com/comics.php
+    - name: "Port Sherry"
+      link: http://portsherry.com/
+    - name: "Questionable Content"
+      link: http://www.questionablecontent.net/
+    - name: "Raruurien"
+      link: http://raruurien.com/
+    - name: "RandoWis"
+      link: https://randowis.com/
+    - name: "Sam and Fuzzy"
+      link: http://www.samandfuzzy.com/
+    - name: "Sarah&rsquo;s Scribbles"
+      link: http://www.sarahcandersen.com/
+    - name: "Saturday Morning Breakfast Cereal"
+      link: http://www.smbc-comics.com/
+    - name: "Scandinavia and the World"
+      link: http://www.satwcomic.com/
+    - name: "Sheldon"
+      link: http://www.sheldoncomics.com/
+    - name: "Stupid Fox"
+      link: http://www.stupidfox.net/
+    - name: "Three Is The New Black"
+      link: http://www.threepanelsoul.com/
+    - name: "XKCD"
+      link: http://www.xkcd.com/
+    - name: "ZomCom"
+      link: http://www.webtoons.com/en/challenge/zomcom/list?title_no=70195
+
+- title: Galleries
+  bookmarks:
+    - name: "Behance Network"
+      link: http://www.behance.net/
+    - name: "Best Web Gallery"
+      link: http://www.bestwebgallery.com/
+    - name: "Best Website Gallery"
+      link: http://bestwebsite.gallery/
+    - name: "Dieline"
+      link: http://www.thedieline.com/blog/
+    - name: "Information Is Beautiful"
+      link: http://www.informationisbeautiful.net/
+    - name: "Land Book"
+      link: https://land-book.com/
+    - name: "Lovely Package"
+      link: http://www.lovelypackage.com/
+    - name: "Really Good Emails"
+      link: http://reallygoodemails.com/
+    - name: "Site Inspire"
+      link: http://www.siteinspire.net/
+    - name: "Unmatched Style"
+      link: http://www.unmatchedstyle.com/
+    - name: "We Love Typography"
+      link: http://www.welovetypography.com/
+    - name: "Web Creme"
+      link: http://www.webcreme.com/
+
+- title: Resources
+  bookmarks:
+    - name: "Creative Market"
+      link: https://creativemarket.com/
+    - name: "Font Squirrel"
+      link: https://www.fontsquirrel.com/
+    - name: "Fonts"
+      link: https://www.fonts.com/
+    - name: "Free Images"
+      link: http://www.freeimages.com/
+    - name: "Icon Finder"
+      link: https://www.iconfinder.com/
+    - name: "IconStore"
+      link: http://iconstore.co/
+    - name: "Lorem Ipsum Generator"
+      link: http://lorem-ipsum.perbang.dk/
+    - name: "Lost Type"
+      link: http://losttype.com/
+    - name: "The Noun Project"
+      link: http://www.thenounproject.com/
+    - name: "MyFonts"
+      link: https://www.myfonts.com/
+    - name: "Pexels"
+      link: https://www.pexels.com/
+    - name: "Premium Pixels"
+      link: http://www.premiumpixels.com/
+    - name: "To Icon"
+      link: http://www.toicon.com/
+
+...

@@ -1,0 +1,19 @@
+---
+layout: bookmarks
+title: My Home Page
+---
+
+{% for section in site.data.bookmarks %}
+	<section>
+		<h2>{{ section.title }} (<a href="#">open all</a>)</h2>
+		<ul>
+			{% for bookmark in section.bookmarks %}
+				<li><a href="{{ bookmark.link }}">{{ bookmark.name }}</a></li>
+			{% endfor %}
+		</ul>
+	</section>
+{% endfor %}
+
+<footer>
+	<p>Last updated: October 4, 2016</p>
+</footer>

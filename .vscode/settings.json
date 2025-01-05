@@ -1,0 +1,25 @@
+{
+  "search.useIgnoreFiles": true,
+  "files.trimTrailingWhitespace": true,
+  "editor.tabSize": 2,
+  "files.insertFinalNewline": true,
+  "search.exclude": {
+    "_site": true,
+    "node_modules": true,
+    ".sass-cache": true,
+    ".DS_Store": true
+  },
+  "files.exclude": {
+    "**/.git": true,
+    "**/node_modules": true,
+    "**/.sass-cache": true,
+    "**/.DS_Store": true,
+    "npm-debug.log": true
+  },
+  "files.watcherExclude": {
+    "**/.git": true,
+    "**/node_modules": true,
+    "**/.sass-cache": true,
+    "**/.DS_Store": true
+  }
+}

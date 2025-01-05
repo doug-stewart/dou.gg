@@ -1,0 +1,187 @@
+.resume-download,
+.resume-email {
+  align-items: center;
+  background: rgba($purple-light, .12);
+  border-radius: 6px;
+  display: flex;
+  justify-content: center;
+  margin: 1.2rem auto 0;
+  max-width: 39.6rem;
+  padding: .8rem 1.6rem;
+  text-decoration: none;
+  transition: background-color .2s $curve;
+
+  &:hover { background-color: rgba($purple-light, .24); }
+
+  &__icon {
+    background-color: $tan-lightest;
+    border-radius: .6rem;
+    display: block;
+    height: 2.4rem;
+    margin-right: .8rem;
+    padding: .3rem;
+    width: 2.4rem;
+
+    svg {
+      display: block;
+      fill: transparent;
+      height: 100%;
+      stroke: $purple-dark;
+      width: 100%;
+    }
+  }
+
+  &__label {
+    box-shadow: 0 1px 0 $tan-lightest;
+    line-height: 1.111;
+    transform: translateY(-1px);
+  }
+}
+
+.resume-ed,
+.resume-ref {
+  blockquote {
+    padding-left: .75ch;
+    quotes: initial;
+    text-indent: -.75ch;
+  }
+
+  blockquote::after { content: close-quote; }
+  blockquote::before { content: open-quote; }
+
+  h3 {
+    margin-bottom: 0;
+    margin-top: 1rem;
+  }
+}
+
+.resume-email { display: none; }
+
+.resume-header {
+  grid-column: 1 / -1;
+  margin-bottom: 4rem;
+
+  &__title {
+    svg {
+      display: block;
+      fill: $tan-lightest;
+      height: auto;
+      margin: 0 auto;
+      max-width: 100%;
+      width: auto;
+    }
+  }
+}
+
+.resume-main {
+  dl {
+    display: grid;
+    grid-template-columns: 1fr max-content;
+  }
+
+  dd {
+    color: $purple-light;
+    font-size: 1rem;
+    text-transform: uppercase;
+  }
+
+  dt,
+  li {
+    margin-left: 3rem;
+    position: relative;
+
+    &::before {
+      content: '•';
+      font-family: $playfair;
+      left: -1em;
+      position: absolute;
+      top: 0;
+      transform: translate(-50%, -6%);
+    }
+  }
+
+  em {
+    color: $purple-lighter;
+    font-style: normal;
+  }
+}
+
+.resume-ref {
+  p {
+    font-style: italic;
+    margin-top: -1rem;
+  }
+}
+
+.resume-skills {
+  dl { max-width: 30rem; }
+}
+
+@media (min-width: 600px) {
+  .resume-code {
+    grid-column: 2;
+    grid-row: 2 / 4;
+  }
+
+  .resume-design { grid-column: 1; }
+
+  .resume-download__label {
+    font-size: 1.8rem;
+    font-weight: 300;
+  }
+
+  .resume-skills {
+    display: grid;
+    grid-gap: 0 4rem;
+    grid-template-columns: 1fr 1fr;
+
+    h2 {
+      grid-column: 1 / -1;
+      margin-top: 0;
+    }
+  }
+
+  .resume-tools { grid-column: 1; }
+}
+
+@media (min-width: 840px) {
+  .resume-ed,
+  .resume-ref,
+  .resume-work { grid-column: 2; }
+
+  .resume-main {
+    display: grid;
+    grid-template-columns: minmax(auto, 32rem) minmax(auto, 78ch);
+    justify-content: center;
+  }
+
+  .resume-work {
+    h2 { margin-top: 0; }
+  }
+
+  .resume-skills {
+    align-self: start;
+    display: block;
+    grid-column: 1;
+    margin-right: 3rem;
+    padding-right: 3rem;
+  }
+}
+
+@media print {
+  html { font-size: 9px; }
+
+  body {
+    background: #fff;
+    color: $purple-dark;
+  }
+
+  .footer,
+  .resume-download,
+  .resume-ref blockquote,
+  .resume-ref h3 { display: none; }
+
+  .resume-email { display: flex; }
+
+  .resume-header__title svg { fill: $purple-dark; }
+}
