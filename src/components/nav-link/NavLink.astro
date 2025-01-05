@@ -6,7 +6,8 @@ const isActive = (currentPath.startsWith(href) && href !== '/') || currentPath =
 
 <style>
     a {
-        color: var(--purple-4);
+        background: unset;
+        color: var(--purple-5);
         display: block;
         font-weight: 700;
         padding: var(--spacing);
@@ -14,7 +15,7 @@ const isActive = (currentPath.startsWith(href) && href !== '/') || currentPath =
         text-transform: uppercase;
 
         &::after {
-            background: var(--purple-4);
+            background: var(--purple-5);
             content: '';
             height: 1px;
             inset-block-start: 1.4lh;

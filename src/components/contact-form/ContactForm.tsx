@@ -39,8 +39,6 @@ const ContactForm = () => {
     const messageLengthError = messageLength > MESSAGE_MAX;
 
     const onSubmit: SubmitHandler<Inputs> = async (data) => {
-        console.log(data);
-
         const response = await fetch('/api/email', {
             method: 'POST',
             body: JSON.stringify(data),

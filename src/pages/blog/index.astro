@@ -1,10 +1,16 @@
 ---
 import BlogLinks from '@/components/blog-links/BlogLinks.astro';
-import PageHeader from '@/components/page-header/PageHeader.astro';
+import Title from '@/components/title/Title.astro';
 import Layout from '@/layouts/Layout.astro';
 ---
 
+<style>
+    .links {
+        --_font-size: var(--type-2);
+    }
+</style>
+
 <Layout title="Blog">
-    <PageHeader>My collected nonsense</PageHeader>
-    <BlogLinks />
+    <Title>My collected nonsense</Title>
+    <BlogLinks class="links" />
 </Layout>

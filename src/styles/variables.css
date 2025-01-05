@@ -3,17 +3,25 @@
     --red-1: hsl(343, 92%, 95%);
     --red-2: hsl(343, 100%, 79%);
 
-    --purple-1: hsl(278, 100%, 79%);
-    --purple-2: hsl(278, 100%, 67%);
-    --purple-3: hsl(278, 31%, 32%);
-    --purple-4: hsl(277, 97%, 12%);
-    --purple-5: hsl(278, 100%, 9%);
+    --grey-1: hsl(0, 0%, 87%);
+
+    --purple-1: hsl(267, 90%, 88%);
+    --purple-2: hsl(278, 100%, 79%);
+    --purple-3: hsl(278, 100%, 67%);
+    --purple-4: hsl(278, 31%, 32%);
+    --purple-5: hsl(277, 97%, 12%);
+    --purple-6: hsl(278, 100%, 9%);
 
     --blue-1: hsl(180, 92%, 95%);
     --blue-2: hsl(180, 92%, 85%);
     --blue-3: hsl(180, 72%, 55%);
-    --blue-4: hsl(189, 100%, 5%);
-    --blue-5: hsl(190, 100%, 5%);
+    --blue-4: hsl(244, 74%, 43%);
+    --blue-6: hsl(189, 100%, 5%);
+    --blue-7: hsl(190, 100%, 5%);
+    --blue-8: hsl(214, 53%, 6%);
+
+    --teal-1: hsl(167, 100%, 87%);
+    --teal-2: hsl(167, 100%, 78%);
 
     --green-1: hsl(162, 90%, 88%);
     --green-2: hsl(167, 100%, 45%);
@@ -28,22 +36,13 @@
 
     /* TYPOGRAPHY: */
 
-    /* Step -2: 8.3333px → 9.6px */
-    --step--2: clamp(0.5208rem, 0.4933rem + 0.1377vw, 0.6rem);
-    /* Step -1: 10px → 12px */
-    --step--1: clamp(0.625rem, 0.5815rem + 0.2174vw, 0.75rem);
-    /* Step 0: 12px → 15px */
-    --step-0: clamp(0.75rem, 0.6848rem + 0.3261vw, 0.9375rem);
-    /* Step 1: 14.4px → 18.75px */
-    --step-1: clamp(0.9rem, 0.8054rem + 0.4728vw, 1.1719rem);
-    /* Step 2: 17.28px → 23.4375px */
-    --step-2: clamp(1.08rem, 0.9461rem + 0.6693vw, 1.4648rem);
-    /* Step 3: 20.736px → 29.2969px */
-    --step-3: clamp(1.296rem, 1.1099rem + 0.9305vw, 1.8311rem);
-    /* Step 4: 24.8832px → 36.6211px */
-    --step-4: clamp(1.5552rem, 1.3rem + 1.2759vw, 2.2888rem);
-    /* Step 5: 29.8598px → 45.7764px */
-    --step-5: clamp(1.8662rem, 1.5202rem + 1.7301vw, 2.861rem);
+    --type--1: clamp(0.625rem, 0.217vw + 0.576rem, 0.75rem); /* 10-12 */
+    --type-0: clamp(0.875rem, 0.217vw + 0.826rem, 1rem); /* 14-16 */
+    --type-1: clamp(1rem, 0.217vw + 0.951rem, 1.125rem); /* 16-18 */
+    --type-2: clamp(1.125rem, 0.652vw + 0.978rem, 1.5rem); /* 18-24 */
+    --type-3: clamp(1.5rem, 1.304vw + 1.206rem, 2.25rem); /* 24-36 */
+    --type-4: clamp(2.25rem, 2.609vw + 1.663rem, 3.75rem); /* 36-60 */
+    --type-5: clamp(3rem, 2.609vw + 2.413rem, 4.5rem); /* 48-72 */
 
     /* LAYOUT: */
     --spacing: clamp(0.625rem, 0.5833rem + 0.2083vw, 0.75rem); /* 10-12px */

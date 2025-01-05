@@ -4,10 +4,7 @@ import '@/styles/variables.css';
 import '@/styles/typography.css';
 import '@/styles/forms.css';
 
-import { Image } from 'astro:assets';
-
 import favicon from '@/assets/images/favicon.png';
-import funston from '@/assets/images/funston.png';
 import GlobalFooter from '@/components/global-footer/GlobalFooter.astro';
 import GlobalHeader from '@/components/global-header/GlobalHeader.astro';
 
@@ -38,11 +35,11 @@ const { title, bodyClass, wrapperClass, isErrorRoute } = Astro.props;
         />
         <style>
             body {
-                --_bg-1: var(--blue-5);
-                --_bg-2: var(--purple-5);
+                --_bg-1: var(--blue-7);
+                --_bg-2: var(--purple-6);
 
                 background-color: var(--_bg-2);
-                color: var(--blue-1);
+                color: var(--teal-1);
                 display: grid;
                 grid-template:
                     'header' auto
@@ -66,7 +63,7 @@ const { title, bodyClass, wrapperClass, isErrorRoute } = Astro.props;
                 isolation: isolate;
                 overflow: clip;
                 position: absolute;
-                z-index: -1;
+                z-index: -2;
 
                 &::before {
                     background-image: url("data:image/svg+xml;utf8,<svg viewBox='0 0 250 250' xmlns='http://www.w3.org/2000/svg' height='250' width='250'><filter id='noiseFilter'><feTurbulence type='fractalNoise' baseFrequency='5' numOctaves='3' stitchTiles='stitch'/></filter><rect width='100%' height='100%' filter='url(%23noiseFilter)'/></svg>"),
@@ -76,16 +73,7 @@ const { title, bodyClass, wrapperClass, isErrorRoute } = Astro.props;
                     inset: 0;
                     mix-blend-mode: multiply;
                     position: absolute;
-                    z-index: 1;
                 }
-            }
-
-            .funston {
-                display: block;
-                height: auto;
-                mix-blend-mode: luminosity;
-                opacity: 0.12;
-                width: 100%;
             }
         </style>
         <script is:inline type="module">
@@ -122,16 +110,6 @@ const { title, bodyClass, wrapperClass, isErrorRoute } = Astro.props;
             <slot />
         </main>
         <GlobalFooter isErrorRoute={isErrorRoute} />
-        <div class="page-bg">
-            <Image
-                src={funston}
-                alt=""
-                role="presentation"
-                class="funston"
-                layout="full-width"
-                format="avif"
-                loading="eager"
-            />
-        </div>
+        <div class="page-bg"></div>
     </body>
 </html>

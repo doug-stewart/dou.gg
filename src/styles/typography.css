@@ -1,6 +1,15 @@
 ::selection {
     background-color: var(--blue-2);
-    color: var(--blue-5);
+    color: var(--blue-7);
+}
+
+body {
+    font-kerning: normal;
+    font-optical-sizing: auto;
+    font-variant-ligatures: common-ligatures no-discretionary-ligatures no-historical-ligatures
+        contextual;
+    line-height: 1.5;
+    text-decoration-skip-ink: auto;
 }
 
 body,
@@ -11,18 +20,11 @@ li,
 .type-0 {
     font-family: 'Jost', system-ui, sans-serif;
     font-optical-sizing: auto;
-    font-size: var(--step-0);
+    font-size: var(--type-0);
     font-weight: 300;
-    letter-spacing: 0.01em;
+    letter-spacing: 0.024em;
     line-height: max(24px, 1.618em);
     text-wrap: pretty;
-}
-
-.asterism {
-    display: block;
-    height: auto;
-    margin-block-end: 0.36em;
-    width: 1.1em;
 }
 
 h1,
@@ -43,19 +45,12 @@ h6,
     line-height: 1.5;
 }
 
-h2,
-.type-2,
-h3,
-.type-3,
-h4,
-.type-4 {
-    color: var(--purple-1);
-}
-
 h1,
 .type-1 {
-    font-size: var(--step-4);
+    color: var(--green-2);
+    font-size: var(--type-5);
     font-weight: 600;
+    line-height: 1.16667;
     margin-block: calc(var(--spacing) * 3);
 
     &:has(strong) {
@@ -69,44 +64,53 @@ h1,
 
 h2,
 .type-2 {
-    font-size: var(--step-2);
+    color: var(--teal-2);
+    font-size: var(--type-3);
     font-weight: 600;
-    line-height: 1.24;
+    line-height: 1.333;
     margin-block: calc(var(--spacing) * 3) calc(var(--spacing) * 1.5);
-    text-transform: uppercase;
 }
 
 h3,
 .type-3 {
-    font-size: var(--step-1);
-    font-weight: 500;
+    color: var(--green-2);
+    font-size: var(--type-2);
+    font-weight: 700;
+    line-height: 1.5;
+    text-transform: uppercase;
 }
 
 h4,
 .type-4 {
-    font-size: var(--step-1);
-    font-weight: 400;
+    color: var(--teal-1);
+    font-size: var(--type-2);
+    font-weight: 700;
+    line-height: 1.5;
 }
 
 h5,
 .type-5 {
-    font-size: var(--step-0);
-    font-weight: 600;
+    color: var(--green-2);
+    font-size: var(--type-1);
+    font-weight: 700;
+    line-height: 1.333;
 }
 
 h6,
 .type-6 {
-    font-size: var(--step--1);
+    color: var(--teal-1);
+    font-size: var(--type-0);
     font-weight: 500;
-    text-transform: uppercase;
+    line-height: 1.5;
 }
 
 cite,
 .type--1 {
-    color: var(--blue-2);
-    font-size: var(--step--1);
+    color: var(--purple-1);
+    font-size: var(--type--1);
     font-style: italic;
     font-weight: 500;
+    line-height: 1.333;
 }
 
 h1,
@@ -145,15 +149,17 @@ table,
 }
 
 a,
-.link {
+.link,
+.block-link {
     --_anchor-underline: 0%;
-    --_color: var(--green-2);
+    --_color: var(--teal-1);
+    --_color-active: var(--green-6);
     --_bg: var(--_color);
     --_bg-active: var(--_bg);
 
     background-color: transparent;
     background-image: radial-gradient(ellipse at 50% 100%, var(--_bg-active) 50%, transparent 0%),
-        linear-gradient(to top, var(--_bg) max(1px, 0.072em), transparent 0%);
+        linear-gradient(to top, var(--_bg) max(1px, 0.06em), transparent 0%);
     background-position:
         50% 100%,
         0 0;
@@ -167,16 +173,22 @@ a,
     padding-inline: 0.06em;
     position: relative;
     text-decoration: none;
-    transition-duration: calc(var(--animation-timing) * 3);
-    transition-property: --_anchor-underline, color;
-    transition-timing-function: var(--animation-spring);
+    transition:
+        --_anchor-underline calc(var(--animation-timing) * 4) var(--animation-spring),
+        color calc(var(--animation-timing) * 2) var(--animation-spring);
 
     &:focus-visible,
+    &:focus-within:has(:focus-visible),
     &:hover {
-        --_color: var(--green-6);
-        --_bg: var(--green-2);
         --_anchor-underline: 100%;
+        color: var(--_color-active);
     }
+}
+
+.block-link {
+    background-image: radial-gradient(ellipse at 50% 100%, var(--_bg-active) 50%, transparent 0%);
+    background-position: 50% 100%;
+    background-size: 250% calc(var(--_anchor-underline) * 1.7);
 }
 
 b,
@@ -239,7 +251,7 @@ figure {
     position: relative;
 
     &:where(:has(img, video)) {
-        background-color: color-mix(in srgb, transparent, var(--purple-5) 48%);
+        background-color: color-mix(in srgb, transparent, var(--purple-6) 48%);
         border: 1px solid color-mix(in srgb, transparent, var(--blue-1) 12%);
         border-radius: 3px;
         display: block;
@@ -258,7 +270,7 @@ figure {
     }
 
     blockquote {
-        font-size: var(--step-2);
+        font-size: var(--type-2);
         font-weight: 200;
         padding-inline: calc(var(--spacing) * 2);
     }

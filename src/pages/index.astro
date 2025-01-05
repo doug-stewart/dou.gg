@@ -4,22 +4,66 @@ import ArrowRight from '@/assets/icons/arrow-right.svg';
 import Bridge from '@/assets/icons/bridge.svg';
 import Cheese from '@/assets/icons/cheese.svg';
 import Cli from '@/assets/icons/cli.svg';
-import Me from '@/assets/icons/me.svg';
 import BlogLinks from '@/components/blog-links/BlogLinks.astro';
-import PageHeader from '@/components/page-header/PageHeader.astro';
+import Title from '@/components/title/Title.astro';
 import Layout from '@/layouts/Layout.astro';
 ---
 
 <style>
-    .me {
-        color: var(--green-2);
+    .masthead {
+        margin-block-end: calc(var(--spacing) * 5);
+        padding-block-end: 1px;
+        position: relative;
     }
 
-    .title,
+    .circles {
+        bottom: 0;
+        left: calc(var(--spacing) * -3);
+        overflow: clip;
+        /* z-index: -1; */
+        pointer-events: none;
+        position: absolute;
+        top: calc(var(--spacing) * -12);
+        width: 100vw;
+
+        &::after,
+        &::before {
+            background-color: var(--grey-1);
+            border-radius: 50%;
+            bottom: 0;
+            content: '';
+            height: 200%;
+            mix-blend-mode: color-dodge;
+            opacity: 0.03;
+            position: absolute;
+            translate: -50% 0;
+            width: max(260vw, 1280px);
+        }
+
+        &::after {
+            translate: calc(-50% + var(--spacing) * 8) calc(var(--spacing) * -1);
+        }
+
+        &::before {
+            translate: calc(-50% + var(--spacing) * 8) 0;
+        }
+    }
+
+    .home-title {
+        font-size: calc(var(--type-4) * 2);
+        font-weight: 300;
+
+        strong {
+            font-weight: 700;
+        }
+    }
+
+    .intro,
     .about,
-    .blog,
-    .hobbies {
-        margin-block-end: calc(var(--spacing) * 3);
+    .blog {
+        margin-block-end: calc(var(--spacing) * 5);
+        position: relative;
+        z-index: 1;
 
         h2 {
             color: inherit;
@@ -31,23 +75,39 @@ import Layout from '@/layouts/Layout.astro';
         }
     }
 
+    .intro,
     .about,
-    .hobbies {
-        a {
-            --_color: var(--blue-1);
-            --_bg-active: var(--blue-1);
-
+    .more,
+    .social {
+        a,
+        strong {
             font-weight: 500;
+        }
+    }
 
-            &:focus-visible,
-            &:hover {
-                --_color: var(--green-6);
-            }
+    .intro,
+    .about,
+    .social {
+        p {
+            font-size: var(--type-2);
+            font-weight: 200;
+            text-wrap: balance;
+        }
+    }
+
+    .intro {
+        p {
+            font-size: var(--type-3);
         }
 
-        p {
-            font-size: var(--step-2);
-            font-weight: 200;
+        span {
+            display: inline-block;
+        }
+    }
+
+    .blog {
+        h2 {
+            color: var(--green-2);
         }
     }
 
@@ -55,6 +115,11 @@ import Layout from '@/layouts/Layout.astro';
         margin-block-start: calc(var(--spacing) * 2);
 
         a {
+            --_color: var(--purple-2);
+            --_color-active: var(--purple-5);
+            --_bg: var(--purple-2);
+            --_bg-active: var(--_bg);
+
             align-items: center;
             display: flex;
             font-weight: 500;
@@ -65,33 +130,30 @@ import Layout from '@/layouts/Layout.astro';
             margin-inline-start: 0.5ch;
         }
     }
-
-    .hobbies {
-        margin: unset;
-    }
 </style>
 
 <Layout title="Home">
-    <PageHeader class="title">
-        Hi! I’m
-        <span>
-            <Me role="presentation" class="me" />
-            <strong class="me">Doug Stewart</strong>
-        </span> a
-        <span>
-            <Cli role="presentation" />
-            <strong>software developer</strong>
-        </span> and
-        <span>
-            <Cheese role="presentation" />
-            <strong>team leader</strong>
-        </span> living in
-        <span>
-            <Bridge role="presentation" />
-            <strong>San Francisco, CA</strong>
-        </span>.
-    </PageHeader>
-    <section class="about">
+    <div class="masthead">
+        <Title class="home-title">Hi, I’m <strong>Doug</strong></Title>
+        <div class="intro">
+            <p>
+                a super nerdy
+                <span>
+                    <Cli role="presentation" />&nbsp;<strong>software developer</strong>
+                </span> and
+                <span>
+                    <Cheese role="presentation" />&nbsp;<strong>team lead</strong>
+                </span> living in
+                <span>
+                    <Bridge role="presentation" />&nbsp;<strong>San Francisco, CA</strong>
+                </span>
+                <br />
+                with my cat (Lucy).
+            </p>
+        </div>
+        <div class="circles"></div>
+    </div>
+    <div class="about">
         <p>
             For more than 15 years I’ve been making amazing websites and leading teams for <a
                 href="https://www.krafton.com/">Krafton Americas</a
@@ -104,6 +166,15 @@ import Layout from '@/layouts/Layout.astro';
                 >Gillette</a
             >, <a href="https://www.rossignol.com/">Rossignol</a>, and many others.
         </p>
+    </div>
+    <section class="blog">
+        <h2>Sometimes I write <ArrowDown role="presentation" /></h2>
+        <BlogLinks />
+        <p class="more">
+            <a href="/blog">There&rsquo;s more <ArrowRight role="presentation" /></a>
+        </p>
+    </section>
+    <div class="social">
         <p>
             You can find me on <a href="https://codesandbox.io/u/doug-stewart">CodeSandbox.io</a> and
             <a href="https://github.com/doug-stewart">GitHub</a>.
@@ -112,18 +183,9 @@ import Layout from '@/layouts/Layout.astro';
                 >LinkedIn</a
             > or just <a href="/contact">email me</a>.
         </p>
-    </section>
-    <section class="blog">
-        <h2>Sometimes I write <ArrowDown role="presentation" /></h2>
-        <BlogLinks />
-        <p class="more">
-            <a href="/blog">There&rsquo;s more <ArrowRight role="presentation" /></a>
-        </p>
-    </section>
-    <section class="hobbies">
         <p>
-            When I&rsquo;m not doing the code monkey thing I ride my motorcycle and do some casual
+            And when I’m not doing the code monkey thing I ride my motorcycle and do some casual
             photography.
         </p>
-    </section>
+    </div>
 </Layout>
