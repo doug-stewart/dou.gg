@@ -2,13 +2,18 @@
 type Props = {
     length?: number;
     class?: string;
+    headerLevel?: string;
 };
 
+import type { HTMLTag } from 'astro/types';
 import { getCollection } from 'astro:content';
+import dayjs from 'dayjs';
 
 import ArrowRight from '@/assets/icons/arrow-right.svg';
 
-const { length, class: classes } = Astro.props;
+const { length, headerLevel, ...rest } = Astro.props;
+
+const Hn = (headerLevel || 'h3') as HTMLTag;
 
 let posts = await getCollection('blog').then((response: any) =>
     response.sort((a: any, b: any) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf()),
@@ -20,54 +25,111 @@ if (length) {
 ---
 
 <style>
-    .list {
-        ol {
-            list-style: none;
-            padding-inline: 0;
-        }
+    .posts {
+        display: grid;
+        font-size: var(--_font-size, var(--type-1));
+        gap: calc(var(--spacing) / 2);
+        grid-template-columns: repeat(auto-fill, 10em);
+        place-content: start;
+    }
 
-        li {
-            padding: 0;
+    .post {
+        --_font-size: var(--type-1);
+        --_color: var(--purple-2);
+        --_color-active: var(--purple-6);
+        --_bg: var(--purple-2);
+        --_bg-active: var(--_bg);
 
-            &:not(:last-child) {
-                margin-block-end: calc(var(--spacing) * 0.5);
-            }
+        aspect-ratio: 1;
+        display: grid;
+        gap: 0.5em 0;
+        grid-template:
+            'title title title' auto
+            '. . .' 1fr
+            'date . arrow' auto
+            / auto 1fr auto;
+        padding: 1em;
+        position: relative;
+        width: 10em;
+        z-index: 0;
+
+        &::before {
+            background-color: var(--grey-1);
+            content: '';
+            inset: 0;
+            mix-blend-mode: color-dodge;
+            opacity: 0.06;
+            position: absolute;
+            z-index: -1;
         }
+    }
+
+    .arrow {
+        grid-area: arrow;
+        height: auto;
+        width: 0.84em;
+    }
+
+    .date {
+        font-size: var(--type--1);
+        font-weight: 500;
+        grid-area: date;
+        line-height: 1;
+        opacity: 0.36;
+        white-space: nowrap;
+    }
+
+    .title {
+        color: inherit;
+        font-size: 1em;
+        font-weight: 300;
+        grid-area: title;
+        line-height: 1.333;
+        margin: unset;
+        text-transform: none;
 
         a {
-            --_bg: transparent;
-            --_bg-active: var(--purple-3);
+            background: unset;
+            color: inherit;
+            display: block;
+            font-weight: inherit;
+            position: static;
+            text-decoration: none;
 
-            align-items: center;
-            background-color: color-mix(in srgb, transparent, var(--purple-3) 24%);
-            display: flex;
-            font-size: 18px;
-            gap: 0.5ch;
-            padding: 1em;
-            width: fit-content;
-
-            &:focus-visible,
-            &:hover {
-                --_color: var(--blue-1);
+            &::after {
+                content: '';
+                inset: 0;
+                position: absolute;
+                z-index: 1;
             }
         }
 
-        svg {
-            height: 0.84em;
-            width: auto;
+        span {
+            -webkit-box-orient: vertical;
+            display: -webkit-box;
+            -webkit-line-clamp: 4;
+            overflow: hidden;
         }
     }
 </style>
 
-<ol class:list={['list', classes]}>
+<div class:list={['posts']} {...rest}>
     {
         posts.map((post: any) => (
-            <li>
-                <a href={`/blog/${post.id}`}>
-                    {post.data.title}
-                    <ArrowRight role="presentation" />
-                </a>
-            </li>
+            <article class="post block-link">
+                <Hn class="title">
+                    <a href={`/blog/${post.id}`}>
+                        <span>{post.data.title}</span>
+                    </a>
+                </Hn>
+                <time
+                    class="date"
+                    datetime={`${dayjs(post.data.publishDate).format('YYYY-MM-DD')}`}
+                >
+                    {dayjs(post.data.publishDate).format('MMM D, YYYY')}
+                </time>
+                <ArrowRight class="arrow" role="presentation" />
+            </article>
         ))
     }
-</ol>
+</div>

@@ -3,33 +3,36 @@ import { Image } from 'astro:assets';
 
 import lucy from '@/assets/images/lucy-bg.png';
 import glow from '@/assets/images/lucy-glow.png';
-import PageHeader from '@/components/page-header/PageHeader.astro';
+import Title from '@/components/title/Title.astro';
 import Layout from '@/layouts/Layout.astro';
 
 interface Props {
     title: string;
     headline: string;
+    tagline: string;
 }
 
-const { title, headline } = Astro.props;
+const { title, headline, tagline } = Astro.props;
 ---
 
 <style>
     .info {
         grid-column: 1 / -1;
-        max-width: max(300px, 38.2vw);
-        position: relative;
-        z-index: 1;
+        max-width: max(300px, 56vw);
+
+        p {
+            text-transform: none;
+            text-wrap: balance;
+        }
     }
 
-    .title,
-    .notice {
-        text-wrap: balance;
-    }
+    .error-title {
+        font-size: calc(var(--type-4) * 2);
+        font-weight: 300;
 
-    .asterism {
-        display: block;
-        font-weight: 500;
+        strong {
+            font-weight: 700;
+        }
     }
 
     .lucy,
@@ -37,7 +40,8 @@ const { title, headline } = Astro.props;
     .lucy__glow {
         display: block;
         height: 100%;
-        inset: 0;
+        inset-block: 0;
+        inset-inline-end: 0;
         max-height: unset;
         max-width: unset;
         object-fit: contain;
@@ -47,7 +51,9 @@ const { title, headline } = Astro.props;
     }
 
     .lucy {
-        z-index: 0;
+        mix-blend-mode: luminosity;
+        width: 80vw;
+        z-index: -1;
     }
 
     .lucy__glow {
@@ -57,8 +63,9 @@ const { title, headline } = Astro.props;
 
 <Layout title={title} isErrorRoute={true}>
     <div class="info">
-        <PageHeader>{headline}</PageHeader>
-        <p class="notice">
+        <Title class="error-title">{'{'}<strong>{headline}</strong>{'}'}</Title>
+        <p class="type-3">{tagline}</p>
+        <p>
             If I sent you here, uh, sorry! Could you please <a href="mailto:hi@dou.gg"
                 >let me know</a
             >?

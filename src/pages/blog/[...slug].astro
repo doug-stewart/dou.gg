@@ -3,7 +3,7 @@
 import { getEntry, render } from 'astro:content';
 import dayjs from 'dayjs';
 
-import PageHeader from '@/components/page-header/PageHeader.astro';
+import Title from '@/components/title/Title.astro';
 import Layout from '@/layouts/Layout.astro';
 
 const { slug } = Astro.params;
@@ -34,7 +34,7 @@ const { Content } = await render(post);
 </style>
 
 <Layout title={title}>
-    <PageHeader class="heading">
+    <Title class="heading">
         {title}
         <p class="date" slot="after-text">
             <time datetime={`${dayjs(publishDate).format('YYYY-MM-DD')}`}>
@@ -42,7 +42,7 @@ const { Content } = await render(post);
             </time>
             —
         </p>
-    </PageHeader>
+    </Title>
     <div class="content">
         <Content />
     </div>

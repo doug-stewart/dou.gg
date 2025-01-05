@@ -1,0 +1,46 @@
+---
+type Props = {
+    class?: string;
+};
+
+const { class: className, ...rest } = Astro.props;
+const content = Astro.slots.render('default');
+---
+
+<style>
+    .title {
+        --color: var(--green-2);
+
+        color: transparent;
+        display: grid;
+        font-weight: 700;
+        grid-template: 1fr / 1fr;
+        line-height: 1;
+
+        span {
+            grid-column: 1 / -1;
+            grid-row: 1 / -1;
+        }
+
+        .title-main,
+        .title-shadow {
+            color: var(--color);
+            content: attr(data-text);
+            opacity: 0.84;
+            pointer-events: none;
+        }
+
+        .title-shadow {
+            mix-blend-mode: color-dodge;
+            pointer-events: none;
+            translate: var(--spacing) 0;
+        }
+    }
+</style>
+
+<h1 class:list={['title', className]} {...rest}>
+    <slot name="before-text" />
+    <span class="title-shadow" role="presentation"><Fragment set:html={content} /></span>
+    <span class="title-main"><Fragment set:html={content} /></span>
+    <slot name="after-text" />
+</h1>

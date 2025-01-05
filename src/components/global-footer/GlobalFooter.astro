@@ -6,10 +6,16 @@ const { isErrorRoute } = Astro.props;
 
 <style>
     .footer {
+        background: linear-gradient(to bottom, transparent, var(--blue-8) 84%);
         font-weight: 600;
         grid-area: footer;
+        margin-block-end: calc(var(--spacing) * -3);
+        margin-inline: calc(var(--spacing) * -3);
+        padding-block: 0 calc(var(--spacing) * 3);
+        padding-inline: calc(var(--spacing) * 3);
 
         a {
+            --_color: var(--green-2);
             font-weight: 600;
         }
     }
