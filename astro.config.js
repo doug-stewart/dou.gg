@@ -6,7 +6,7 @@ import { defineConfig } from 'astro/config';
 
 export default defineConfig({
     site: 'https://dou.gg',
-    adapter: cloudflare(),
+    adapter: cloudflare({ imageService: 'cloudflare' }),
     output: 'server',
     integrations: [mdx(), sitemap(), react()],
     experimental: {
