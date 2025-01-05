@@ -49,6 +49,7 @@ const { title, bodyClass, wrapperClass, isErrorRoute } = Astro.props;
             no-repeat 0 0;
         inset: 0;
         isolation: isolate;
+        overflow: clip;
         position: absolute;
         z-index: -1;
 
@@ -128,7 +129,7 @@ const { title, bodyClass, wrapperClass, isErrorRoute } = Astro.props;
                 alt=""
                 role="presentation"
                 class="funston"
-                layout="responsive"
+                layout="full-width"
                 format="avif"
             />
         </div>
