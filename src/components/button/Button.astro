@@ -2,7 +2,12 @@
 const { href, class: classes, ...props } = Astro.props;
 ---
 
-<a {...props} class:list={['btn', classes]} href={href}>
+<a
+    {...props}
+    class:list={['btn', classes]}
+    href={href}
+    {...href.includes('.pdf') && { download: href.split('/').pop() }}
+>
     <slot />
 </a>
 
@@ -16,10 +21,10 @@ const { href, class: classes, ...props } = Astro.props;
     .btn {
         --_anchor-underline: 0%;
         --_bg: var(--yellow-3);
+
         background: var(--yellow-2)
             radial-gradient(ellipse at 50% 100%, var(--_bg) 50%, transparent 0%) no-repeat 50%
             100% / 200% calc(var(--_anchor-underline) * 2);
-
         background-color: var(--yellow-2);
         border-radius: max(2px, 0.144em);
         box-decoration-break: slice;
