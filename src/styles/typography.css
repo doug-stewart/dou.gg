@@ -163,9 +163,9 @@ a,
     padding-inline: 0.06em;
     position: relative;
     text-decoration: none;
-    transition-duration: var(--animation-timing);
+    transition-duration: calc(var(--animation-timing) * 3);
     transition-property: --_anchor-underline, color;
-    transition-timing-function: var(--animation-curve-out);
+    transition-timing-function: var(--animation-spring);
 
     &:focus-visible,
     &:hover {
