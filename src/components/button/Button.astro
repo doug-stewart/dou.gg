@@ -1,0 +1,52 @@
+---
+const { href, class: classes, ...props } = Astro.props;
+---
+
+<a {...props} class:list={['btn', classes]} href={href}>
+    <slot />
+</a>
+
+<style>
+    @property --_btnProgress {
+        inherits: true;
+        initial-value: 0%;
+        syntax: '<percentage>';
+    }
+
+    .btn {
+        --_duration: calc(var(--animation-timing) * 2);
+        --_btnProgress: 0%;
+
+        background: var(--green-3a12)
+            linear-gradient(to top, var(--green-3) var(--_btnProgress), transparent 0%) no-repeat 0
+            0;
+        box-decoration-break: slice;
+        display: block;
+        line-height: 1.2;
+        padding: 0.6em;
+        text-decoration: none;
+        transition-duration: var(--_duration);
+        transition-property: --_btnProgress, color;
+        transition-timing-function: var(--animation-curve-out);
+
+        svg {
+            display: block;
+            height: 1.2em;
+            width: auto;
+        }
+
+        &:where(:has(> svg)),
+        &:where(:has(> img)) {
+            display: grid;
+            gap: 0.5em;
+            grid-template-columns: 1.2em 1fr;
+        }
+
+        &:focus-visible,
+        &:hover {
+            --_btnProgress: 100%;
+
+            color: var(--green-1);
+        }
+    }
+</style>

@@ -1,0 +1,183 @@
+/* @link https://utopia.fyi/type/calculator?c=320,12,1.2,1280,15,1.25,5,2,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l&g=s,l,xl,12 */
+:root {
+    /* S: 10px → 12px */
+    --type-s: clamp(0.625rem, 0.5833rem + 0.2083vw, 0.75rem);
+    /* M: 12px → 15px */
+    --type-m: clamp(0.75rem, 0.6875rem + 0.3125vw, 0.9375rem);
+    /* L: 14.4px → 18.75px */
+    --type-l: clamp(0.9rem, 0.8094rem + 0.4531vw, 1.1719rem);
+    /* XL: 17.28px → 23.4375px */
+    --type-xl: clamp(1.08rem, 0.9517rem + 0.6414vw, 1.4648rem);
+    /* XXL: 24.8832px → 36.6211px */
+    --type-xxl: clamp(1.5552rem, 1.3107rem + 1.2227vw, 2.2888rem);
+}
+
+body,
+.type-0 {
+    font-family: 'Jost', system-ui, sans-serif;
+    font-optical-sizing: auto;
+    font-size: var(--type-m);
+    font-weight: 300;
+    letter-spacing: 0.048ch;
+    line-height: 1.5;
+}
+
+h1,
+.type-1 {
+    font-size: var(--type-xxl);
+    font-weight: 200;
+    letter-spacing: 0;
+    line-height: 1.24;
+    margin-block: calc(var(--spacing-m) / 2);
+
+    strong {
+        font-weight: 600;
+    }
+}
+
+h2,
+.type-xl {
+    font-size: var(--type-xl);
+    font-weight: 500;
+    line-height: 1.24;
+    margin-block: calc(var(--spacing-m) / 2);
+    text-transform: uppercase;
+}
+
+h3,
+.type-3 {
+    font-size: var(--type-l);
+    font-weight: 500;
+    margin-block: calc(var(--spacing-m) / 4);
+}
+
+h4,
+.type-4 {
+    font-size: var(--type-l);
+    font-weight: 300;
+    margin-block: calc(var(--spacing-m) / 4);
+}
+
+h5,
+.type-5 {
+    font-size: var(--type-m);
+    font-weight: 600;
+}
+
+h6,
+.type-6 {
+    font-size: var(--type-s);
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+cite,
+.type--1 {
+    font-size: var(--type-s);
+}
+
+@property --anchor-underline {
+    inherits: true;
+    initial-value: 0%;
+    syntax: '<percentage>';
+}
+
+a:not([class]) {
+    --anchor-underline: 0%;
+
+    background: transparent
+        linear-gradient(to top, var(--green-3) calc(var(--anchor-underline) + 1px), transparent 0%)
+        no-repeat 0 0;
+    box-decoration-break: slice;
+    text-decoration: none;
+    transition-duration: var(--animation-timing);
+    transition-property: --anchor-underline, color;
+    transition-timing-function: var(--animation-curve-out);
+
+    &:focus-visible,
+    &:hover {
+        --anchor-underline: 100%;
+
+        color: var(--green-1);
+        transition-timing-function: var(--animation-curve-in);
+    }
+}
+
+b,
+dt,
+strong {
+    font-weight: 600;
+}
+
+em,
+i {
+    font-style: italic;
+}
+
+q {
+    &::after {
+        content: close-quote;
+    }
+
+    &::before {
+        content: open-quote;
+    }
+}
+
+figure,
+ol:where(:not([class])),
+p,
+ul:where(:not([class])),
+table {
+    margin-block: 0.8rem;
+
+    :where(h4, h5, h6) + & {
+        margin-block-start: unset;
+    }
+}
+
+ol:where(:not([class])),
+ul:where(:not([class])) {
+    padding-inline-start: calc(var(--spacing-l) / 2);
+
+    ol:where(:not([class])),
+    ul:where(:not([class])) {
+        margin-block: 0;
+    }
+
+    li {
+        padding-inline-start: 0.5ch;
+    }
+}
+
+ol li::marker {
+    font-size: 0.86em;
+    font-weight: 600;
+}
+
+figure:where(:has(blockquote)) {
+    position: relative;
+
+    &::before {
+        border-inline-start: 4px solid;
+        content: '';
+        inset-block: 0;
+        inset-inline-start: 0;
+        position: absolute;
+    }
+
+    > p {
+        padding-inline: calc(var(--spacing-m) / 2);
+    }
+
+    blockquote {
+        font-size: var(--type-xl);
+        font-weight: 200;
+        padding-inline: calc(var(--spacing-m) / 2);
+    }
+
+    cite {
+        font-style: italic;
+        font-weight: 600;
+    }
+}

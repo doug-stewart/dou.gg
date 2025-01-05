@@ -3,8 +3,6 @@
 *::after {
     box-sizing: border-box;
     color: currentcolor;
-    font: unset;
-    line-height: unset;
     vertical-align: baseline;
 }
 
@@ -32,14 +30,14 @@
 }
 
 html {
-    line-height: 1.4;
+    height: 100%;
     text-size-adjust: none;
 }
 
 body {
     -moz-osx-font-smoothing: grayscale;
     -webkit-font-smoothing: antialiased;
-    min-height: 100vh;
+    min-height: 100%;
     text-rendering: geometricprecision;
 }
 
@@ -56,18 +54,6 @@ h5,
 h6,
 p {
     margin: 0;
-}
-
-button,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-input,
-label {
-    line-height: 1.1;
 }
 
 a:not([class]) {
@@ -95,10 +81,7 @@ button {
 
 h1,
 h2,
-h3,
-h4,
-h5,
-h6 {
+h3 {
     text-wrap: balance;
 }
 
@@ -108,7 +91,11 @@ picture {
     max-width: 100%;
 }
 
-ul[class],
-ol[class] {
-    list-style-type: none;
+ul,
+ol {
+    &:where([class]) {
+        list-style-type: none;
+        margin: unset;
+        padding: unset;
+    }
 }

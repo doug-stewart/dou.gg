@@ -1,0 +1,65 @@
+@property --_factor {
+    inherits: true;
+    initial-value: 0;
+    syntax: '<number>';
+}
+
+.halftone {
+    --_color: var(--green-3);
+    --_factor: 0;
+    --_size: 6px;
+
+    --_offset: calc(var(--_size) * 14);
+    --_offset-calc: var(--_offset) + 100% * var(--_factor) + var(--_offset) * var(--_factor);
+
+    background-color: var(--green-3a12);
+
+    background-image: linear-gradient(to right, var(--_color) 50%, transparent 0),
+        radial-gradient(circle at center, var(--_color) calc(var(--_size) * 0.1), transparent 0),
+        radial-gradient(circle at center, var(--_color) calc(var(--_size) * 0.1), transparent 0),
+        radial-gradient(circle at center, var(--_color) calc(var(--_size) * 0.2), transparent 0),
+        radial-gradient(circle at center, var(--_color) calc(var(--_size) * 0.2), transparent 0),
+        radial-gradient(circle at center, var(--_color) calc(var(--_size) * 0.3), transparent 0),
+        radial-gradient(circle at center, var(--_color) calc(var(--_size) * 0.3), transparent 0),
+        radial-gradient(circle at center, var(--_color) calc(var(--_size) * 0.4), transparent 0),
+        radial-gradient(circle at center, var(--_color) calc(var(--_size) * 0.4), transparent 0),
+        radial-gradient(circle at center, var(--_color) calc(var(--_size) * 0.5), transparent 0),
+        radial-gradient(circle at center, var(--_color) calc(var(--_size) * 0.5), transparent 0),
+        radial-gradient(circle at center, var(--_color) calc(var(--_size) * 0.6), transparent 0),
+        radial-gradient(circle at center, var(--_color) calc(var(--_size) * 0.6), transparent 0),
+        radial-gradient(circle at center, var(--_color) calc(var(--_size) * 0.7), transparent 0),
+        radial-gradient(circle at center, var(--_color) calc(var(--_size) * 0.7), transparent 0);
+    background-position:
+        calc(100% - var(--_offset) + var(--_offset) * var(--_factor) - var(--_factor) * 100%) 0,
+        calc(var(--_size) / 2 * 26 - var(--_offset-calc)) calc(var(--_size) / 2 * 13),
+        calc(var(--_size) / 2 * 24 - var(--_offset-calc)) calc(var(--_size) / 2 * 12),
+        calc(var(--_size) / 2 * 22 - var(--_offset-calc)) calc(var(--_size) / 2 * 11),
+        calc(var(--_size) / 2 * 20 - var(--_offset-calc)) calc(var(--_size) / 2 * 10),
+        calc(var(--_size) / 2 * 18 - var(--_offset-calc)) calc(var(--_size) / 2 * 9),
+        calc(var(--_size) / 2 * 16 - var(--_offset-calc)) calc(var(--_size) / 2 * 8),
+        calc(var(--_size) / 2 * 14 - var(--_offset-calc)) calc(var(--_size) / 2 * 7),
+        calc(var(--_size) / 2 * 12 - var(--_offset-calc)) calc(var(--_size) / 2 * 6),
+        calc(var(--_size) / 2 * 10 - var(--_offset-calc)) calc(var(--_size) / 2 * 5),
+        calc(var(--_size) / 2 * 8 - var(--_offset-calc)) calc(var(--_size) / 2 * 4),
+        calc(var(--_size) / 2 * 6 - var(--_offset-calc)) calc(var(--_size) / 2 * 3),
+        calc(var(--_size) / 2 * 4 - var(--_offset-calc)) calc(var(--_size) / 2 * 2),
+        calc(var(--_size) / 2 * 2 - var(--_offset-calc)) calc(var(--_size) / 2 * 1),
+        calc(var(--_size) / 2 * 0 - var(--_offset-calc)) calc(var(--_size) / 2 * 0);
+    background-repeat: repeat-y;
+    background-size:
+        200% 100%,
+        var(--_size) var(--_size),
+        var(--_size) var(--_size),
+        var(--_size) var(--_size),
+        var(--_size) var(--_size),
+        var(--_size) var(--_size),
+        var(--_size) var(--_size),
+        var(--_size) var(--_size),
+        var(--_size) var(--_size),
+        var(--_size) var(--_size),
+        var(--_size) var(--_size),
+        var(--_size) var(--_size),
+        var(--_size) var(--_size),
+        var(--_size) var(--_size),
+        var(--_size) var(--_size);
+}
