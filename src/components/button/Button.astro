@@ -1,15 +1,32 @@
 ---
-const { href, class: classes, ...props } = Astro.props;
+const { href, class: classes, kind, ...props } = Astro.props;
 ---
 
-<a
-    {...props}
-    class:list={['btn', classes]}
-    href={href}
-    {...href.includes('.pdf') && { download: href.split('/').pop() }}
->
-    <slot />
-</a>
+{
+    kind === 'button' ? (
+        <button {...props} class:list={['btn', classes]}>
+            <slot />
+        </button>
+    ) : kind === 'link' ? (
+        <a
+            {...props}
+            class:list={['btn', classes]}
+            href={href}
+            {...(href.includes('.pdf') && { download: href.split('/').pop() })}
+        >
+            <slot />
+        </a>
+    ) : (
+        <a
+            {...props}
+            class:list={['btn', classes]}
+            href={href}
+            {...(href.includes('.pdf') && { download: href.split('/').pop() })}
+        >
+            <slot />
+        </a>
+    )
+}
 
 <style>
     @property --_anchor-underline {
@@ -24,7 +41,7 @@ const { href, class: classes, ...props } = Astro.props;
 
         background: var(--yellow-2)
             radial-gradient(ellipse at 50% 100%, var(--_bg) 50%, transparent 0%) no-repeat 50%
-            100% / 200% calc(var(--_anchor-underline) * 2);
+            100% / 160% calc(var(--_anchor-underline) * 4);
         background-color: var(--yellow-2);
         border-radius: max(2px, 0.144em);
         box-decoration-break: slice;

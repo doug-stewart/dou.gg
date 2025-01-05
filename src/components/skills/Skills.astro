@@ -56,26 +56,45 @@ const cssCustomProps = [...environments, ...frameworks, ...languages, ...softwar
     }
 
     .skill {
+        --_icon-reveal: 0%;
+
+        background-color: var(--color);
         position: relative;
+
+        &::after {
+            background: var(--color)
+                radial-gradient(
+                    ellipse at 50% 100%,
+                    color-mix(in srgb, var(--color), black 24%) 50%,
+                    transparent 0%
+                )
+                no-repeat 50% 100% / 240% calc(var(--_icon-reveal) * 2);
+            border-radius: 5px;
+            content: '';
+            height: calc(100% + 2px);
+            inset: -1px;
+            position: absolute;
+            transition: --_icon-reveal calc(var(--animation-timing) * 1.5)
+                var(--animation-curve-out);
+            width: calc(100% + 2px);
+            z-index: 0;
+        }
+
+        &:focus-visible::after,
+        &:hover::after {
+            --_icon-reveal: 100%;
+        }
     }
 
     .icon {
-        --_icon-reveal: 0%;
-
         aspect-ratio: 1 / 1;
-        background: var(--blue-2)
-            radial-gradient(ellipse at 50% 100%, var(--color) 50%, transparent 0%) no-repeat 50%
-            100% / 200% calc(var(--_icon-reveal) * 2);
+        background-color: var(--color);
         display: block;
+        filter: grayscale(1) contrast(1000) invert(1);
         mask-image: var(--mask);
         mask-size: cover;
         position: relative;
-        transition: --_icon-reveal calc(var(--animation-timing) * 2) var(--animation-curve-out);
-
-        &:focus-visible,
-        &:hover {
-            --_icon-reveal: 100%;
-        }
+        z-index: 1;
     }
 
     .tooltip {
@@ -129,11 +148,11 @@ const cssCustomProps = [...environments, ...frameworks, ...languages, ...softwar
         <ul class="label-group__list">
             {
                 languages.map(({ icon, id, label }: any) => (
-                    <li class="label-group__item skill">
-                        <span
-                            class="icon"
-                            style={`--mask: var(--${icon}-mask); --color: var(--${icon}-color); anchor-name: ${id}`}
-                        />
+                    <li
+                        class="label-group__item skill"
+                        style={`--mask: var(--${icon}-mask); --color: var(--${icon}-color); anchor-name: ${id}`}
+                    >
+                        <span class="icon" />
                         <span class="tooltip type--1" style={`position-anchor: ${id}`}>
                             {label}
                         </span>
@@ -147,11 +166,11 @@ const cssCustomProps = [...environments, ...frameworks, ...languages, ...softwar
         <ul class="label-group__list">
             {
                 frameworks.map(({ icon, id, label }: any) => (
-                    <li class="label-group__item skill">
-                        <span
-                            class="icon"
-                            style={`--mask: var(--${icon}-mask); --color: var(--${icon}-color); anchor-name: ${id}`}
-                        />
+                    <li
+                        class="label-group__item skill"
+                        style={`--mask: var(--${icon}-mask); --color: var(--${icon}-color); anchor-name: ${id}`}
+                    >
+                        <span class="icon" />
                         <span class="tooltip type--1" style={`position-anchor: ${id}`}>
                             {label}
                         </span>
@@ -165,11 +184,11 @@ const cssCustomProps = [...environments, ...frameworks, ...languages, ...softwar
         <ul class="label-group__list">
             {
                 software.map(({ icon, id, label }: any) => (
-                    <li class="label-group__item skill">
-                        <span
-                            class="icon"
-                            style={`--mask: var(--${icon}-mask); --color: var(--${icon}-color); anchor-name: ${id}`}
-                        />
+                    <li
+                        class="label-group__item skill"
+                        style={`--mask: var(--${icon}-mask); --color: var(--${icon}-color); anchor-name: ${id}`}
+                    >
+                        <span class="icon" />
                         <span class="tooltip type--1" style={`position-anchor: ${id}`}>
                             {label}
                         </span>
@@ -183,11 +202,11 @@ const cssCustomProps = [...environments, ...frameworks, ...languages, ...softwar
         <ul class="label-group__list">
             {
                 environments.map(({ icon, id, label }: any) => (
-                    <li class="label-group__item skill">
-                        <span
-                            class="icon"
-                            style={`--mask: var(--${icon}-mask); --color: var(--${icon}-color); anchor-name: ${id}`}
-                        />
+                    <li
+                        class="label-group__item skill"
+                        style={`--mask: var(--${icon}-mask); --color: var(--${icon}-color); anchor-name: ${id}`}
+                    >
+                        <span class="icon" />
                         <span class="tooltip type--1" style={`position-anchor: ${id}`}>
                             {label}
                         </span>
