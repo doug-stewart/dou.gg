@@ -1,0 +1,115 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    color: currentcolor;
+    font: unset;
+    line-height: unset;
+    vertical-align: baseline;
+}
+
+[role='presentation'],
+:disabled {
+    pointer-events: none;
+}
+
+:focus {
+    outline: 1px solid;
+}
+
+@supports selector(:focus-visible) {
+    :focus {
+        outline: none;
+    }
+}
+
+:focus-visible {
+    outline: 1px solid;
+}
+
+:target {
+    scroll-margin-block: 1rlh;
+}
+
+html {
+    font-size: 10px;
+    line-height: 1.5;
+    text-size-adjust: none;
+}
+
+body {
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    min-height: 100vh;
+    text-rendering: geometricprecision;
+}
+
+blockquote,
+body,
+dd,
+dl,
+figure,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+    margin: 0;
+}
+
+button,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+input,
+label {
+    line-height: 1.1;
+}
+
+a:not([class]) {
+    color: currentcolor;
+    text-decoration-skip-ink: auto;
+}
+
+button,
+input[type='button'],
+input[type='checkbox'],
+input[type='radio'],
+select {
+    cursor: pointer;
+}
+
+button {
+    appearance: unset;
+    background: unset;
+    border: unset;
+
+    :active {
+        outline: unset;
+    }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    text-wrap: balance;
+}
+
+img,
+picture {
+    display: block;
+    max-width: 100%;
+}
+
+ul[class],
+ol[class] {
+    list-style-type: none;
+}

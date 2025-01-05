@@ -1,0 +1,17 @@
+{
+    "extends": "astro/tsconfigs/strict",
+    "compilerOptions": {
+        "lib": ["dom", "dom.iterable", "esnext"],
+        "strict": true,
+        "esModuleInterop": true,
+        "moduleResolution": "Bundler",
+        "isolatedModules": true,
+        "incremental": true,
+        "baseUrl": ".",
+        "paths": {
+            "@/*": ["./src/*"]
+        }
+    },
+    "include": ["**/*.ts", "**/*.tsx"],
+    "exclude": ["node_modules"]
+}
