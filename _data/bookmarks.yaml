@@ -33,7 +33,7 @@
     - name: 'Synology DiskStation'
       link: https://10.0.1.100:5001/
     - name: 'UniFi Controller'
-      link: http://10.0.1.100:8443/
+      link: https://10.0.1.100:8443/
 
 - title: Download Sites
   bookmarks:

@@ -9,6 +9,7 @@ exclude: [
   'Gemfile',
   'Gemfile.lock',
   'node_modules',
+  'vendor',
   'package-lock.json',
   'CNAME'
 ]
