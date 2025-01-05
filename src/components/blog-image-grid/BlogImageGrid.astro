@@ -64,6 +64,11 @@ const fulfilledImages = await Promise.all(imageImports).then((result) =>
         display: block;
         position: relative;
         z-index: 0;
+
+        img {
+            height: auto;
+            width: 100%;
+        }
     }
 
     .overlay {
@@ -106,19 +111,18 @@ const fulfilledImages = await Promise.all(imageImports).then((result) =>
                     <span class="overlay">
                         <Zoom role="presentation" />
                     </span>
+                    {/* <pre>{JSON.stringify(fulfilledImages[`${src}-sml`], null, 2)}</pre> */}
                     <img
                         alt={`Thumbnail: ${alt}`}
                         src={fulfilledImages[`${src}-sml`].src}
-                        height={fulfilledImages[`${src}-sml`].height}
-                        width={fulfilledImages[`${src}-sml`].width}
+                        {...fulfilledImages[`${src}-sml`].attributes}
                     />
                 </a>
                 <Dialog id={`${src}-dialog`}>
                     <img
                         alt={`Full Size: ${alt}`}
                         src={fulfilledImages[`${src}-lrg`].src}
-                        height={fulfilledImages[`${src}-lrg`].height}
-                        width={fulfilledImages[`${src}-lrg`].width}
+                        {...fulfilledImages[`${src}-lrg`].attributes}
                     />
                 </Dialog>
             </li>
