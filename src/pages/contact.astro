@@ -1,0 +1,77 @@
+---
+import Layout from '@/layouts/Layout.astro';
+---
+
+<script>
+    const form: HTMLFormElement | null = document.querySelector('.contact-form');
+
+    const handleSubmit = async (event: Event) => {
+        event.preventDefault();
+
+        if (!form) return;
+
+        const formData = new FormData(form);
+        const data = Object.fromEntries(formData);
+
+        const response = await fetch('https://email.dou.gg/', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(data),
+        });
+
+        if (response.ok) {
+            form.reset();
+            alert('Message sent!');
+        } else {
+            alert('Something went wrong. Please try again.');
+        }
+    };
+</script>
+
+<style>
+    .contact-form {
+        display: grid;
+        grid-template-columns: fit-content 1fr;
+
+        label {
+            display: grid;
+            grid-column: 1 / -1;
+            grid-template-columns: subgrid;
+        }
+
+        input,
+        textarea {
+            color: var(--green-5);
+            font: inherit;
+        }
+        textarea {
+            min-height: 8lh;
+
+            @supports (field-sizing: content) {
+                field-sizing: content;
+                min-height: 4lh;
+            }
+        }
+    }
+</style>
+
+<Layout title="Contact">
+    <h1>Contact</h1>
+    <form class="contact-form">
+        <label>
+            <span>Name</span>
+            <input type="text" name="name" required />
+        </label>
+        <label>
+            <span>Email</span>
+            <input type="email" name="email" required />
+        </label>
+        <label>
+            <span>Message</span>
+            <textarea name="email" required></textarea>
+        </label>
+        <button type="submit">Send It</button>
+    </form>
+</Layout>
