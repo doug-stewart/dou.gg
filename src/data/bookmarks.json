@@ -10,11 +10,6 @@
         { "name": "Imgur", "link": "https://imgur.com/", "category": "1" },
         { "name": "Reddit", "link": "https://reddit.com/", "category": "1" },
         { "name": "YouTube", "link": "https://www.youtube.com/", "category": "1" },
-        {
-            "name": "Alpha Coders",
-            "link": "https://wall.alphacoders.com/",
-            "category": "1"
-        },
         { "name": "ArtStation", "link": "https://www.artstation.com/", "category": "1" },
         {
             "name": "Wallhaven",
@@ -29,6 +24,9 @@
         { "name": "1337x", "link": "https://1337x.to/", "category": "3" },
         { "name": "The Pirate Bay", "link": "https://thepiratebay.org/", "category": "3" },
         { "name": "Nyaa", "link": "https://nyaa.si/", "category": "3" },
-        { "name": "Torrent Galaxy", "link": "https://torrentgalaxy.to/", "category": "3" }
+        { "name": "Torrent Galaxy", "link": "https://torrentgalaxy.to/", "category": "3" },
+        { "name": "BitSearch", "link": "https://bitsearch.to/", "category": "3" },
+        { "name": "Knaben Database", "link": "https://knaben.eu/search/", "category": "3" },
+        { "name": "EXT Torrents", "link": "https://ext.to/", "category": "3" }
     ]
 }
