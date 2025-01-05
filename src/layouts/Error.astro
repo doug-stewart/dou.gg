@@ -6,8 +6,6 @@ import glow from '@/assets/images/lucy-glow.png';
 import PageHeader from '@/components/page-header/PageHeader.astro';
 import Layout from '@/layouts/Layout.astro';
 
-import '@/styles/error.css';
-
 interface Props {
     title: string;
     headline: string;
@@ -16,8 +14,49 @@ interface Props {
 const { title, headline } = Astro.props;
 ---
 
+<style>
+    .info {
+        grid-column: 1 / -1;
+        max-width: max(300px, 38.2vw);
+        position: relative;
+        z-index: 1;
+    }
+
+    .title,
+    .notice {
+        text-wrap: balance;
+    }
+
+    .asterism {
+        display: block;
+        font-weight: 500;
+    }
+
+    .lucy,
+    .lucy__img,
+    .lucy__glow {
+        display: block;
+        height: 100%;
+        inset: 0;
+        max-height: unset;
+        max-width: unset;
+        object-fit: contain;
+        object-position: bottom right;
+        position: absolute;
+        width: 100%;
+    }
+
+    .lucy {
+        z-index: 0;
+    }
+
+    .lucy__glow {
+        filter: invert(100%) sepia(100%) saturate(10000%) hue-rotate(90deg);
+    }
+</style>
+
 <Layout title={title} isErrorRoute={true}>
-    <div class="error">
+    <div class="info">
         <PageHeader>{headline}</PageHeader>
         <p class="notice">
             If I sent you here, uh, sorry! Could you please <a href="mailto:hi@dou.gg"
