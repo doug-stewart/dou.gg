@@ -69,7 +69,7 @@ li {
 
         &::after {
             background-color: oklch(0.22 0 0deg);
-            box-shadow: 0 0 0.36em oklch(0 0 0deg / 24%);
+            box-shadow: -1px -1px 1px oklch(0 0 0deg / 48%);
             content: '';
             height: 0.72em;
             inset-block-end: 0;
