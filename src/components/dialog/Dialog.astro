@@ -1,0 +1,31 @@
+---
+const { props } = Astro;
+---
+
+<style>
+    .dialog {
+        background-color: var(--blue-5);
+        border: unset;
+        max-height: calc(100dvh - var(--spacing) * 2);
+        max-width: calc(100dvw - var(--spacing) * 2);
+        padding: var(--spacing);
+
+        &::backdrop {
+            backdrop-filter: blur(6px);
+            background-color: color-mix(in srgb, transparent, var(--blue-5) 88%);
+        }
+    }
+
+    .close {
+        position: fixed;
+        right: 12px;
+        top: 12px;
+    }
+</style>
+
+<dialog class="dialog" {...props}>
+    <slot />
+    <form method="dialog">
+        <button class="link close"> Close </button>
+    </form>
+</dialog>

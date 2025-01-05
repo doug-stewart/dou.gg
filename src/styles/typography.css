@@ -1,47 +1,58 @@
-/* @link https://utopia.fyi/type/calculator?c=320,14,1.2,1440,18,1.333,5,2,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l&g=s,l,xl,12 */
-
-:root {
-    /* Step -2: 9.7222px → 10.1301px */
-    --step--2: clamp(0.6076rem, 0.6004rem + 0.0364vw, 0.6331rem);
-    /* Step -1: 11.6667px → 13.5034px */
-    --step--1: clamp(0.7292rem, 0.6964rem + 0.164vw, 0.844rem);
-    /* Step 0: 14px → 18px */
-    --step-0: clamp(0.875rem, 0.8036rem + 0.3571vw, 1.125rem);
-    /* Step 1: 16.8px → 23.994px */
-    --step-1: clamp(1.05rem, 0.9215rem + 0.6423vw, 1.4996rem);
-    /* Step 2: 20.16px → 31.984px */
-    --step-2: clamp(1.26rem, 1.0489rem + 1.0557vw, 1.999rem);
-    /* Step 3: 24.192px → 42.6347px */
-    --step-3: clamp(1.512rem, 1.1827rem + 1.6467vw, 2.6647rem);
-    /* Step 4: 29.0304px → 56.832px */
-    --step-4: clamp(1.8144rem, 1.3179rem + 2.4823vw, 3.552rem);
-    /* Step 5: 34.8365px → 75.7571px */
-    --step-5: clamp(2.1773rem, 1.4466rem + 3.6536vw, 4.7348rem);
-
-    --type-s: var(--step--2);
-    --type-m: var(--step--1);
-    --type-l: var(--step-0);
-    --type-xl: var(--step-1);
-    --type-xxl: var(--step-3);
+::selection {
+    background-color: var(--blue-2);
+    color: var(--blue-5);
 }
 
 body,
 .type-0 {
     font-family: 'Jost', system-ui, sans-serif;
     font-optical-sizing: auto;
-    font-size: var(--type-m);
+    font-size: var(--step-0);
     font-weight: 300;
-    letter-spacing: 0.048ch;
+    letter-spacing: 0.01em;
+    line-height: 1.618;
+    text-wrap: pretty;
+}
+
+.asterism {
+    display: block;
+    height: auto;
+    margin-block-end: 0.36em;
+    width: 1.1em;
+}
+
+h1,
+.type-1,
+h2,
+.type-2,
+h3,
+.type-3,
+h4,
+.type-4 {
+    line-height: 1.389;
+}
+
+h5,
+.type-5,
+h6,
+.type-6 {
     line-height: 1.5;
+}
+
+h2,
+.type-2,
+h3,
+.type-3,
+h4,
+.type-4 {
+    color: var(--purple-1);
 }
 
 h1,
 .type-1 {
-    font-size: var(--type-xxl);
+    font-size: var(--step-4);
     font-weight: 600;
-    letter-spacing: 0;
-    line-height: 1.24;
-    margin-block: calc(var(--spacing) * 2);
+    margin-block: calc(var(--spacing) * 3);
 
     &:has(strong) {
         font-weight: 200;
@@ -50,54 +61,48 @@ h1,
     strong {
         font-weight: 600;
     }
-
-    .asterism {
-        display: block;
-        height: auto;
-        margin-block-end: 0.36em;
-        width: 1.1em;
-    }
 }
 
 h2,
 .type-2 {
-    font-size: var(--type-xl);
-    font-weight: 500;
+    font-size: var(--step-2);
+    font-weight: 600;
     line-height: 1.24;
-    margin-block: calc(var(--spacing) * 2);
+    margin-block: calc(var(--spacing) * 3) calc(var(--spacing) * 1.5);
     text-transform: uppercase;
 }
 
 h3,
 .type-3 {
-    font-size: var(--type-l);
+    font-size: var(--step-1);
     font-weight: 500;
-    margin-block: var(--spacing);
 }
 
 h4,
 .type-4 {
-    font-size: var(--type-l);
-    font-weight: 300;
-    margin-block: var(--spacing);
+    font-size: var(--step-1);
+    font-weight: 400;
 }
 
 h5,
 .type-5 {
-    font-size: var(--type-m);
+    font-size: var(--step-0);
     font-weight: 600;
 }
 
 h6,
 .type-6 {
-    font-size: var(--type-s);
+    font-size: var(--step--1);
     font-weight: 500;
     text-transform: uppercase;
 }
 
 cite,
 .type--1 {
-    font-size: var(--type-s);
+    color: var(--blue-2);
+    font-size: var(--step--1);
+    font-style: italic;
+    font-weight: 500;
 }
 
 h1,
@@ -107,6 +112,7 @@ h4,
 h5,
 h6,
 cite,
+dl,
 figure,
 ol:where(:not([class])),
 p,
@@ -134,42 +140,45 @@ table,
     syntax: '<percentage>';
 }
 
-a:where(:not([class])) {
+a,
+.link {
     --_anchor-underline: 0%;
-    --_bg: var(--yellow-2);
-    --_color: var(--yellow-2);
+    --_color: var(--green-2);
+    --_bg: var(--_color);
+    --_bg-active: var(--_bg);
 
     background-color: transparent;
-    background-image: linear-gradient(to top, var(--_bg) max(1px, 0.072em), transparent 0%),
-        radial-gradient(ellipse at 50% 100%, var(--_bg) 50%, transparent 0%);
+    background-image: radial-gradient(ellipse at 50% 100%, var(--_bg-active) 50%, transparent 0%),
+        linear-gradient(to top, var(--_bg) max(1px, 0.072em), transparent 0%);
     background-position:
-        0 0,
-        50% 100%;
+        50% 100%,
+        0 0;
     background-repeat: no-repeat;
     background-size:
-        100% 100%,
-        150% calc(var(--_anchor-underline) * 5);
-    box-decoration-break: slice;
+        160% calc(var(--_anchor-underline) * 3),
+        100% 100%;
+    border-radius: 3px;
+    box-decoration-break: clone;
     color: var(--_color);
+    padding-inline: 0.06em;
+    position: relative;
     text-decoration: none;
     transition-duration: var(--animation-timing);
-    transition-property: --_anchor-underline, border-radius, color;
+    transition-property: --_anchor-underline, color;
     transition-timing-function: var(--animation-curve-out);
 
     &:focus-visible,
     &:hover {
+        --_color: var(--green-6);
+        --_bg: var(--green-2);
         --_anchor-underline: 100%;
-        --_color: var(--green-5);
-
-        border-radius: max(2px, 0.144em);
-        transition-timing-function: var(--animation-curve-in);
     }
 }
 
 b,
 dt,
 strong {
-    font-weight: 600;
+    font-weight: 700;
 }
 
 em,
@@ -187,12 +196,16 @@ q {
     }
 }
 
+h3,
+.type-3,
+h4,
+.type-4,
 figure,
 ol:where(:not([class])),
 p,
 ul:where(:not([class])),
 table {
-    margin-block: 0.8rem;
+    margin-block: calc(var(--spacing) * 1.5);
 
     :where(h4, h5, h6) + & {
         margin-block-start: unset;
@@ -234,13 +247,8 @@ figure:where(:has(blockquote)) {
     }
 
     blockquote {
-        font-size: var(--type-xl);
+        font-size: var(--step-2);
         font-weight: 200;
         padding-inline: calc(var(--spacing) * 2);
-    }
-
-    cite {
-        font-style: italic;
-        font-weight: 600;
     }
 }

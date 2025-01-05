@@ -1,0 +1,73 @@
+---
+type Props = {
+    length?: number;
+    class?: string;
+};
+
+import { getCollection } from 'astro:content';
+
+import ArrowRight from '@/assets/icons/arrow-right.svg';
+
+const { length, class: classes } = Astro.props;
+
+let posts = await getCollection('blog').then((response: any) =>
+    response.sort((a: any, b: any) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf()),
+);
+
+if (length) {
+    posts = posts.slice(0, length);
+}
+---
+
+<style>
+    .list {
+        ol {
+            list-style: none;
+            padding-inline: 0;
+        }
+
+        li {
+            padding: 0;
+
+            &:not(:last-child) {
+                margin-block-end: calc(var(--spacing) * 0.5);
+            }
+        }
+
+        a {
+            --_bg: transparent;
+            --_bg-active: var(--purple-3);
+
+            align-items: center;
+            background-color: color-mix(in srgb, transparent, var(--purple-3) 24%);
+            display: flex;
+            font-size: 18px;
+            gap: 0.5ch;
+            padding: 1em;
+            width: fit-content;
+
+            &:focus-visible,
+            &:hover {
+                --_color: var(--blue-1);
+            }
+        }
+
+        svg {
+            height: 0.84em;
+            width: auto;
+        }
+    }
+</style>
+
+<ol class:list={['list', classes]}>
+    {
+        posts.map((post: any) => (
+            <li>
+                <a href={`/blog/${post.id}`}>
+                    {post.data.title}
+                    <ArrowRight role="presentation" />
+                </a>
+            </li>
+        ))
+    }
+</ol>

@@ -1,32 +1,129 @@
 ---
-import map from '@/assets/images/map.png';
-import Asterism from '@/icons/asterism.svg';
-import Jobs from '@/components/jobs/Jobs.astro';
-import ButtonList from '@/components/button-list/ButtonList.astro';
-import Skills from '@/components/skills/Skills.astro';
+import ArrowDown from '@/assets/icons/arrow-down.svg';
+import ArrowRight from '@/assets/icons/arrow-right.svg';
+import Bridge from '@/assets/icons/bridge.svg';
+import Cheese from '@/assets/icons/cheese.svg';
+import Cli from '@/assets/icons/cli.svg';
+import Me from '@/assets/icons/me.svg';
+import BlogLinks from '@/components/blog-links/BlogLinks.astro';
+import PageHeader from '@/components/page-header/PageHeader.astro';
 import Layout from '@/layouts/Layout.astro';
-
-import { homeButtons } from '@/data/home-buttons.json';
-
-import '@/styles/home.css';
-import { Image } from 'astro:assets';
 ---
 
+<style>
+    .me {
+        color: var(--green-2);
+    }
+
+    .title,
+    .about,
+    .blog,
+    .hobbies {
+        margin-block-end: calc(var(--spacing) * 3);
+
+        h2 {
+            color: inherit;
+        }
+
+        svg {
+            height: 0.84em;
+            width: auto;
+        }
+    }
+
+    .about,
+    .hobbies {
+        a {
+            --_color: var(--blue-1);
+            --_bg-active: var(--blue-1);
+
+            font-weight: 500;
+
+            &:focus-visible,
+            &:hover {
+                --_color: var(--green-6);
+            }
+        }
+
+        p {
+            font-size: var(--step-2);
+            font-weight: 200;
+        }
+    }
+
+    .more {
+        margin-block-start: calc(var(--spacing) * 2);
+
+        a {
+            align-items: center;
+            display: flex;
+            font-weight: 500;
+            width: fit-content;
+        }
+
+        svg {
+            margin-inline-start: 0.5ch;
+        }
+    }
+
+    .hobbies {
+        margin: unset;
+    }
+</style>
+
 <Layout title="Home">
-    <Image class="map" src={map} alt="" layout="responsive" format="avif" role="presentation" />
-    <h1 class="title">
-        <Asterism class="asterism" />
-        Hi! I’m <strong>Doug Stewart</strong>, a <strong>frontend developer</strong> living in <strong
-            >San Francisco, CA</strong
-        > with over 15 years’ experience making beautiful websites.
-    </h1>
-    <ButtonList buttons={homeButtons} class="links" />
-    <section class="section">
-        <h2>My tools of the trade</h2>
-        <Skills />
+    <PageHeader class="title">
+        Hi! I’m
+        <span>
+            <Me role="presentation" class="me" />
+            <strong class="me">Doug Stewart</strong>
+        </span> a
+        <span>
+            <Cli role="presentation" />
+            <strong>software developer</strong>
+        </span> and
+        <span>
+            <Cheese role="presentation" />
+            <strong>team leader</strong>
+        </span> living in
+        <span>
+            <Bridge role="presentation" />
+            <strong>San Francisco, CA</strong>
+        </span>.
+    </PageHeader>
+    <section class="about">
+        <p>
+            For more than 15 years I’ve been making amazing websites and leading teams for <a
+                href="https://www.krafton.com/">Krafton Americas</a
+            >, <a href="https://www.togetherlabs.com/">Together Labs</a>, <a
+                href="https://www.kongregate.com/">Kongregate</a
+            >, and <a href="https://www.linkedin.com/company/tag-new-media/about/">Tag New Media</a
+            >; and I’ve worked with amazing brands like <a href="https://www.uperform.com/"
+                >ANCILE Solutions</a
+            >, <a href="https://www.keurig.com/">Keurig</a>, <a href="https://www.gillette.com/"
+                >Gillette</a
+            >, <a href="https://www.rossignol.com/">Rossignol</a>, and many others.
+        </p>
+        <p>
+            You can find me on <a href="https://codesandbox.io/u/doug-stewart">CodeSandbox.io</a> and
+            <a href="https://github.com/doug-stewart">GitHub</a>.
+            <br />
+            If you want to connect I&rsquo;m on <a href="https://www.linkedin.com/in/dougmstewart/"
+                >LinkedIn</a
+            > or just <a href="/contact">email me</a>.
+        </p>
     </section>
-    <section class="section">
-        <h2>(Not All of) The People I’ve worked with</h2>
-        <Jobs />
+    <section class="blog">
+        <h2>Sometimes I write <ArrowDown role="presentation" /></h2>
+        <BlogLinks />
+        <p class="more">
+            <a href="/blog">There&rsquo;s more <ArrowRight role="presentation" /></a>
+        </p>
+    </section>
+    <section class="hobbies">
+        <p>
+            When I&rsquo;m not doing the code monkey thing I ride my motorcycle and do some casual
+            photography.
+        </p>
     </section>
 </Layout>
