@@ -1,4 +1,5 @@
 ---
+import map from '@/assets/images/map.png';
 import Asterism from '@/icons/asterism.svg';
 import Jobs from '@/components/jobs/Jobs.astro';
 import ButtonList from '@/components/button-list/ButtonList.astro';
@@ -8,9 +9,11 @@ import Layout from '@/layouts/Layout.astro';
 import { homeButtons } from '@/data/home-buttons.json';
 
 import '@/styles/home.css';
+import { Image } from 'astro:assets';
 ---
 
 <Layout title="Home">
+    <Image class="map" src={map} alt="" layout="responsive" format="avif" role="presentation" />
     <h1 class="title">
         <Asterism class="asterism" />
         Hi! I’m <strong>Doug Stewart</strong>, a <strong>frontend developer</strong> living in <strong
