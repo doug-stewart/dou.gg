@@ -1,85 +1,29 @@
 ---
-import Button from '../components/button/Button.astro';
-import Layout from '../layouts/Layout.astro';
-import '../styles/home.css';
+import Asterism from '@/icons/asterism.svg';
+import Jobs from '@/components/jobs/Jobs.astro';
+import ButtonList from '@/components/button-list/ButtonList.astro';
+import Skills from '@/components/skills/Skills.astro';
+import Layout from '@/layouts/Layout.astro';
+
+import { homeButtons } from '@/data/home-buttons.json';
+
+import '@/styles/home.css';
 ---
 
 <Layout title="Home">
     <h1 class="title">
-        <span class="title__asterism" area-hidden areia-role="display">⁂</span>Hi! I’m <strong
-            >Doug Stewart</strong
-        >, a <strong>frontend developer</strong> living in <strong>San Francisco, CA</strong> with over
-        15 years’ experience making beautiful websites.
+        <Asterism class="asterism" />
+        Hi! I’m <strong>Doug Stewart</strong>, a <strong>frontend developer</strong> living in <strong
+            >San Francisco, CA</strong
+        > with over 15 years’ experience making beautiful websites.
     </h1>
-    <p class="contact">
-        <a href="mailto:hi@dou.gg">Contact</a>
-    </p>
-    <p class="cta">
-        <Button class="download" href="/downloads/doug-stewart-resume.pdf" download>
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                <path
-                    fill="currentColor"
-                    d="m12 18-7.5-7.5 2.1-2.175 3.9 3.9V0h3v12.225l3.9-3.9 2.1 2.175L12 18Zm-9 6a2.889 2.889 0 0 1-2.119-.881A2.89 2.89 0 0 1 0 21v-4.5h3V21h18v-4.5h3V21c0 .825-.294 1.531-.881 2.119A2.889 2.889 0 0 1 21 24H3Z"
-                ></path>
-            </svg>
-            Download my resume
-        </Button>
-    </p>
-    <section class="socials">
-        <h2 class="socials__title">Where To Find Me</h2>
-        <ul class="socials__list">
-            <li class="socials__item">
-                <Button href="https://www.linkedin.com/in/dougmstewart/">
-                    <svg
-                        area-hidden
-                        areia-role="display"
-                        xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 24 24"
-                    >
-                        <path
-                            fill="currentColor"
-                            fill-rule="evenodd"
-                            d="M21.333 24H2.667A2.667 2.667 0 0 1 0 21.333V2.667A2.667 2.667 0 0 1 2.667 0h18.666A2.667 2.667 0 0 1 24 2.667v18.666A2.667 2.667 0 0 1 21.333 24Zm-4.228-3.333h3.562V13.35c0-3.095-1.755-4.592-4.206-4.592-2.452 0-3.484 1.91-3.484 1.91V9.11H9.545v11.556h3.432V14.6c0-1.626.748-2.593 2.18-2.593 1.316 0 1.948.93 1.948 2.593v6.066ZM3.333 5.466c0 1.177.948 2.132 2.117 2.132s2.116-.955 2.116-2.132A2.124 2.124 0 0 0 5.45 3.333c-1.17 0-2.117.955-2.117 2.133Zm3.924 15.2h-3.58V9.112h3.58v11.556Z"
-                            clip-rule="evenodd"></path>
-                    </svg>
-                    LinkedIn
-                </Button>
-            </li>
-            <li class="socials__item">
-                <Button href="https://github.com/doug-stewart/">
-                    <svg
-                        area-hidden
-                        areia-role="display"
-                        viewBox="0 0 24 24"
-                        xmlns="http://www.w3.org/2000/svg"
-                    >
-                        <path
-                            fill-rule="evenodd"
-                            clip-rule="evenodd"
-                            d="M12.3546 0C5.52282 0 0 5.49998 0 12.3042C0 17.7432 3.53866 22.3472 8.44772 23.9767C9.06148 24.0991 9.28629 23.7119 9.28629 23.3862C9.28629 23.1009 9.26606 22.1232 9.26606 21.1044C5.82932 21.8379 5.11365 19.6377 5.11365 19.6377C4.56134 18.2117 3.74299 17.8452 3.74299 17.8452C2.61815 17.0914 3.82493 17.0914 3.82493 17.0914C5.07268 17.1729 5.7274 18.3544 5.7274 18.3544C6.83177 20.2284 8.61134 19.6989 9.32726 19.3729C9.42943 18.5784 9.75692 18.0284 10.1046 17.7229C7.36359 17.4377 4.47966 16.3784 4.47966 11.6522C4.47966 10.3077 4.97026 9.20771 5.74763 8.35222C5.62498 8.04672 5.19533 6.78347 5.87054 5.09273C5.87054 5.09273 6.9137 4.76673 9.26581 6.35572C10.2728 6.08639 11.3114 5.94938 12.3546 5.94823C13.3977 5.94823 14.4611 6.09097 15.4431 6.35572C17.7955 4.76673 18.8386 5.09273 18.8386 5.09273C19.5138 6.78347 19.0839 8.04672 18.9613 8.35222C19.7591 9.20771 20.2295 10.3077 20.2295 11.6522C20.2295 16.3784 17.3456 17.4172 14.584 17.7229C15.0342 18.1099 15.4226 18.8432 15.4226 20.0044C15.4226 21.6544 15.4024 22.9787 15.4024 23.3859C15.4024 23.7119 15.6275 24.0991 16.241 23.9769C21.15 22.3469 24.6887 17.7432 24.6887 12.3042C24.7089 5.49998 19.1659 0 12.3546 0Z"
-                            fill="currentColor"></path>
-                    </svg>
-                    GitHub
-                </Button>
-            </li>
-            <li class="socials__item">
-                <Button href="https://codesandbox.io/u/doug-stewart">
-                    <svg
-                        area-hidden
-                        areia-role="display"
-                        xmlns="http://www.w3.org/2000/svg"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                    >
-                        <path
-                            fill="currentColor"
-                            fill-rule="evenodd"
-                            d="M0 0h24v24H0V0Zm21.546 2.455v19.09H2.454V2.455h19.09Z"
-                            clip-rule="evenodd"></path>
-                    </svg>
-                    CodeSandbox.io
-                </Button>
-            </li>
-        </ul>
+    <ButtonList buttons={homeButtons} class="links" />
+    <section class="section">
+        <h2>My tools of the trade</h2>
+        <Skills />
+    </section>
+    <section class="section">
+        <h2>(Not All of) The People I’ve worked with</h2>
+        <Jobs />
     </section>
 </Layout>

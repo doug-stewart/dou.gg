@@ -4,12 +4,12 @@ import eslintConfigPrettier from 'eslint-config-prettier';
 import importPlugin from 'eslint-plugin-import';
 import jsxA11y from 'eslint-plugin-jsx-a11y';
 import eslintPluginPrettierRecommended from 'eslint-plugin-prettier/recommended';
-// import tseslint from 'typescript-eslint';
+import tseslint from 'typescript-eslint';
 
 export default [
     { ignores: ['**/env.d.ts', '.astro/*', 'node_modules/*', 'dist/*'] },
     eslint.configs.recommended,
-    // ...tseslint.configs.recommendedTypeChecked,
+    ...tseslint.configs.recommendedTypeChecked,
     importPlugin.flatConfigs.recommended,
     eslintPluginPrettierRecommended,
     eslintConfigPrettier,
@@ -48,13 +48,13 @@ export default [
             react: { version: 'detect' },
         },
     },
-    // ...eslintPluginAstro.configs.recommended,
-    // {
-    //     files: ['*.astro'],
-    //     parser: 'astro-eslint-parser',
-    //     parserOptions: {
-    //         parser: '@typescript-eslint/parser',
-    //         extraFileExtensions: ['.astro'],
-    //     },
-    // },
+    ...eslintPluginAstro.configs.recommended,
+    {
+        files: ['*.astro'],
+        parser: 'astro-eslint-parser',
+        parserOptions: {
+            parser: '@typescript-eslint/parser',
+            extraFileExtensions: ['.astro'],
+        },
+    },
 ];

@@ -1,0 +1,201 @@
+---
+import { getImage } from 'astro:assets';
+import { nanoid } from 'nanoid';
+
+import { environments as environmentsData } from '@/data/environments.json';
+import { frameworks as frameworksData } from '@/data/frameworks.json';
+import { languages as languagesData } from '@/data/languages.json';
+import { software as softwareData } from '@/data/software.json';
+
+const processData = (data: any) =>
+    data.map((datum: any) => {
+        const { icon, ...rest } = datum;
+        return {
+            ...rest,
+            icon,
+            mask: icon ? `/src/assets/images/skills/mono/${icon}.png` : '',
+            id: `--${rest.label.toLowerCase().replace(/[^a-z]+/g, '')}-${nanoid(5)}`,
+        };
+    });
+
+const environments = processData(environmentsData);
+const frameworks = processData(frameworksData);
+const languages = processData(languagesData);
+const software = processData(softwareData);
+
+const pngs = import.meta.glob<{ default: ImageMetadata }>('/src/assets/images/skills/mono/*.png');
+
+const promises = await Promise.allSettled(
+    Object.values(pngs).map(async (image) =>
+        getImage({ src: image(), format: 'avif', height: 96, width: 96 })
+    )
+);
+
+const optimized = Object.fromEntries(
+    Object.keys(pngs).map((key, index) => [
+        key,
+        promises[index].status === 'fulfilled' ? promises[index].value.src : '',
+    ])
+);
+
+console.log({ optimized });
+
+const cssCustomProps = [...environments, ...frameworks, ...languages, ...software].reduce(
+    (string, { color, icon, mask }) =>
+        `${string} --${icon}-mask: url(${optimized[mask]});\n--${icon}-color: ${color};\n`,
+    ''
+);
+---
+
+<style set:text={`:root {${cssCustomProps}}`}></style>
+
+<style>
+    @property --_icon-reveal {
+        inherits: true;
+        initial-value: 0%;
+        syntax: '<percentage>';
+    }
+
+    .skill {
+        position: relative;
+    }
+
+    .icon {
+        --_icon-reveal: 0%;
+
+        aspect-ratio: 1 / 1;
+        background: var(--green-1)
+            radial-gradient(ellipse at 50% 100%, var(--color) 50%, transparent 0%) no-repeat 50%
+            100% / 200% calc(var(--_icon-reveal) * 2);
+        display: block;
+        mask-image: var(--mask);
+        mask-size: cover;
+        position: relative;
+        transition: --_icon-reveal calc(var(--animation-timing) * 2) var(--animation-curve-out);
+
+        &:focus-visible,
+        &:hover {
+            --_icon-reveal: 100%;
+        }
+    }
+
+    .tooltip {
+        background-color: var(--blue-3);
+        border-radius: 6px;
+        bottom: calc(anchor(top));
+        color: var(--green-5);
+        display: block;
+        filter: drop-shadow(0 max(2px, 0.144em) hsl(0 0% 0% / 0.36));
+        font-weight: 600;
+        justify-self: anchor-center;
+        left: anchor(center);
+        margin: calc(var(--spacing));
+        opacity: 0;
+        padding-block: 0.5em;
+        padding-inline: 1em;
+        pointer-events: none;
+        position: fixed;
+        text-align: center;
+        transition-delay: 0ms;
+        transition-duration: var(--animation-timing);
+        transition-property: opacity, translate;
+        transition-timing-function: var(--animation-curve-out);
+        translate: 0 var(--spacing);
+        width: max-content;
+        z-index: 1;
+
+        &::after {
+            aspect-ratio: 1 / 1;
+            background-color: var(--blue-3);
+            content: '';
+            height: var(--spacing);
+            left: 50%;
+            position: absolute;
+            rotate: 45deg;
+            top: 100%;
+            translate: -50% -50%;
+        }
+    }
+
+    .icon:hover + .tooltip {
+        opacity: 1;
+        transition-delay: var(--animation-timing);
+        translate: 0 0;
+    }
+</style>
+
+<div class="label-group">
+    <div class="label-group__set">
+        <h3 class="label-group__label">I use</h3>
+        <ul class="label-group__list">
+            {
+                languages.map(({ icon, id, label }: any) => (
+                    <li class="label-group__item skill">
+                        <span
+                            class="icon"
+                            style={`--mask: var(--${icon}-mask); --color: var(--${icon}-color); anchor-name: ${id}`}
+                        />
+                        <span class="tooltip type--1" style={`position-anchor: ${id}`}>
+                            {label}
+                        </span>
+                    </li>
+                ))
+            }
+        </ul>
+    </div>
+    <div class="label-group__set">
+        <h3 class="label-group__label">along with</h3>
+        <ul class="label-group__list">
+            {
+                frameworks.map(({ icon, id, label }: any) => (
+                    <li class="label-group__item skill">
+                        <span
+                            class="icon"
+                            style={`--mask: var(--${icon}-mask); --color: var(--${icon}-color); anchor-name: ${id}`}
+                        />
+                        <span class="tooltip type--1" style={`position-anchor: ${id}`}>
+                            {label}
+                        </span>
+                    </li>
+                ))
+            }
+        </ul>
+    </div>
+    <div class="label-group__set">
+        <h3 class="label-group__label">with help from</h3>
+        <ul class="label-group__list">
+            {
+                software.map(({ icon, id, label }: any) => (
+                    <li class="label-group__item skill">
+                        <span
+                            class="icon"
+                            style={`--mask: var(--${icon}-mask); --color: var(--${icon}-color); anchor-name: ${id}`}
+                        />
+                        <span class="tooltip type--1" style={`position-anchor: ${id}`}>
+                            {label}
+                        </span>
+                    </li>
+                ))
+            }
+        </ul>
+    </div>
+    <div class="label-group__set">
+        <h3 class="label-group__label">on</h3>
+        <ul class="label-group__list">
+            {
+                environments.map(({ icon, id, label }: any) => (
+                    <li class="label-group__item skill">
+                        <span
+                            class="icon"
+                            style={`--mask: var(--${icon}-mask); --color: var(--${icon}-color); anchor-name: ${id}`}
+                        />
+                        <span class="tooltip type--1" style={`position-anchor: ${id}`}>
+                            {label}
+                        </span>
+                    </li>
+                ))
+            }
+        </ul>
+    </div>
+    <p class="label-group__note">and other stuff.</p>
+</div>

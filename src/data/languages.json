@@ -1,0 +1,12 @@
+{
+    "languages": [
+        { "label": "TypeScript", "icon": "typescript", "color": "#3178C6" },
+        { "label": "JavaScript", "icon": "javascript", "color": "#FFDF00" },
+        { "label": "CSS", "icon": "css", "color": "#663399" },
+        { "label": "Sass", "icon": "sass", "color": "#CC6699" },
+        { "label": "PostCSS", "icon": "postcss", "color": "#DD3A0A" },
+        { "label": "HTML", "icon": "html", "color": "#E34C26" },
+        { "label": "Markdown", "icon": "markdown", "color": "#499BEA" },
+        { "label": "Handlebars", "icon": "handlebars", "color": "#B0ABA8" }
+    ]
+}

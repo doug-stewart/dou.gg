@@ -1,0 +1,22 @@
+{
+    "frameworks": [
+        { "label": "React", "icon": "react", "color": "#59C4DC" },
+        { "label": "Next.js", "icon": "next-js", "color": "#fff" },
+        { "label": "Node.js", "icon": "node-js", "color": "#5FA04E" },
+        { "label": "Jest", "icon": "jest", "color": "#CC4615" },
+        { "label": "Astro", "icon": "astro", "color": "#c9539f" },
+        { "label": "Ruby on Rails", "icon": "ruby-on-rails", "color": "#C70202" },
+        { "label": "Ember.js", "icon": "ember-js", "color": "#E04E39" },
+        { "label": "Backbone.js", "icon": "backbone-js", "color": "#0071B5" },
+        { "label": "Vite", "icon": "vite", "color": "#FFDD35" },
+        { "label": "Electron", "icon": "electron", "color": "#AEE9F8" },
+        { "label": "Vitest", "icon": "vitest", "color": "#FBC72B" },
+        { "label": "Jekyll", "icon": "jekyll", "color": "#C81515" },
+        { "label": "React Testing Library", "icon": "react-testing-library", "color": "#E33332" },
+        { "label": "Zustand", "icon": "zustand", "color": "#D4BFB0" },
+        { "label": "React Email", "icon": "react-email", "color": "#81D7F7" },
+        { "label": "jQuery", "icon": "jquery", "color": "#1266A9" },
+        { "label": "Strapi", "icon": "strapi", "color": "#9593F8" },
+        { "label": "WordPress", "icon": "wordpress", "color": "#3858E9" }
+    ]
+}
