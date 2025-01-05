@@ -69,7 +69,12 @@ const fulltime = jobs.filter(({ type }) => type === 'full-time');
                 fulltime.map(({ label, logo, url }) => (
                     <li class="label-group__item job">
                         <a href={url} target="_blank">
-                            <Image src={logos[logo]()} alt={label} />
+                            <Image
+                                src={logos[logo]()}
+                                alt={label}
+                                layout="responsive"
+                                format="avif"
+                            />
                             <span class="label type-5">{label}</span>
                         </a>
                     </li>
@@ -83,7 +88,12 @@ const fulltime = jobs.filter(({ type }) => type === 'full-time');
                     contract.map(({ label, logo, url }) => (
                         <li class="label-group__item job">
                             <a href={url} target="_blank">
-                                <Image src={logos[logo]()} alt={label} />
+                                <Image
+                                    src={logos[logo]()}
+                                    alt={label}
+                                    layout="responsive"
+                                    format="avif"
+                                />
                                 <span class="label type-5">{label}</span>
                             </a>
                         </li>
