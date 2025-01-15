@@ -1,0 +1,238 @@
+---
+title: "It's Time To Stop Defaulting to Flexbox"
+slug: 'its-time-to-stop-defaulting-to-flexbox'
+publishDate: 2025-01-14
+---
+
+_Shoutout to&#x20;_[_Kevin Powell's video_](https://www.youtube.com/watch?v=vO-1eseQ-kc)_&#x20;for
+putting this idea in my head._
+
+I expect most frontend developers reach for flexbox as their go-to way of laying out content and
+they probably shouldn't. Not because flexbox is bad but because grid will be a better choice most of
+the time. But if that's true why do we choose flexbox? Let's discuss it.
+
+## Why you probably reach for flexbox before grid
+
+**The first reason is pretty obvious: flexbox came first** so there's a good chance you've been
+using it for longer than grid. The [W3C Spec for flexbox](https://www.w3.org/TR/css-flexbox-1/) hit
+Release Candidate status back at the tail end of 2019 but it has been in browsers, in some form,
+[since early 2010](https://caniuse.com/flexbox) with the final syntax arriving in 2012. Grid hit RC
+status at the [end of 2020](https://www.w3.org/TR/css-grid-1/) after being in browsers
+[since 2015](https://caniuse.com/css-grid) with modern Grid syntax hitting around early 2017.
+Flexbox was around for three years in its final form before grid even hit browsers with another 2
+years before both were at their final syntax. That's 3–5 years of practicing and building muscle
+memory on a new tool that was exceptionally useful. That kind of inertia is hard to overcome without
+conscious effort.
+
+**The second reason is also fairly obvious: flexbox is simpler than grid** which means we teach it
+to new developers before grid. Flexbox has only a handful of properties and mostly it boils down to
+a few key questions:
+
+- Do I want my layout to be vertical or horizontal?
+- Do I want my layout to wrap?
+- How do I want my children to align in the X and Y orientation?
+- How do I want my children to grow or shrink?
+- Do I want to move a child to the start or end of the layout?
+- Is my starting point top, bottom, left, right?
+
+Grid has all of those considerations plus a few more:
+
+- Do I want to fill by row or column first?
+- Do I want my layout to be explicit or implicit and to what degree?
+- Do I want my children to inherit their parent's layout?
+
+Grid also always cares about every direction where flexbox can only ever care about one direction,
+be it the X or Y. You have to think of the entire layout holistically where flexbox has more local
+considerations. Simply put, grid has more going on than flexbox and it only makes sense that we
+would teach the simpler layout tool—which we should acknowledge is complex in its own right—before
+we dive into the more complex tool. While that does make sense for teaching, once you've learned the
+tools shouldn't we care more about what tool is best for the job?
+
+## Why you should probably reach for grid anyway
+
+Developers are always looking for a way to be more efficient and to build better things. We should
+prioritize tools that help us achieve those goals without limiting us in ways we do not want. Framed
+that way, Grid is just a better tool and if you have to choose one to master it should be your first
+choice.
+
+**Grid gives you a few things that you don't get with flexbox:**
+
+- Absolute positioned elements become relative to the grid cell.
+- No more hard-coded heights layouts just so everything in a row is the same size.
+- Named grid areas make full-page layouts a breeze to throw together and easy to adjust wen flowing
+  form mobile to desktop layouts, all within a single property (remember, this, we'll come back to
+  it).
+- Children with a consistent internal layout that's aware of all its siblings' layouts (subgrid is
+  really cool, you guys).
+- More control for intrinsic sizing (which you can still ignore) means your layouts are inherently
+  more robust.
+
+And there's plenty more. On the other hand the only thing flexbox gives you over grid is the
+independent layout of rows or columns when your content wraps. That's not nothing but it is of
+limited utility given most of the time the design you need to implement is going to consider both
+directions in concert.
+
+These additional traits make grid great not just for building full page layouts but for constructing
+smaller components too. Let's go through an example. What if you want to center one item in a parent
+both vertically and horizontally? Lots of space, put it in the middle. Here's how flexbox and grid
+compare:
+
+```css
+/* with flexbox */
+.wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* with grid */
+.wrapper {
+    display: grid;
+    place-items: center;
+}
+```
+
+OK, not bad. Grid wins but only by a single property and this is a pretty simple problem to solve
+anyway. What if you want the content centered when there's enough space and for it to scroll
+vertically when there's not? Like if you want to center a dialog on the screen but allow it to
+scroll on the screen (not within the dialog) for some reason. How would that play out? Let's see:
+
+```css
+/* with flexbox */
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: auto;
+
+    /* this is essentially a hack that adds empty children to push the other content around when there's space */
+    &::after,
+    &::before {
+        content: '';
+        flex: 1;
+    }
+
+    /* we need to stop our real child from squishing, which it might depending on its intrinsic size' */
+    > * {
+        flex: 0 0 auto;
+    }
+}
+
+/* with grid things remain unchanged. */
+.wrapper {
+    display: grid;
+    place-items: center;
+    overflow: auto;
+}
+```
+
+Suddenly that delta increases. Now imagine you wanted margins around that child...
+
+The reason this works is because flexbox is designed to be flexible and less opinionated on what
+happens to your content. grid is intentionally rigid and most of the time we're going to want that.
+
+What about our good friend the card layout?
+
+```css
+/* with flexbox */
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+
+    > * {
+        flex: 1 1 200px;
+    }
+}
+
+/* with grid */
+.wrapper {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+}
+```
+
+You end up with a similar result but with fewer properties and everything is on the parent. The
+bonus is that all your cards will be the same height, a thing you simply cannot do in flexbox.
+
+### But sometimes flexbox can be better, kinda
+
+If all you want is an implicit layout that's single direction, flexbox has the edge. Imagine you
+have a row of items and you want there to be a gap between the last two. This might be a menu where
+you want most of the controls aligned to the left and the final one, an important action, on it's
+own on the right. Here's how that would look with Flexbox:
+
+```css
+.wrapper {
+    display: flex;
+
+    > * {
+        flex: 0 0 auto; /* might be necessary depending on intrinsic size so it's good to have */
+        &:last-child {
+            margin-inline-start: auto;
+        } /* pushes our last child to the far right */
+    }
+}
+```
+
+That's not too bad, right? Reasonably concise and only one small potential issue we'd need to avoid.
+What about grid?
+
+```css
+.wrapper {
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-columns: repeat(1000, auto) 1fr auto; /* spot the hack? */
+
+    > *:last-child {
+        grid-column: 1002;
+    }
+}
+```
+
+OK, that's not too bad. CSS sometimes requires hacks and we're definitely doing that here. We've
+created 1,002 implicit columns with the second to last oe taking up as much space as possible and
+our important action sitting in the 1,002nd column. But there's a downside to this hack: You can't
+use `gap` anymore. The Gap property does not collapse if a cell is empty so if you try to use that
+to space your buttons out you're gonna have a bad time. Of course, you can solve that problem with
+some simple margins but it _is_ a problem you need to solve and a trade-off we should acknowledge.
+
+However, not to get too excited for flexbox, a more realistic version of that would be an more
+explicit grid since a menu's content is pretty well known. You're likely to know what controls are
+going to be available and how many there are so you're more likely to do this:
+
+```css
+/* maybe this? */
+.wrapper {
+    display: grid;
+    grid-template-columns: repeat(4, auto) 1fr auto;
+
+    > *:last-child {
+        grid-column: 6;
+    }
+}
+```
+
+Looks like a winner, right? Fewer properties, most of which are on the parent, means we have a
+clearer understand of exactly what our layout is doing when we look at our code. If someone adds an
+unexpected child and breaks the layout where you apply the fix is pretty clear.
+
+Which solution makes more sense will depend on a few things but a big one is do you know how many
+children will be in the menu and are you OK with using margins instead of gaps.
+
+## In the end just use what works for you
+
+One of my favorite aspects of frontend development is that there's no one way to solve any problem.
+Before flexbox and grid we used to do most of this with floats and positioning. Before that they
+used tables. All of the old ways are still viable, it's just the new ways are better. They're more
+reliable, more powerful, more semantic, more accessible, more predictable. They're just better.
+
+Before we wrap this up, I do have one last final reason to use grid over flexbox: You're going to
+use grid anyway. Remember how I said named grid areas let you define complex layouts and rearrange
+them for responsiveness? These days you're almost certainly doing your main layout with a grid so no
+matter what you will be using grid on every single project. But you can't say the same thing about
+flex, can you?
+
+So if you're always going to have to use one, which one should you focus your energy on mastering?
+
+Honestly the answer is both but prioritize grid.
