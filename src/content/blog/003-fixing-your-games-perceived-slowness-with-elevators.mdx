@@ -1,0 +1,215 @@
+---
+title: "Fixing Your Game's Perceived Slowness with Elevators"
+slug: 'fixing-your-games-perceived-slowness-with-elevators'
+publishDate: 2017-12-12
+---
+
+import { Image } from 'astro:assets';
+
+import assassinsCreed from '@/assets/blog/fixing-your-games-perceived-slowness-with-elevators/assassins-creed.mp4';
+import bayonetta2 from '@/assets/blog/fixing-your-games-perceived-slowness-with-elevators/bayonetta-2.mp4';
+import dishonored2 from '@/assets/blog/fixing-your-games-perceived-slowness-with-elevators/dishonored-2.jpg';
+import splatoon from '@/assets/blog/fixing-your-games-perceived-slowness-with-elevators/splatoon.jpg';
+import worldOfGoo from '@/assets/blog/fixing-your-games-perceived-slowness-with-elevators/world-of-goo.png';
+import Notice from '@/components/notice/Notice.astro';
+
+<Notice>
+    This post was originally written by me for Kongregate and [published on their
+    blog](https://blog.kongregate.com/fixing-your-games-perceived-slowness-with-elevators/) on
+    December 12th, 2017. I’m reposting it here for archival purposes and posterity (with minor
+    change), yadda yadda, you know the drill.
+</Notice>
+
+Spending months on optimization only to realize your game _still feels slow_ can be pretty
+demoralizing. Try as you might, eventually you’ll reach a point where the technical solutions are
+simply too expensive to justify. What do you do then? Your game still feels slow and players won’t
+accept it. Luckily you have other options.
+
+## Let’s talk about elevators
+
+Wait, what do elevators have to do with video games? Loads! Trust me, this’ll make sense. Solving
+the problem of perceived slowness can be tricky, but it helps to think of the problem as a
+perception issue. There’s a story called “The Elevator Problem” that I first read in a
+[37signals blog post](https://signalvnoise.com/posts/1244-defining-the-problem-of-elevator-waiting-times).
+Apparently
+[it’s been around for a while](http://www3.sympatico.ca/karasik/GF_evolution_of_legend.html), so you
+may have heard of it. The short version goes like this:
+
+> A building is receiving complaints that the elevator wait times are too long. They consult a
+> variety of experts who recommend all sorts of expensive and invasive solutions. One suggests
+> installing mirrors next to the elevator doors so people can use the time to check their appearance
+> or do some surreptitious people watching. The suggestion is adopted, at a lower cost, and the
+> complaints stop.
+
+In this story the problem solving is as follows:
+
+> Wait times are too long → Why is that a problem? → I don’t like to wait → Why not? → Because it’s
+> boring. Solution: Remove the boredom.
+
+This is how you should be thinking about perceived slowness in your games. Once you’ve exhausted
+your options in terms of technical improvements—or once those improvements come at too high a
+cost—it’s time to start thinking about changing how those delays feel.
+
+Let’s talk about that.
+
+## Solving the problem of slowness
+
+While every problem is unique, many options already exist, and they can be great starting points for
+coming up with your own solution.
+
+### Start generally before you narrow your focus
+
+Maybe your entire game just _feels_ slow, not any particular part but a more holistic problem.
+You’ve benchmarked the game and it’s actually running nice and smooth, so what gives? A common cause
+for this type of problem is animation.
+
+**Slow animations** can make even the most responsive app feel slow. Maybe you didn’t account for
+the timing or maybe you’re hiding your sins, but slow animations can make things feel long and drawn
+out. Sometimes that’s the right choice, like if it’s a dramatic moment in your story, but most of
+the time you want your animations to feel much more snappy.
+
+A good guideline is animations should be 200–800ms (depending on complexity) if you want them to
+feel fast. For simple animations err on the shorter side, allowing more complex animations to be a
+little longer to allow for full comprehension. If it’s a long series of actions you should break
+that down into its constituent parts for timing. Make sure to keep each part on the quicker side to
+balance out the longer overall length.
+
+**Stuttering animations**, specifically animations that don’t appear to run at their natural speed,
+are often perceived as poor performance. Maybe the animation actually is running correctly, but if
+it’s not perceived that way then it’s still a problem.
+
+There’s no clear and simple solution on how to avoid this one. Often people will suggest keeping the
+average FPS of your game above 60, but that’s not always the right choice.
+[Cuphead](http://store.steampowered.com/app/268910/Cuphead/) might run at 60+ FPS, but it’s pretty
+clear the animations are much slower. This was the right choice for them, as it matches the
+aesthetic style of the era they drew inspiration from. It’s important for whatever you choose that
+everything feels natural and not like it’s dragging.
+
+All of this contributes to how responsive your game feels, and that will define how forgiving your
+players are when you have no choice but to introduce small delays.
+
+### Speaking of those small delays…
+
+When transitioning from one state in your game to another you might experience a delay as players
+wait for a server response or some generated content. While that new state is loading what do you do
+with the empty screen?
+
+You know the information you’re about to receive and the form it’s going to take. Use that to your
+advantage by showing placeholder content. Your players will have a better understanding of what’s
+about to happen, and it’s a subtle way of letting them know the thing they’re waiting on isn’t your
+game; it’s their internet connection.
+
+### When there’s nothing else to do…
+
+Sometimes there’s just no avoiding a long wait, and placeholder content isn’t going to cut it, so
+what do you do? Go back to The Elevator Problem. You have their attention; how do you want to use
+it?
+
+#### Have some fun
+
+Loading screens are often not much more than some basic art and a progress bar. But you can spice
+this idea up pretty easily by changing the sorts of progress messages that are displayed on the
+screen. Games like The Sims and World of Goo do this by making each step be utterly nonsense.
+
+<figure>
+    <Image src={worldOfGoo} alt="World of Goo loading screen" layout="responsive" format="avif" />
+    <figcaption>World of Goo loading screen</figcaption>
+</figure>
+
+This technique can be a lot of fun for both you and your players. Just make sure that you have a
+good backlog of randomly selectable messages to pull from. It also works best when the load time
+itself isn’t more than a minute.
+
+#### Teach your players about your game
+
+It’s common to add tips to the loading screen, and that’s a great starting place. One of the more
+recent innovations of this technique is to add multiple tidbits that players can flip through.
+_Dishonored 2_ used this to great effect by providing you tips on general gameplay and
+level-specific guidance.
+
+<figure>
+    <Image
+        src={dishonored2}
+        alt="Dishonored 2, Dunwall loading screen"
+        layout="responsive"
+        format="avif"
+    />
+    <figcaption>Dishonored 2, Dunwall loading screen</figcaption>
+</figure>
+
+This is best used when the wait isn’t terribly long (especially if you’re only showing one piece of
+information on each loading screen). A good guideline is to speed-read through the tip three times
+as fast as you can (it should be quick, you know the copy). If the delay is noticeably longer than
+that then you need to either give them more things to read or distract them in some other way.
+
+#### Let your players futz around
+
+You don’t always need to manage a player’s time. Sometimes it’s enough to give them a playground in
+which to amuse themselves. The _Assassin’s Creed_ franchise put players in an empty, endless arena
+and let them run around like an idiot. This fit especially well given the franchise’s central
+conceit of all past events taking place in a digital reconstruction.
+
+<figure>
+    <video autoplay loop muted src={assassinsCreed}></video>
+    <figcaption>Assassin’s Creed loading zone</figcaption>
+</figure>
+
+This technique works best when it’s only a moderate delay of no more than a minute or two. Any
+longer and you’re just standing in an empty room feeling bored. This one is especially fun if your
+character models have physics effects applied to them.
+
+#### Let them play (another) game
+
+For a while people had to avoid this because it was patented by Namco.
+[That ended in November 2015](https://www.eff.org/deeplinks/2015/12/loading-screen-game-patent-finally-expires),
+and it’s now one of the best options for letting people kill time while their game loads. _splatoon_
+took full advantage of this by letting you play a series of squid-based mini games.
+
+<figure>
+    <Image src={splatoon} alt="splatoon mini-game promo" layout="responsive" format="avif" />
+    <figcaption>splatoon mini-game promo</figcaption>
+</figure>
+
+This is a great choice for longer delays where the player can expect to wait for several minutes —
+for example, if your players are stuck waiting for an online lobby to become available. However, if
+the wait is too short they might barely get to play the mini game at all, which can be its own
+source of frustration, so watch out for that.
+
+#### Mix, match, and modify!
+
+Each of these are great on their own, but what happens if you mix them? Something pretty great!
+Bayonetta 2 made their loading screen a place to learn and practice special moves, which is a key
+part of gameplay. The result is a fun, educational playground. It’s even a mini game in its own way.
+
+<figure>
+    <video autoplay loop muted src={bayonetta2}></video>
+    <figcaption>Bayonetta 2 loading screen with combo-move tutorial</figcaption>
+</figure>
+
+This option can be the best of all worlds. It’s fun for players, who get to mess around with no real
+consequences if they fail. If the session is cut short it isn’t a big deal, nor is it a big problem
+if it becomes an extended one. The only real risk is if your gameplay doesn’t have enough complexity
+to warrant this kind of repeated interaction. However, even that problem is rendered moot if the
+moves themselves (and their accompanying effects) are visually interesting.
+
+#### Make it your own
+
+With all of these examples it’s important to remember that the visual presentation isn’t the point
+I’m trying to make. Each example should be considered in the abstract. Your game could be very
+different, both in gameplay and in terms of visuals, but still benefit from using one of these
+techniques.
+
+Let’s say you’re making a 2D platformer. The loading screen could be a playground with a series of
+simple shapes the player can jump and navigate around. The implementation would be rather simple but
+still provide the user with ample opportunity to practice core gameplay. You could further increase
+the usefulness of this time by designing the area to require multiple higher-level techniques to
+fully explore, including tutorial text near each section.
+
+It’s all up to you and what you think might most entertain and educate your players.
+
+## It’s all about perception
+
+Managing a player’s impression of your game is a tricky thing. Being perceived as slow can be the
+kiss of death even for the best game. But you can manage that perception through careful planning,
+consideration, turning extra time to the player’s advantage, and always remembering why elevators
+have mirrors.
