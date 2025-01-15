@@ -28,24 +28,6 @@ li,
 }
 
 h1,
-.type-1,
-h2,
-.type-2,
-h3,
-.type-3,
-h4,
-.type-4 {
-    line-height: 1.389;
-}
-
-h5,
-.type-5,
-h6,
-.type-6 {
-    line-height: 1.5;
-}
-
-h1,
 .type-1 {
     color: var(--green-2);
     font-size: var(--type-5);
@@ -101,10 +83,11 @@ h6,
     color: var(--teal-1);
     font-size: var(--type-0);
     font-weight: 500;
-    line-height: 1.5;
+    line-height: 1.618;
 }
 
 cite,
+figcaption,
 .type--1 {
     color: var(--purple-1);
     font-size: var(--type--1);
@@ -122,6 +105,7 @@ h6,
 cite,
 dl,
 figure,
+figcaption,
 ol:where(:not([class])),
 p,
 ul:where(:not([class])),
@@ -219,6 +203,7 @@ h4,
 figure,
 ol:where(:not([class])),
 p,
+pre,
 ul:where(:not([class])),
 table {
     margin-block: calc(var(--spacing) * 1.5);
@@ -287,9 +272,15 @@ figure {
     }
 }
 
-cite {
+cite,
+figcaption {
     display: block;
     letter-spacing: 0.05em;
     padding-block-start: var(--spacing);
     text-align: center;
+}
+
+pre {
+    border-radius: 6px;
+    padding: var(--spacing);
 }

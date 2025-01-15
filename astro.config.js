@@ -4,6 +4,8 @@ import react from '@astrojs/react';
 import sitemap from '@astrojs/sitemap';
 import { defineConfig } from 'astro/config';
 
+import douggDark from './themes/dougg-dark.json';
+
 export default defineConfig({
     site: 'https://dou.gg',
     adapter: cloudflare({ imageService: 'cloudflare' }),
@@ -12,5 +14,10 @@ export default defineConfig({
     experimental: {
         responsiveImages: true,
         svg: true,
+    },
+    markdown: {
+        shikiConfig: {
+            theme: douggDark,
+        },
     },
 });
