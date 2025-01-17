@@ -22,7 +22,7 @@ const { title, bodyClass, wrapperClass, isErrorRoute } = Astro.props;
     <head>
         <meta charset="UTF-8" />
         <meta name="description" content="Astro description" />
-        <meta name="viewport" content="width=device-width" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="icon" type="image/png" href={favicon.src} />
         <meta name="generator" content={Astro.generator} />
         <title>{`${title} ⁂ Dou.gg`}</title>
@@ -52,8 +52,11 @@ const { title, bodyClass, wrapperClass, isErrorRoute } = Astro.props;
             }
 
             .wrapper {
+                --_max-body-width: calc(100vw - calc(var(--spacing) * 6));
+                --_max-text-width: calc(var(--spacing) * 68);
+
                 margin-block: calc(var(--spacing) * 5);
-                max-width: calc(var(--spacing) * 68);
+                max-width: min(var(--_max-body-width), var(--_max-text-width));
             }
 
             .page-bg {

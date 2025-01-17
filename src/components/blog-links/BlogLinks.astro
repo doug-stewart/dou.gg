@@ -29,8 +29,12 @@ if (length) {
         display: grid;
         font-size: var(--_font-size, var(--type-1));
         gap: calc(var(--spacing) / 2);
-        grid-template-columns: repeat(auto-fill, 10em);
+        /* grid-template-columns: repeat(auto-fill, 10em); */
         place-content: start;
+
+        @media (width > 400px) {
+            grid-template-columns: repeat(auto-fill, 10em);
+        }
     }
 
     .post {
@@ -40,7 +44,6 @@ if (length) {
         --_bg: var(--purple-2);
         --_bg-active: var(--_bg);
 
-        aspect-ratio: 1;
         display: grid;
         gap: 0.5em 0;
         grid-template:
@@ -50,7 +53,6 @@ if (length) {
             / auto 1fr auto;
         padding: 1em;
         position: relative;
-        width: 10em;
         z-index: 0;
 
         &::before {
@@ -61,6 +63,10 @@ if (length) {
             opacity: 0.06;
             position: absolute;
             z-index: -1;
+        }
+
+        @media (width > 400px) {
+            aspect-ratio: 1;
         }
     }
 
