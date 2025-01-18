@@ -69,13 +69,12 @@ const { title, bodyClass, wrapperClass, isErrorRoute } = Astro.props;
                 z-index: -2;
 
                 &::before {
-                    background-image: url("data:image/svg+xml;utf8,<svg viewBox='0 0 250 250' xmlns='http://www.w3.org/2000/svg' height='250' width='250'><filter id='noiseFilter'><feTurbulence type='fractalNoise' baseFrequency='5' numOctaves='3' stitchTiles='stitch'/></filter><rect width='100%' height='100%' filter='url(%23noiseFilter)'/></svg>"),
-                        linear-gradient(#333 0, #333 100%);
+                    background: url('/images/static.gif') repeat;
                     content: '';
-                    filter: contrast(300%) brightness(300%);
                     inset: 0;
-                    mix-blend-mode: multiply;
+                    mix-blend-mode: soft-light;
                     position: absolute;
+                    opacity: 0.24;
                 }
             }
         </style>
