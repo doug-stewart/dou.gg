@@ -6,33 +6,41 @@ const { isErrorRoute } = Astro.props;
 
 <style>
     .footer {
-        background: linear-gradient(to bottom, transparent, var(--blue-8) 84%);
+        background: linear-gradient(to bottom, transparent, var(--blue-9) 84%);
         font-weight: 600;
+        font-size: var(--type--1);
+        font-style: italic;
         grid-area: footer;
+        color: var(--blue-4);
         margin-block-end: calc(var(--spacing) * -3);
         margin-inline: calc(var(--spacing) * -3);
-        padding-block: 0 calc(var(--spacing) * 3);
+        padding-block: calc(var(--spacing) * 5);
         padding-inline: calc(var(--spacing) * 3);
+        position: relative;
+        overflow: clip;
+        text-align: center;
 
         a {
-            --_color: var(--green-2);
+            --_color: var(--blue-4);
             font-weight: 600;
         }
     }
 
     .asterism {
         color: var(--green-2);
+        font-size: var(--type-5);
         height: auto;
-        opacity: 0.24;
-        width: 2em;
+        opacity: 0.06;
+        width: 1em;
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        translate: -50% 10%;
     }
 </style>
 
 <footer class="footer">
     <Asterism role="presentation" class="asterism" />
-    <p>
-        {isErrorRoute ? 'Imperfectly made with love by me.' : 'Made with love by me.'}
-        <br />
-        <a href="/downloads/doug-stewart-resume.pdf" download>Download my resume</a>
-    </p>
+    {isErrorRoute ? 'Imperfectly made with love by me.' : 'Made with love by me.'}
+    <a href="/downloads/doug-stewart-resume.pdf" download>Download my resume</a>
 </footer>
