@@ -22,7 +22,7 @@ li,
     font-optical-sizing: auto;
     font-size: var(--type-0);
     font-weight: 300;
-    letter-spacing: 0.024em;
+    letter-spacing: 0.036em;
     line-height: max(24px, 1.618em);
     text-wrap: pretty;
 }
