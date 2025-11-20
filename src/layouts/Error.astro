@@ -75,7 +75,7 @@ const { title, headline, tagline } = Astro.props;
         <slot />
     </div>
     <div role="presentation" class="lucy">
-        <Image class="lucy__glow" src={glow} alt="" layout="responsive" format="avif" />
-        <Image class="lucy__img" src={lucy} alt="" layout="responsive" format="avif" />
+        <Image class="lucy__glow" src={glow} alt="" layout="constrained" format="avif" />
+        <Image class="lucy__img" src={lucy} alt="" layout="constrained" format="avif" />
     </div>
 </Layout>

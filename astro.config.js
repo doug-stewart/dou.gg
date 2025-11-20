@@ -11,13 +11,12 @@ export default defineConfig({
     adapter: cloudflare({ imageService: 'cloudflare' }),
     output: 'server',
     integrations: [mdx(), sitemap(), react()],
-    experimental: {
-        responsiveImages: true,
-        svg: true,
-    },
-    markdown: {
-        shikiConfig: {
-            theme: douggDark,
+    responsiveImages: true,
+    svg: true,
+    markdown: { shikiConfig: { theme: douggDark } },
+    vite: {
+        ssr: {
+            external: ['node:path', 'node:fs/promises', 'node:url', 'node:crypto'],
         },
     },
 });

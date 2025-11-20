@@ -23,7 +23,7 @@ const isActive = (currentPath.startsWith(href) && href !== '/') || currentPath =
             opacity: 0;
             position: absolute;
             transition-duration: calc(var(--animation-timing) * 2);
-            transition-property: opacity transform;
+            transition-property: opacity, transform;
             transition-timing-function: var(--animation-spring);
             translate: 0 0.24em;
         }

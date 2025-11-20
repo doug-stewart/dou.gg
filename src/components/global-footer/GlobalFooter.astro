@@ -7,17 +7,17 @@ const { isErrorRoute } = Astro.props;
 <style>
     .footer {
         background: linear-gradient(to bottom, transparent, var(--blue-9) 84%);
-        font-weight: 600;
+        color: var(--blue-4);
         font-size: var(--type--1);
         font-style: italic;
+        font-weight: 600;
         grid-area: footer;
-        color: var(--blue-4);
         margin-block-end: calc(var(--spacing) * -3);
         margin-inline: calc(var(--spacing) * -3);
+        overflow: clip;
         padding-block: calc(var(--spacing) * 5);
         padding-inline: calc(var(--spacing) * 3);
         position: relative;
-        overflow: clip;
         text-align: center;
 
         a {
@@ -27,15 +27,15 @@ const { isErrorRoute } = Astro.props;
     }
 
     .asterism {
+        bottom: 0;
         color: var(--green-2);
         font-size: var(--type-5);
         height: auto;
-        opacity: 0.06;
-        width: 1em;
-        position: absolute;
-        bottom: 0;
         left: 50%;
+        opacity: 0.06;
+        position: absolute;
         translate: -50% 10%;
+        width: 1em;
     }
 </style>
 

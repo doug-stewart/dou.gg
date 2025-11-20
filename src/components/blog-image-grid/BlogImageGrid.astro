@@ -27,9 +27,10 @@ const filteredImages = allBlogImages.filter((allImage) => {
     return hasBase && hasFile;
 });
 
-const imageImports = filteredImages.map(async (image: any) => {
+const imageImports = filteredImages.map(async (image) => {
     const key = image[0].match(/[ \w-]+?(?=\.)/g)?.at(0);
-    const processed = await getImage({ src: image[1].default, format: 'avif' });
+    const module = image[1] as { default: string };
+    const processed = await getImage({ src: module.default, format: 'avif' });
     return [key, processed];
 });
 

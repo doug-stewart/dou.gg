@@ -15,8 +15,8 @@ const { length, headerLevel, ...rest } = Astro.props;
 
 const Hn = (headerLevel || 'h3') as HTMLTag;
 
-let posts = await getCollection('blog').then((response: any) =>
-    response.sort((a: any, b: any) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf()),
+let posts = await getCollection('blog').then((response) =>
+    response.sort((a, b) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf()),
 );
 
 if (length) {
@@ -121,7 +121,7 @@ if (length) {
 
 <div class:list={['posts']} {...rest}>
     {
-        posts.map((post: any) => (
+        posts.map((post) => (
             <article class="post block-link">
                 <Hn class="title">
                     <a href={`/blog/${post.id}`}>
