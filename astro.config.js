@@ -8,7 +8,13 @@ import douggDark from './themes/dougg-dark.json';
 
 export default defineConfig({
     site: 'https://dou.gg',
-    adapter: cloudflare({ imageService: 'cloudflare' }),
+    adapter: cloudflare({
+        imageService: 'cloudflare',
+        runtime: {
+            mode: 'local',
+            type: 'pages',
+        },
+    }),
     output: 'server',
     integrations: [mdx(), sitemap(), react()],
     responsiveImages: true,
@@ -17,6 +23,11 @@ export default defineConfig({
     vite: {
         ssr: {
             external: ['node:path', 'node:fs/promises', 'node:url', 'node:crypto'],
+        },
+        resolve: {
+            alias: {
+                'react-dom/server': 'react-dom/server.edge',
+            },
         },
     },
 });
