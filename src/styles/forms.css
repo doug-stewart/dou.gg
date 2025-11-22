@@ -126,11 +126,12 @@ label ~ :is(input, textarea):user-invalid {
         display: none;
     }
 
-    .error,
-    .input,
-    .submit,
-    .textarea-count {
-        grid-column: 2 / -1;
+    @media (width > 600px) {
+        .error,
+        .input,
+        .textarea-count {
+            grid-column: 2 / -1;
+        }
     }
 }
 
@@ -188,8 +189,10 @@ label ~ :is(input, textarea):user-invalid {
     }
 }
 
-.submit {
-    grid-column: 2 / -1;
+@media (width > 600px) {
+    .submit {
+        grid-column: 2 / -1;
+    }
 }
 
 .form-status--failed,
