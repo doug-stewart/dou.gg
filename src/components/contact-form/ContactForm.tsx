@@ -128,7 +128,7 @@ const ContactForm = () => {
                         </span>
                     )}
                 </label>
-                <input type="text" name="honey" hidden aria-hidden />
+                <input className="honey" type="text" name="honey" tabIndex={-1} aria-hidden />
                 <button type="submit" className="submit">
                     Send it
                 </button>
