@@ -1,7 +1,7 @@
 'use client';
 
 import clsx from 'clsx';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import type { SubmitHandler } from 'react-hook-form';
 import { useForm } from 'react-hook-form';
 
@@ -52,6 +52,11 @@ const ContactForm = () => {
             setStatus('error');
         }
     };
+
+    useEffect(() => {
+        const expires = new Date(Date.now() + 60 * 60 * 1000).toUTCString();
+        document.cookie = `dougg_form_time=${new Date().getTime()}; exires=${expires}; path=/`;
+    }, []);
 
     return (
         <>
@@ -123,6 +128,7 @@ const ContactForm = () => {
                         </span>
                     )}
                 </label>
+                <input type="text" name="honey" hidden aria-hidden />
                 <button type="submit" className="submit">
                     Send it
                 </button>
