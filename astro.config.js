@@ -6,6 +6,13 @@ import { defineConfig } from 'astro/config';
 
 import douggDark from './themes/dougg-dark.json';
 
+// https://github.com/withastro/astro/issues/12824
+const alias = import.meta.env.PROD
+    ? {
+          'react-dom/server': 'react-dom/server.edge',
+      }
+    : undefined;
+
 export default defineConfig({
     site: 'https://dou.gg',
     adapter: cloudflare({
@@ -21,9 +28,7 @@ export default defineConfig({
     svg: true,
     markdown: { shikiConfig: { theme: douggDark } },
     vite: {
-        ssr: {
-            external: ['node:path', 'node:fs/promises', 'node:url', 'node:crypto'],
-            noExternal: import.meta.env.NODE_ENV === 'production' ? ['react', 'react-dom'] : [],
-        },
+        resolve: { alias },
+        ssr: { alias },
     },
 });
