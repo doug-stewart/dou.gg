@@ -23,11 +23,7 @@ export default defineConfig({
     vite: {
         ssr: {
             external: ['node:path', 'node:fs/promises', 'node:url', 'node:crypto'],
-        },
-        resolve: {
-            alias: {
-                'react-dom/server': 'react-dom/server.edge',
-            },
+            noExternal: import.meta.env.NODE_ENV === 'production' ? ['react', 'react-dom'] : [],
         },
     },
 });
