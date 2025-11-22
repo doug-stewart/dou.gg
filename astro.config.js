@@ -29,6 +29,9 @@ export default defineConfig({
     markdown: { shikiConfig: { theme: douggDark } },
     vite: {
         resolve: { alias },
-        ssr: { alias },
+        ssr: {
+            alias,
+            external: ['node:fs/promises', 'node:path', 'node:url', 'node:crypto'],
+        },
     },
 });
