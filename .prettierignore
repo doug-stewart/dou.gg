@@ -1,2 +1,4 @@
-node_modules
+.astro
 build
+dist
+node_modules

@@ -1,4 +1,4 @@
-# Directories here
-.vscode
+.astro
+build
 dist
 node_modules
