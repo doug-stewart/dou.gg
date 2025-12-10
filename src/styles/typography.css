@@ -142,7 +142,8 @@ a,
     --_bg-active: var(--_bg);
 
     background-color: transparent;
-    background-image: radial-gradient(ellipse at 50% 100%, var(--_bg-active) 50%, transparent 0%),
+    background-image:
+        radial-gradient(ellipse at 50% 100%, var(--_bg-active) 50%, transparent 0%),
         linear-gradient(to top, var(--_bg) max(1px, 0.06em), transparent 0%);
     background-position:
         50% 100%,
@@ -264,6 +265,7 @@ figure {
     video {
         border-radius: 3px;
         display: block;
+        height: auto;
         max-width: 100%;
     }
 
