@@ -94,6 +94,7 @@ h3 {
 img,
 picture {
     display: block;
+    height: auto;
     max-width: 100%;
 }
 
