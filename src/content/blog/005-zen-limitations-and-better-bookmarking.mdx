@@ -1,39 +1,76 @@
 ---
-title: 'Zen's limitations pushed me to better bookmarking'
+title: "Zen's limitations pushed me to better bookmarking"
 slug: zen-limitations-and-better-bookmarking
 publishDate: 2026-06-08
 ---
 
 ## Zen's limitations pushed me to better bookmarking
 
-Remember when Google killed off the super popular Google Reader and we all panicked but the result was a renaissance of RSS feed reader applications and services? Sometimes being forced to find a solution leads to a better place.
+Remember when Google killed off the super popular Google Reader and we all panicked but the result
+was a renaissance of RSS feed reader applications and services? Sometimes being forced to find a
+solution leads to a better place.
 
-Speaking of, do you know [Zen](https://zen-browser.app/)? It's a great Firefox-based browser with a small but [super enthusiastic](https://www.reddit.com/r/browsersbracket/comments/1rgpbdf/zen_vs_mozilla_firefox/) community and it's been my desktop browser of choice ever since Arc was ~~killed~~ put into [maintenance mode](https://browsercompany.substack.com/p/letter-to-arc-members-2025). It's got a pretty unique UI with a great focus on privacy. If you've never heard of it it's definitely worth a try.
+Speaking of, do you know [Zen](https://zen-browser.app/)? It's a great Firefox-based browser with a
+small but
+[super enthusiastic](https://www.reddit.com/r/browsersbracket/comments/1rgpbdf/zen_vs_mozilla_firefox/)
+community and it's been my desktop browser of choice ever since Arc was ~~killed~~ put into
+[maintenance mode](https://browsercompany.substack.com/p/letter-to-arc-members-2025). It's got a
+pretty unique UI with a great focus on privacy. If you've never heard of it it's definitely worth a
+try.
 
-It does, however, have some limitations you should know about and how I went about solving those limitations for myself has made my digital life better. You see, Zen can't sync your data.
+It does, however, have some limitations you should know about and how I went about solving those
+limitations for myself has made my digital life better. You see, Zen can't sync your data.
 
 ## Linkwarden + Raycast = ♥️
 
-Zen's ability to sync data is limited and while they've been promising to implement a more robust cross-device syncing service since at least [2025](https://github.com/zen-browser/desktop/pull/12531) so far it hasn't happened. In the end I got tired of waiting and since I don't want to leave Zen for another browser I needed a solution.
+Zen's ability to sync data is limited and while they've been promising to implement a more robust
+cross-device syncing service since at least
+[2025](https://github.com/zen-browser/desktop/pull/12531) so far it hasn't happened. In the end I
+got tired of waiting and since I don't want to leave Zen for another browser I needed a solution.
 
-Storing bookmarks in your browser (as is tradition) means, at best, you can only access them while in a browser synced with your account. For the most part that's good enough but it's also quite limiting. Luckily, there's an alternative and that's where self-hosting, once again, saved the day.
+Storing bookmarks in your browser (as is tradition) means, at best, you can only access them while
+in a browser synced with your account. For the most part that's good enough but it's also quite
+limiting. Luckily, there's an alternative and that's where self-hosting, once again, saved the day.
 
-In the end I settled on [Linkwarden](https://linkwarden.app/), a self-hosted link management platform that's a bookmark manager and link archiver in one. That alone is pretty great but it also integrates with a host of other apps and services, including [Raycast](https://www.raycast.com/). I already use Raycast (I'm currently exploring [Vicinae](https://vicinae.com/) for Linux) as a better Spotlight and quite handily it has a Linkwarden integration. 
+In the end I settled on [Linkwarden](https://linkwarden.app/), a self-hosted link management
+platform that's a bookmark manager and link archiver in one. That alone is pretty great but it also
+integrates with a host of other apps and services, including [Raycast](https://www.raycast.com/). I
+already use Raycast (I'm currently exploring [Vicinae](https://vicinae.com/) for Linux) as a better
+Spotlight and quite handily it has a Linkwarden integration.
 
-Storing everything in Linkwarden (or any similar service, really) provides several benefits over browser-based bookmarking:
+Storing everything in Linkwarden (or any similar service, really) provides several benefits over
+browser-based bookmarking:
 
-* On any of my computers I can type `lw` into Raycast and search all of my bookmarks quickly and easily. This turned out to be faster than opening Zen, switching to the relevant Space, and clicking the link. Or worse finding it in a nested stack of bookmarks.
-* Linkwarden is accessible anywhere I could need it, either by an app or a self-hosted website. If I have the internet I can access my bookmarks. I don't need a specific browser with a specific account signed in. This is especially handy on public or shared computers.
-* I can integrate Linkwarden into more than just Raycast. Any service that is web-aware in some capacity could, in theory, integrate Linkwarden. This opens up a world of automations otherwise inaccessible to me.
+- On any of my computers I can type `lw` into Raycast and search all of my bookmarks quickly and
+  easily. This turned out to be faster than opening Zen, switching to the relevant Space, and
+  clicking the link. Or worse finding it in a nested stack of bookmarks.
+- Linkwarden is accessible anywhere I could need it, either by an app or a self-hosted website. If I
+  have the internet I can access my bookmarks. I don't need a specific browser with a specific
+  account signed in. This is especially handy on public or shared computers.
+- I can integrate Linkwarden into more than just Raycast. Any service that is web-aware in some
+  capacity could, in theory, integrate Linkwarden. This opens up a world of automations otherwise
+  inaccessible to me.
 
-I admit this isn't as smooth in all aspects as simply having bookmarks in a browser, and this does introduce additional points of failure. But I'm getting some great benefits for these tradeoffs and, to me, they're more than worth it.
+I admit this isn't as smooth in all aspects as simply having bookmarks in a browser, and this does
+introduce additional points of failure. But I'm getting some great benefits for these tradeoffs and,
+to me, they're more than worth it.
 
 ## My quest to free myself from platform lock-in
 
-The more platforms and services I use that [die](https://killedbygoogle.com/) or are [enshittified](https://www.windowscentral.com/microsoft/windows-11/windows-president-addresses-current-state-of-windows-11-after-ai-backlash-we-know-we-have-a-lot-of-work-to-do) the more I care about who controls my digital life. If you've never heard about [digital sovereignty](https://www.redhat.com/en/topics/ai/digital-sovereignty) it's worth learning about but, in short, if the only way we have to vote is by leaving and taking our data with us then our control over that data is paramount.
+The more platforms and services I use that [die](https://killedbygoogle.com/) or are
+[enshittified](https://www.windowscentral.com/microsoft/windows-11/windows-president-addresses-current-state-of-windows-11-after-ai-backlash-we-know-we-have-a-lot-of-work-to-do)
+the more I care about who controls my digital life. If you've never heard about
+[digital sovereignty](https://www.redhat.com/en/topics/ai/digital-sovereignty) it's worth learning
+about but, in short, if the only way we have to vote is by leaving and taking our data with us then
+our control over that data is paramount.
 
-This is why I've been spending more time self-hosting services and moving my data into systems I control. That isn't always simple, or as convenient, but the part I didn't expect was the power it would give me.
+This is why I've been spending more time self-hosting services and moving my data into systems I
+control. That isn't always simple, or as convenient, but the part I didn't expect was the power it
+would give me.
 
-Often you don't need specialized hardware to do this stuff as most of it runs in Docker and anything can run Docker these days. If you're at all curious I think the gateway service is [Immich](https://immich.app/) (think self-hosted Google Photos). It's quite easy to set up and if you get stuck [r/selfhosted](https://www.reddit.com/r/selfhosted/) is a great place to get help.
+Often you don't need specialized hardware to do this stuff as most of it runs in Docker and anything
+can run Docker these days. If you're at all curious I think the gateway service is
+[Immich](https://immich.app/) (think self-hosted Google Photos). It's quite easy to set up and if
+you get stuck [r/selfhosted](https://www.reddit.com/r/selfhosted/) is a great place to get help.
 
 Just don't be surprised if this cascades into self-hosting like 20 different things...
